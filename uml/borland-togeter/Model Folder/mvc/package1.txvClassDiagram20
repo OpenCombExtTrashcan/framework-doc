@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhgh8sl2lo-r7iw9p">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="visibility" value="public"/>
+		<reference referencedUin="design:node:::-amcqg9ghafwjgkcx6bbg">
+			<property name="bounds" value="195,195,140,80"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="view_as_class" value="true"/>
+			<reference referencedUin="label:$name:design:node:::-amcqg9ghafwjgkcx6bbg">
+				<property name="bounds" value="-36,30,92,21"/>
+			</reference>
+			<reference referencedUin="design:link:::ieje0rghahvp8n-uuj4cn:-amcqg9ghafwjgkcx6bbg">
+				<property name="sourceAnchor" value="260,200"/>
+				<property name="targetAnchor" value="260,150"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghag5r9kf9b1zc:-amcqg9ghafwjgkcx6bbg">
+				<property name="bounds" value="77,-15,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghag94mw-394f6z:-amcqg9ghafwjgkcx6bbg">
+				<property name="bounds" value="100,148,0,0"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::-amcqg9ghag6dgi-tgzlpj">
+			<property name="bounds" value="195,15,150,131"/>
+			<property name="view_as_class" value="true"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="design:node:::tq87glghahqfxl-w6w49:-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="53,7,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::h17mrghagbons-hwifha:-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="22,-4,0,0"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="label:$name:design:node:::-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="-20,30,61,21"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghaibe53-yhl8fq:-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="35,10,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghag6krn-dsgc3p:-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="15,13,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghag8wjntbszss:-amcqg9ghag6dgi-tgzlpj">
+				<property name="bounds" value="86,-24,0,0"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::-amcqg9ghagbj38x1aaak">
+			<property name="bounds" value="15,15,119,182"/>
+			<property name="view_as_class" value="true"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="design:node:::477wfghaghujvlw11s0:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="18,51,0,0"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagd133-j0nwdy:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="100,-25,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghaicp82-sgjo7x:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="93,7,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagcv10-fqvjvw:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="67,-23,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagdejei41e3:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="111,-27,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagegxeakxt96:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="110,-19,0,0"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagex8c-ozup06:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="89,9,0,0"/>
+			</reference>
+			<reference referencedUin="label:$name:design:node:::-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="-41,30,102,21"/>
+			</reference>
+			<reference referencedUin="design:node:::tq87glghagdowg-c8mcav:-amcqg9ghagbj38x1aaak">
+				<property name="bounds" value="109,-24,0,0"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

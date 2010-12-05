@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhgh8wef5s-fu24cp">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="design:node:::66jh6gh8wevo9-qh74y7">
+			<property name="bounds" value="75,15,80,80"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="design:link:::gcub4gh8wevo9ghms1k:66jh6gh8wevo9-qh74y7">
+				<property name="sourceAnchor" value="160,60"/>
+				<property name="targetAnchor" value="274,60"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::htshogh8wf2gr-6ba7k2">
+			<property name="bounds" value="269,45,20,20"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="label:$name:design:node:::htshogh8wf2gr-6ba7k2">
+				<property name="bounds" value="-15,30,51,21"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::vr70gh8wevo9rdat74">
+			<property name="bounds" value="125,165,80,80"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="design:link:::ieje0rgh8wtl7k-8hxda:vr70gh8wevo9rdat74">
+				<property name="sourceAnchor" value="145,170"/>
+				<property name="targetAnchor" value="145,100"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:node:::ij1pmgh8wevnz-ato1jm">
+			<property name="bounds" value="25,165,80,80"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="design:link:::ieje0rgh8wtl7k-jxlx7c:ij1pmgh8wevnz-ato1jm">
+				<property name="sourceAnchor" value="95,170"/>
+				<property name="targetAnchor" value="95,100"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

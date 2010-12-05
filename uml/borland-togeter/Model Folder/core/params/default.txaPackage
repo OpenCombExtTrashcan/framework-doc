@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<node uin="66jh6gh8wevo9-qh74y7">
+		<property name="$metaclass" value="Class20"/>
+		<property name="$name" value="Params"/>
+		<link uin="gcub4gh8wevo9ghms1k">
+			<property name="$metaclass" value="RequiredInterface20"/>
+			<participant referencedUin="design:node:::66jh6gh8wevo9-qh74y7" role="Client"></participant>
+			<participant referencedUin="design:node:::htshogh8wf2gr-6ba7k2" role="Supplier"></participant>
+		</link>
+	</node>
+	<node uin="vr70gh8wevo9rdat74">
+		<property name="$metaclass" value="Class20"/>
+		<property name="$name" value="HttpParams"/>
+		<property name="mod__extends" value="Params"/>
+		<link uin="ieje0rgh8wtl7k-8hxda">
+			<property name="$metaclass" value="Generalization20"/>
+			<property name="mod__cachedBaseName" value="Params"/>
+			<participant referencedUin="design:node:::vr70gh8wevo9rdat74" role="Client"></participant>
+			<participant referencedUin="design:node:::66jh6gh8wevo9-qh74y7" role="Supplier"></participant>
+		</link>
+	</node>
+	<node uin="ij1pmgh8wevnz-ato1jm">
+		<property name="$metaclass" value="Class20"/>
+		<property name="$name" value="CLParams"/>
+		<property name="mod__extends" value="Params"/>
+		<link uin="ieje0rgh8wtl7k-jxlx7c">
+			<property name="$metaclass" value="Generalization20"/>
+			<property name="mod__cachedBaseName" value="Params"/>
+			<participant referencedUin="design:node:::ij1pmgh8wevnz-ato1jm" role="Client"></participant>
+			<participant referencedUin="design:node:::66jh6gh8wevo9-qh74y7" role="Supplier"></participant>
+		</link>
+	</node>
+	<node uin="htshogh8wf2gr-6ba7k2">
+		<property name="$metaclass" value="Interface20"/>
+		<property name="$name" value="IParams"/>
+	</node>
+</nodeSet>

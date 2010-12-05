@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<node uin="-amcqg9ghafwjgkcx6bbg">
+		<property name="$metaclass" value="Interface20"/>
+		<property name="mod__extends" value="INamable"/>
+		<property name="$name" value="IContainedable"/>
+		<node uin="tq87glghag5r9kf9b1zc">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="$name" value="setParent"/>
+			<node uin="ttifwdghag5rkf-uwcq0l">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghag5rkf-62mcrc">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag5rkf-1mf53i">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghag5rkf6zs3ui">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag5rkfe43syq">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghag5rkf7qxj8d">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag5rkp83sz5g">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghag5rkp-bzkqgu">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghag94mw-394f6z">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="getParent"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghag9hvf-a5owwr"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghag9hvf-a5owwr"/>
+			<property name="mod__returnTypeReferencedElement" value="design:node:::-amcqg9ghagbj38x1aaak"/>
+			<property name="mod__returnType" value="IContainer"/>
+			<node uin="ttifwdghag94ybqvwuhp">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghag94yb23y8s2">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag94ybd64b8g">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghag94ybktmz6e">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag94ybk1kby6">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghag94ybfgi5fb">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag94yl9i0r7q">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghag94ylh9g7ze">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="-5kd6yfghag9hvf-a5owwr">
+				<property name="$metaclass" value="Parameter"/>
+				<property name="$name" value="Parameter1"/>
+				<property name="mod__type" value="IContainer"/>
+				<property name="direction" value="$return"/>
+			</node>
+		</node>
+		<link uin="ieje0rghahvp8n-uuj4cn">
+			<property name="$metaclass" value="Generalization20"/>
+			<property name="mod__cachedBaseName" value="INamable"/>
+			<participant referencedUin="design:node:::-amcqg9ghafwjgkcx6bbg" role="Client"></participant>
+			<participant referencedUin="design:node:::-amcqg9ghag6dgi-tgzlpj" role="Supplier"></participant>
+		</link>
+	</node>
+	<node uin="-amcqg9ghag6dgi-tgzlpj">
+		<property name="$metaclass" value="Interface20"/>
+		<property name="$name" value="INamable"/>
+		<node uin="h17mrghagbons-hwifha">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="$name" value="hasName"/>
+			<node uin="begvrghagbonspp6qzt">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="9s8tcghagbons-wwmt4i">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="j780oghagbonszf6pb2">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="iazr8ghagbons-rx5phr">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="3gpovghagbons-kli2h7">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="47wzgghagbons-xtmi4z">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="7pjd7ghagbonsduwhmi">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ibqy8ghagbons-k5foxm">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghag6krn-dsgc3p">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="addName"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfghag8qhakf6sjh"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfghag8qhakf6sjh"/>
+			<node uin="ttifwdghag6tlm2akstb">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghag6tlm-j284ow">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag6tlm-qwjhrm">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghag6tlmq55fzr">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag6tlw-85vnlr">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghag6tlw6faiev">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag6tlw-jg7vu3">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghag6tlw3nb7s2">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="-5kd6yfghag8qhakf6sjh">
+				<property name="$metaclass" value="Parameter"/>
+				<property name="$name" value="Names"/>
+				<property name="lower" value="1"/>
+				<property name="upper" value="1"/>
+				<property name="multiplicity" value="1"/>
+				<property name="mod__type" value="array"/>
+				<property name="direction" value="$in"/>
+			</node>
+		</node>
+		<node uin="tq87glghag8wjntbszss">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="$name" value="removeName"/>
+			<property name="mod_Visibility" value="$public"/>
+			<node uin="ttifwdghag8wty-tc1ycg">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghag8wty68fpmi">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag8wu8hruvuj">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghag8wu811svg9">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag8wu8-rl97h7">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghag8wu8-uxgyrx">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghag8wui-nwwshk">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghag8wui-t008d1">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghahqfxl-w6w49">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="clearNames"/>
+			<node uin="ttifwdghahqgfv2ldobc">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghahqgfvyoc8v4">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghahqgfy-rsi1vg">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghahqgfy-9vfhhn">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghahqggc-i48yfi">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghahqggcpgmqkn">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghahqggl-u5bnbc">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghahqggl-6qthj8">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghaibe53-yhl8fq">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod__returnType" value="Iterator"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaicfjehv0owm"/>
+			<property name="$name" value="namesIterator"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaicfjehv0owm"/>
+			<node uin="ttifwdghaibembr382bi">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghaibemcy99ujn">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaibemefuy81y">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghaibemelry43k">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaibemrr7f74h">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghaibemrpytaoq">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaiben4-hk7bkk">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghaiben43ccf2f">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="-5kd6yfghaicfjehv0owm">
+				<property name="$metaclass" value="Parameter"/>
+				<property name="$name" value="Parameter1"/>
+				<property name="mod__type" value="Iterator"/>
+				<property name="direction" value="$return"/>
+			</node>
+		</node>
+	</node>
+	<node uin="-amcqg9ghagbj38x1aaak">
+		<property name="$metaclass" value="Interface20"/>
+		<property name="$name" value="IContainer"/>
+		<node uin="tq87glghagcv10-fqvjvw">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="addChild"/>
+			<node uin="ttifwdghagcvbv-bp0d7g">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghagcvbv5ffrnj">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagcvbvldu75y">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghagcvbves9vgc">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagcvbvnw9a91">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghagcvbvpjaft9">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagcvc5-4hnuw4">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghagcvc5ddanfo">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghagd133-j0nwdy">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="removeChild"/>
+			<node uin="ttifwdghagd1e8jpsa9q">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghagd1e8-rlbqlw">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagd1e8zhue7y">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghagd1e8-36ixmi">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagd1e83rvhj6">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghagd1e8j8uxfs">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagd1ei-7ix6bf">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghagd1eivpqau5">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="477wfghaghujvlw11s0">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="$name" value="clearChildren"/>
+			<property name="mod_Visibility" value="$public"/>
+			<node uin="f9pz3ghaghujv-11acdx">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="36qmmghaghujv67oejd">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="3cx2mghaghujvuvkidy">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="hac3kghaghujv-c2sya2">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="j5rlpghaghujvby7m5z">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="blpqmghaghujvv2n9le">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="87n8ughaghujvqaj8gy">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ccgglghaghujv-ydljnp">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghagdejei41e3">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="getChild"/>
+			<node uin="ttifwdghagdetf-tbv51a">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghagdetf3g2n3s">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdetf-vhopnv">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghagdetfw775bg">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdetf-sewdha">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghagdetf-nuv04b">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdetpf5b0ha">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghagdetp-oo5tac">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghagdowg-c8mcav">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="findChildInFamily"/>
+			<node uin="ttifwdghagdp6g-auxswm">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghagdp6g-b5yuya">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdp6gbjddj4">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghagdp6gy28owl">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdp6q-7fgeh4">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghagdp6qftzoqo">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagdp70-f4ita0">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghagdp70bu7mmu">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghagegxeakxt96">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="setChildTypes"/>
+			<node uin="ttifwdghageh7o882k4f">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghageh7o1cb3fd">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghageh7ovfq57k">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghageh7o5vfj1x">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghageh7y-f1jb3m">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghageh7yi8jnf0">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghageh7ybd48sz">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghageh7yifuzf5">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghagex8c-ozup06">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="clearChildTypes"/>
+			<node uin="ttifwdghagexmth7jtbp">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghagexmt-9oikx4">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagexmt-cc3f1l">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghagexmtxjh5vn">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagexndyz053a">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghagexnd-lrdptv">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghagexnn-pmyld0">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghagexnnyp07b">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
+		<node uin="tq87glghaicp82-sgjo7x">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="iterator"/>
+			<property name="mod__returnType" value="Iterator"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
+			<node uin="ttifwdghaicpv37eaep4">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghaicpv46puvxi">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaicpv7-rinpxt">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghaicpv7-vql04s">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaicpvl-7dga5l">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghaicpvl86gjap">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghaicpvv-dojlrj">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghaicpvvj77rq2">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="-5kd6yfghaid53j-6zor88">
+				<property name="$metaclass" value="Parameter"/>
+				<property name="$name" value="Parameter1"/>
+				<property name="mod__type" value="Iterator"/>
+				<property name="direction" value="$return"/>
+			</node>
+		</node>
+	</node>
+</nodeSet>
