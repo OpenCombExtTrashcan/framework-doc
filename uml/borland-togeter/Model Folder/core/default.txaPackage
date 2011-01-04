@@ -4,7 +4,7 @@
 <nodeSet  version="1.1">
 	<node uin="-tdsqjugh8sobvw4v8ga8">
 		<property name="$metaclass" value="Class20"/>
-		<property name="$name" value="System"/>
+		<property name="$name" value="Application"/>
 		<node uin="hnimszgh8wfrg0tr742e">
 			<property name="$metaclass" value="Property20"/>
 			<property name="mod_Visibility" value="$private"/>
@@ -27,18 +27,6 @@
 				<property name="$metaclass" value="TypeLink"/>
 				<participant referencedUin="design:node:::hnimszgh8wv6cy-391686:-tdsqjugh8sobvw4v8ga8" role="Client"></participant>
 				<participant referencedUin="design:node:::-tdsqjugh8wtcbd6ulb5v" role="Supplier"></participant>
-			</link>
-		</node>
-		<node uin="hnimszgh8xa07x-np0oo5">
-			<property name="$metaclass" value="Property20"/>
-			<property name="mod_Visibility" value="$private"/>
-			<property name="$name" value="aFactory"/>
-			<property name="mod__typeReferencedElement" value="design:node:::-amcqg9gh8x453k36ngw9"/>
-			<property name="mod__type" value="ISystemFactory"/>
-			<link uin="ieje0rgh8xaa5o-n0rqav">
-				<property name="$metaclass" value="TypeLink"/>
-				<participant referencedUin="design:node:::hnimszgh8xa07x-np0oo5:-tdsqjugh8sobvw4v8ga8" role="Client"></participant>
-				<participant referencedUin="design:node:::-amcqg9gh8x453k36ngw9" role="Supplier"></participant>
 			</link>
 		</node>
 		<node uin="fnfo4gh8xn86uthzxqq">
@@ -86,6 +74,9 @@
 			<property name="$metaclass" value="Operation20"/>
 			<property name="mod_Visibility" value="$public"/>
 			<property name="$name" value="setRequest"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<node uin="ttifwdgh8xam8q-6kd9m8">
@@ -186,6 +177,9 @@
 			<property name="$name" value="setResponse"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
 			<node uin="ttifwdgh8xefyfo140zn">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -273,46 +267,10 @@
 				</node>
 			</node>
 		</node>
-		<node uin="hnimszgh8xfs93-elnvx">
-			<property name="$metaclass" value="Property20"/>
-			<property name="mod__final" value="true"/>
-			<property name="mod__static" value="true"/>
-			<property name="mod_Visibility" value="$public"/>
-			<property name="lower" value="1"/>
-			<property name="upper" value="1"/>
-			<property name="multiplicity" value="1"/>
-			<property name="$name" value="TYPE_HTTP"/>
-			<property name="mod__initialValue" value="&quot;HttpSystemFactory&quot;"/>
-			<property name="mod__typeReferencedElement" value="design:node:::PrimitiveType.String"/>
-			<property name="mod__type" value="String"/>
-			<link uin="ieje0rgh8xko6d-6uscat">
-				<property name="$metaclass" value="TypeLink"/>
-				<participant referencedUin="design:node:::hnimszgh8xfs93-elnvx:-tdsqjugh8sobvw4v8ga8" role="Client"></participant>
-				<participant referencedUin="design:node:::PrimitiveType.String" role="Supplier"></participant>
-			</link>
-		</node>
-		<node uin="h2iuygh8xgv889bcy75">
-			<property name="$metaclass" value="Property20"/>
-			<property name="mod__final" value="true"/>
-			<property name="mod__static" value="true"/>
-			<property name="mod_Visibility" value="$public"/>
-			<property name="lower" value="1"/>
-			<property name="upper" value="1"/>
-			<property name="multiplicity" value="1"/>
-			<property name="$name" value="TYPE_CL"/>
-			<property name="mod__initialValue" value="&quot;CLSystemFactory&quot;"/>
-			<property name="mod__typeReferencedElement" value="design:node:::PrimitiveType.String"/>
-			<property name="mod__type" value="String"/>
-			<link uin="ieje0rgh8xkucw7v4rht">
-				<property name="$metaclass" value="TypeLink"/>
-				<participant referencedUin="design:node:::h2iuygh8xgv889bcy75:-tdsqjugh8sobvw4v8ga8" role="Client"></participant>
-				<participant referencedUin="design:node:::PrimitiveType.String" role="Supplier"></participant>
-			</link>
-		</node>
 		<node uin="tq87glgh8xlhsk-9qoope">
 			<property name="$metaclass" value="Operation20"/>
-			<property name="$name" value="Operation1"/>
 			<property name="@stereotype" value="create"/>
+			<property name="$name" value="getRouter"/>
 			<node uin="ttifwdgh8xli6r-7t0cgt">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -349,6 +307,45 @@
 				</node>
 			</node>
 		</node>
+		<node uin="tq87glghd978k0-okqic4">
+			<property name="$metaclass" value="Operation20"/>
+			<property name="mod_Visibility" value="$public"/>
+			<property name="$name" value="setRouter"/>
+			<node uin="ttifwdghd979gppy5uk3">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="bodyCondition"/>
+				<node uin="ul14qaghd979gskozr54">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghd979gt-3zf446">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="postcondition"/>
+				<node uin="ul14qaghd979gtgm55tz">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+			<node uin="ttifwdghd979gtf3hqtn">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="ownedRuleAggregation"/>
+				<node uin="ul14qaghd979gt1ceznk">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+					<property name="language" value="ocl"/>
+				</node>
+			</node>
+			<node uin="ttifwdghd979gy-4lgpru">
+				<property name="$metaclass" value="Constraint"/>
+				<property name="$name" value="precondition"/>
+				<node uin="ul14qaghd979gytfw2hx">
+					<property name="$metaclass" value="ValueSpecification"/>
+					<property name="$name" value="ValueSpecification1"/>
+				</node>
+			</node>
+		</node>
 	</node>
 	<node uin="-tdsqjugh8wt7lo-ejttlc">
 		<property name="$metaclass" value="Class20"/>
@@ -364,46 +361,6 @@
 				<participant referencedUin="design:node:::hnimszgh8wtywrbir75k:-tdsqjugh8wt7lo-ejttlc" role="Client"></participant>
 				<participant referencedUin="design:node:::htshogh8wf2gr-6ba7k2" role="Supplier"></participant>
 			</link>
-		</node>
-		<node uin="tq87glgh8ww3ki3mpgxs">
-			<property name="$metaclass" value="Operation20"/>
-			<property name="mod_Visibility" value="$public"/>
-			<property name="$name" value="getParam"/>
-			<node uin="ttifwdgh8ww3tzmyh8di">
-				<property name="$metaclass" value="Constraint"/>
-				<property name="$name" value="ownedRuleAggregation"/>
-				<node uin="ul14qagh8ww3tz-rc9vno">
-					<property name="$metaclass" value="ValueSpecification"/>
-					<property name="$name" value="ValueSpecification1"/>
-					<property name="language" value="ocl"/>
-				</node>
-			</node>
-			<node uin="ttifwdgh8ww3tzayvgdi">
-				<property name="$metaclass" value="Constraint"/>
-				<property name="$name" value="precondition"/>
-				<node uin="ul14qagh8ww3tz8rr1hg">
-					<property name="$metaclass" value="ValueSpecification"/>
-					<property name="$name" value="ValueSpecification1"/>
-					<property name="language" value="ocl"/>
-				</node>
-			</node>
-			<node uin="ttifwdgh8ww3u9ze5g7o">
-				<property name="$metaclass" value="Constraint"/>
-				<property name="$name" value="postcondition"/>
-				<node uin="ul14qagh8ww3u9sz669">
-					<property name="$metaclass" value="ValueSpecification"/>
-					<property name="$name" value="ValueSpecification1"/>
-				</node>
-			</node>
-			<node uin="ttifwdgh8ww3uj-otr4vq">
-				<property name="$metaclass" value="Constraint"/>
-				<property name="$name" value="bodyCondition"/>
-				<node uin="ul14qagh8ww3uj-ba3vs">
-					<property name="$metaclass" value="ValueSpecification"/>
-					<property name="$name" value="ValueSpecification1"/>
-					<property name="language" value="ocl"/>
-				</node>
-			</node>
 		</node>
 		<node uin="tq87glgh8wwc7i-e64q9o">
 			<property name="$metaclass" value="Operation20"/>
@@ -682,5 +639,9 @@
 			<participant referencedUin="design:node:::-tdsqjugh8x7p95ja60w7" role="Client"></participant>
 			<participant referencedUin="design:node:::-amcqg9gh8x453k36ngw9" role="Supplier"></participant>
 		</link>
+	</node>
+	<node uin="-tdsqjughd94wn7-m25ook">
+		<property name="$metaclass" value="Class20"/>
+		<property name="$name" value="Router"/>
 	</node>
 </nodeSet>
