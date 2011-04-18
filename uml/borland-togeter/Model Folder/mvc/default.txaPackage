@@ -52,6 +52,7 @@
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfghag8qhakf6sjh"/>
 			<property name="__aggregationEnd_formalParameter" value="4qx0cghd91bkgpvdf7o"/>
 			<property name="__aggregationEnd_formalParameter" value="4qx0cghd91bkgpvdf7o"/>
+			<property name="__aggregationEnd_formalParameter" value="4qx0cghd91bkgpvdf7o"/>
 			<node uin="4lu14ghd91bkgocbujn">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -183,6 +184,7 @@
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaicfjehv0owm"/>
 			<property name="__aggregationEnd_returnResult" value="d5x6aghd91k17u2wear"/>
 			<property name="__aggregationEnd_returnResult" value="d5x6aghd91k17u2wear"/>
+			<property name="__aggregationEnd_returnResult" value="d5x6aghd91k17u2wear"/>
 			<node uin="ccn1tghd91k172g04a8">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -272,6 +274,7 @@
 			<property name="__aggregationEnd_returnResult" value="68vp8ghd91nwk-k2gufe"/>
 			<property name="__aggregationEnd_returnResult" value="68vp8ghd91nwk-k2gufe"/>
 			<property name="mod__returnType" value="IContainer"/>
+			<property name="__aggregationEnd_returnResult" value="68vp8ghd91nwk-k2gufe"/>
 			<node uin="eaffzghd91nwkv9wbrr">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -595,6 +598,7 @@
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
+			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
 			<node uin="ttifwdghaicpv37eaep4">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -687,6 +691,7 @@
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfghag8qhakf6sjh"/>
 			<property name="__aggregationEnd_formalParameter" value="4qx0cghd91bkgpvdf7o"/>
 			<property name="__aggregationEnd_formalParameter" value="h2x83ghd93942d5cyoa"/>
+			<property name="__aggregationEnd_formalParameter" value="jxyghd93jwm65izea"/>
 			<property name="__aggregationEnd_formalParameter" value="jxyghd93jwm65izea"/>
 			<property name="__aggregationEnd_formalParameter" value="jxyghd93jwm65izea"/>
 			<node uin="blpe1ghd93jwi-6gbi2b">
@@ -1017,6 +1022,7 @@
 			<property name="__aggregationEnd_returnResult" value="cuogkghd93944qw7kpv"/>
 			<property name="mod__returnType" value="IContainer"/>
 			<property name="__aggregationEnd_returnResult" value="cuogkghd93944qw7kpv"/>
+			<property name="__aggregationEnd_returnResult" value="cuogkghd93944qw7kpv"/>
 			<node uin="1z37gghd93944-jlr3ck">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -1104,6 +1110,7 @@
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaicfjehv0owm"/>
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaicfjehv0owm"/>
 			<property name="__aggregationEnd_returnResult" value="d5x6aghd91k17u2wear"/>
+			<property name="__aggregationEnd_returnResult" value="fezfxghd93943fu4ymt"/>
 			<property name="__aggregationEnd_returnResult" value="fezfxghd93943fu4ymt"/>
 			<property name="__aggregationEnd_returnResult" value="fezfxghd93943fu4ymt"/>
 			<node uin="ax60mghd93943u67i2u">
@@ -1235,6 +1242,7 @@
 			<property name="__aggregationEnd_returnResult" value="-5kd6yfghaid53j-6zor88"/>
 			<property name="__aggregationEnd_returnResult" value="yedkghd93942-fijbfz"/>
 			<property name="__aggregationEnd_returnResult" value="yedkghd93942-fijbfz"/>
+			<property name="__aggregationEnd_returnResult" value="yedkghd93942-fijbfz"/>
 			<node uin="1de8tghd93942-82rsrq">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -1281,5 +1289,109 @@
 			<participant referencedUin="design:node:::-tdsqjughd92tof-f3wiqw" role="Client"></participant>
 			<participant referencedUin="design:node:::-amcqg9ghagbj38x1aaak" role="Supplier"></participant>
 		</link>
+	</node>
+	<node uin="-yrgd8egmmrpqrp-vzbnv7">
+		<property name="$name" value="Interaction"/>
+		<property name="$metaclass" value="SD20_Interaction"/>
+		<node uin="-y8nsowgmms14rf-hz4z0e">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline9"/>
+			<property name="connectableElementName" value="$aVars"/>
+		</node>
+		<node uin="-y8nsowgmmru68ydnm4y2">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline8"/>
+			<property name="connectableElementName" value="$aUIObjectViewNode"/>
+		</node>
+		<node uin="-y8nsowgmmrtngf67dsj6">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline7"/>
+			<property name="connectableElementName" value="$aUIObjectOthers"/>
+		</node>
+		<node uin="-y8nsowgmmrt17unhhjpr">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline6"/>
+			<property name="connectableElementName" value="$aChildController"/>
+		</node>
+		<node uin="-y8nsowgmmrseo41vquto">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline5"/>
+			<property name="connectableElementName" value="$aUIDisplayDevice(Stream)"/>
+		</node>
+		<node uin="-y8nsowgmmrs3ww-1lbh0w">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline4"/>
+			<property name="connectableElementName" value="$aUIObjectTree"/>
+		</node>
+		<node uin="-y8nsowgmmrre2yoo3i0y">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline3"/>
+			<property name="connectableElementName" value="$aUI"/>
+		</node>
+		<node uin="-y8nsowgmmrqqk6-esuu2d">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline2"/>
+			<property name="connectableElementName" value="$aView"/>
+			<node uin="c87hzvgmms1zmq-yhxsa4">
+				<property name="$metaclass" value="SD20_ExecutionSpecification"/>
+				<property name="$name" value="SD20_ExecutionSpecification1"/>
+			</node>
+		</node>
+		<node uin="-y8nsowgmmrqgeccu6o3a">
+			<property name="$metaclass" value="SD20_Lifeline"/>
+			<property name="$name" value="Lifeline1"/>
+			<property name="connectableElementName" value="$aController"/>
+			<node uin="l2gqtvgmms1zmqzidz3u">
+				<property name="$metaclass" value="SD20_Int_InvocationSpecification"/>
+				<property name="$name" value="SD20_Int_InvocationSpecification1"/>
+				<property name="receiveExecutionSpecificationPuin" value="design:node:::c87hzvgmms1zmq-yhxsa4:-y8nsowgmmrqqk6-esuu2d:-yrgd8egmmrpqrp-vzbnv7"/>
+				<property name="call_cachedSequenceNumber" value="1"/>
+			</node>
+			<link uin="ieje0rgmms1znljxly9o">
+				<property name="$metaclass" value="SD20_Int_CommunicationLink"/>
+				<participant referencedUin="design:node:::-y8nsowgmmrqgeccu6o3a:-yrgd8egmmrpqrp-vzbnv7" role="Client"></participant>
+				<participant referencedUin="design:node:::-y8nsowgmmrqqk6-esuu2d:-yrgd8egmmrpqrp-vzbnv7" role="Supplier"></participant>
+			</link>
+		</node>
+		<node uin="ttifwdgmmrqc0w-f024z0">
+			<property name="$metaclass" value="Constraint"/>
+			<property name="$name" value="postcondition"/>
+			<node uin="ul14qagmmrqc0wm390zr">
+				<property name="$metaclass" value="ValueSpecification"/>
+				<property name="$name" value="ValueSpecification1"/>
+				<property name="language" value="ocl"/>
+			</node>
+		</node>
+		<node uin="ttifwdgmmrqc17-t62xd7">
+			<property name="$metaclass" value="Constraint"/>
+			<property name="$name" value="precondition"/>
+			<node uin="ul14qagmmrqc17-fnw18f">
+				<property name="$metaclass" value="ValueSpecification"/>
+				<property name="$name" value="ValueSpecification1"/>
+				<property name="language" value="ocl"/>
+			</node>
+		</node>
+	</node>
+	<node uin="-yrgd8egmmrvrzm8nuts1">
+		<property name="$metaclass" value="SD20_Interaction"/>
+		<property name="$name" value="Interaction1"/>
+		<node uin="ttifwdgmmrvss2e2h2no">
+			<property name="$metaclass" value="Constraint"/>
+			<property name="$name" value="postcondition"/>
+			<node uin="ul14qagmmrvss233xk8n">
+				<property name="$metaclass" value="ValueSpecification"/>
+				<property name="$name" value="ValueSpecification1"/>
+				<property name="language" value="ocl"/>
+			</node>
+		</node>
+		<node uin="ttifwdgmmrvss2-t03s3b">
+			<property name="$metaclass" value="Constraint"/>
+			<property name="$name" value="precondition"/>
+			<node uin="ul14qagmmrvss2-bfdia2">
+				<property name="$metaclass" value="ValueSpecification"/>
+				<property name="$name" value="ValueSpecification1"/>
+				<property name="language" value="ocl"/>
+			</node>
+		</node>
 	</node>
 </nodeSet>

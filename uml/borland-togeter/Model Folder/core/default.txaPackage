@@ -79,6 +79,7 @@
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xdbtuv8roaw"/>
 			<node uin="ttifwdgh8xam8q-6kd9m8">
 				<property name="$metaclass" value="Constraint"/>
 				<property name="$name" value="ownedRuleAggregation"/>
@@ -175,6 +176,7 @@
 			<property name="$metaclass" value="Operation20"/>
 			<property name="mod_Visibility" value="$public"/>
 			<property name="$name" value="setResponse"/>
+			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>
 			<property name="__aggregationEnd_formalParameter" value="-5kd6yfgh8xevgqe8f0jd"/>

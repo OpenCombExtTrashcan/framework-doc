@@ -7,7 +7,7 @@
 		<property name="$metaclass" value="ClassDiagram20"/>
 		<property name="visibility" value="public"/>
 		<reference referencedUin="design:node:::-amcqg9ghagbj38x1aaak">
-			<property name="bounds" value="15,15,150,301"/>
+			<property name="bounds" value="15,18,150,224"/>
 			<property name="view_as_class" value="true"/>
 			<property name="location_set_by_user" value="true"/>
 			<reference referencedUin="design:node:::gpmpqghd91i0qa4vych:-amcqg9ghagbj38x1aaak">
@@ -68,7 +68,7 @@
 			</reference>
 		</reference>
 		<reference referencedUin="design:node:::-tdsqjughd92tof-f3wiqw">
-			<property name="bounds" value="275,16,150,300"/>
+			<property name="bounds" value="275,19,150,219"/>
 			<property name="location_set_by_user" value="true"/>
 			<reference referencedUin="design:node:::hqjylghd939442vsy4g:-tdsqjughd92tof-f3wiqw">
 				<property name="bounds" value="-1,153,0,0"/>
@@ -133,6 +133,15 @@
 				<property name="bounds" value="111,15,0,0"/>
 				<property name="location_set_by_user" value="true"/>
 			</reference>
+		</reference>
+		<reference referencedUin="design:view:::V1hexuhgmmrp2wnbku6t4">
+			<property name="bounds" value="184,0,85,104"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::Vam8ynkgmmrpqr5-3witme">
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds" value="184,257,126,60"/>
+			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>
 </nodeSet>
