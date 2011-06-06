@@ -1,0 +1,26 @@
+<div class="method-list-item">
+		
+	<!-- function name -->
+	{=$aMethodRef->getName()}
+	
+	<!-- arg list -->
+	(
+	<foreach for='$aMethodRef->getParameters()' key='nParamIdx' item='aRefMetdParam' >
+		<if "$nParamIdx>0">,</if>
+		
+		<if "$aRefMetdParamClass=$aRefMetdParam->getClass()" >
+			<a href="{=str_replace('\\','/',$aRefMetdParamClass->getName())}.html">{= $aRefMetdParamClass->getName() }</a>
+		</if>
+		
+		${=$aRefMetdParam->getName()}
+		
+		<script type="text/php">try{</script>
+		<if "$aRefMetdParam->isOptional()">
+			= {=$aRefMetdParam->getDefaultValue()}
+		</if>
+		<script type="text/php">}catch(\ReflectionException $e){}</script>
+		
+	</foreach>
+	 )
+ 
+</div>

@@ -14,13 +14,11 @@
 <body>
 
 	<div id="classes_index">
-		hello world ~1
-<subtemplate name="">
-<div>
-</div>
-</subtemplate>
+		
 
-<subtemplate:call name="" param.arrItem="$ssdd" />	</div>
+
+<div>-----1</div>
+	</div>
 	
 	<div class="main-area">
 	
@@ -38,360 +36,358 @@
 	 -->\<a href="jc/mvc/model/db/orm/index.html">orm</a><!-- 
  --><!--
 			-->\ModelPrototype		</h4>
-
-		<!-- functions -->
-				<div class="method">
 		
-			<!-- function name -->
-			__construct			
-			<!-- arg list -->
-			(
-											
-								
-				$sName				
-								
-							,				
-								
-				$sTable				
-								
-							,				
-								
-				$primaryKeys				
-								
-							,				
-								
-				$arrClms				
-									= Array								
-						 )
-		 
-		</div>
-				<div class="method">
+		<!-- 回溯继承关系 -->
+					继承：
+							<div>
+					<a href="jc/lang/Object.html">\jc\lang\Object</a>
+				</div>
+							
+		<!-- 实现接口 -->
+				<div>
+			实现接口: 
+							<a href="jc/lang/IObject.html">\jc\lang\IObject</a>
+					</div>
 		
-			<!-- function name -->
-			createFromCnf			
-			<!-- arg list -->
-			(
-											
-								
-				$arrCnf				
-								
-							,				
-								
-				$bCheckValid				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+				
+		<!-- methods list -->
+		<div class="method-list">
+			公共方法:
+							<div class="method-list-item">
 		
-			<!-- function name -->
-			name			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	__construct	
+	<!-- arg list -->
+	(
+					
+				
+		$sName		
+								
+			,		
+				
+		$sTable		
+								
+			,		
+				
+		$primaryKeys		
+								
+			,		
+				
+		$arrClms		
+							= Array						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			tableName			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	createFromCnf	
+	<!-- arg list -->
+	(
+					
+				
+		$arrCnf		
+								
+			,		
+				
+		$bCheckValid		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setTableName			
-			<!-- arg list -->
-			(
-											
-								
-				$sTable				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	name	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			databaseName			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	tableName	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setDatabaseName			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setTableName	
+	<!-- arg list -->
+	(
+					
+				
+		$sTable		
 								
-				$sDatabase				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			modelClass			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	databaseName	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setModelClass			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setDatabaseName	
+	<!-- arg list -->
+	(
+					
+				
+		$sDatabase		
 								
-				$sModelClass				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			primaryKeys			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	modelClass	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setPrimayKeys			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setModelClass	
+	<!-- arg list -->
+	(
+					
+				
+		$sModelClass		
 								
-				$keys				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			addColumn			
-			<!-- arg list -->
-			(
-											
-								
-				$sName				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	primaryKeys	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			clearColumn			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	setPrimayKeys	
+	<!-- arg list -->
+	(
+					
+				
+		$keys		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			columns			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	addColumn	
+	<!-- arg list -->
+	(
+					
+				
+		$sName		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			columnIterator			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	clearColumn	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			associations			
-			<!-- arg list -->
-			(
-											
-								
-				$bCreate				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	columns	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			addAssociation			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/mvc/model/db/orm/AssociationPrototype.html">jc\mvc\model\db\orm\AssociationPrototype</a>
-								
-				$aAssociation				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	columnIterator	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			createModel			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	associations	
+	<!-- arg list -->
+	(
+					
+				
+		$bCreate		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			assertCnfValid			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	addAssociation	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/mvc/model/db/orm/AssociationPrototype.html">jc\mvc\model\db\orm\AssociationPrototype</a>
+				
+		$aAssociation		
 								
-				$arrOrm				
-								
-							,				
-								
-				$bNestingModel				
-									= 								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			reflectTableInfo			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/db/DB.html">jc\db\DB</a>
-								
-				$aDB				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	createModel	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			create			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	assertCnfValid	
+	<!-- arg list -->
+	(
+					
+				
+		$arrOrm		
 								
-				$sClassName				
-								
-							,				
-								
-				$sNamespace				
-									= \								
-							,				
-								
-				$arrArgvs				
-									= Array								
-						 )
-		 
-		</div>
-				<div class="method">
+			,		
+				
+		$bNestingModel		
+							= 						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			application			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	reflectTableInfo	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/db/DB.html">jc\db\DB</a>
+				
+		$aDB		
 								
-				$bDefaultGlobal				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setApplication			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/Application.html">jc\system\Application</a>
+	<!-- function name -->
+	create	
+	<!-- arg list -->
+	(
+					
+				
+		$sClassName		
 								
-				$aApp				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+			,		
+				
+		$sNamespace		
+							= \						
+			,		
+				
+		$arrArgvs		
+							= Array						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			singleton			
-			<!-- arg list -->
-			(
-											
-								
-				$bCreateNew				
-									= 1								
-							,				
-								
-				$createArgvs				
-									= 								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	application	
+	<!-- arg list -->
+	(
+					
+				
+		$bDefaultGlobal		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setSingleton			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/lang/Object.html">jc\lang\Object</a>
+	<!-- function name -->
+	setApplication	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/Application.html">jc\system\Application</a>
+				
+		$aApp		
 								
-				$aInstance				
-									= 								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			findApplicationOnCallStack			
-			<!-- arg list -->
-			(
-											
-								
-				$arrCallStack				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	singleton	
+	<!-- arg list -->
+	(
+					
+				
+		$bCreateNew		
+							= 1						
+			,		
+				
+		$createArgvs		
+							= 						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			flyweight			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setSingleton	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/lang/Object.html">jc\lang\Object</a>
+				
+		$aInstance		
+							= 						
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	findApplicationOnCallStack	
+	<!-- arg list -->
+	(
+					
+				
+		$arrCallStack		
 								
-				$sKey				
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	flyweight	
+	<!-- arg list -->
+	(
+					
+				
+		$sKey		
 								
-						 )
-		 
+		 )
+ 
+</div>						
+			受保护方法:
+							无
+						
+			私有方法:
+							无
+						
+			
 		</div>
-			</div>
+	</div>
 
 </body>
 

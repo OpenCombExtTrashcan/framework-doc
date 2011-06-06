@@ -30,11 +30,15 @@
 	<foreach for="$arrChildren" key='sChildName' item='packageChild' >
 	<div>
 		<if "is_array($packageChild)">
-		Package:
-		<if:else "$packageChild instanceof \jc\doc\classes\builder\ClassInfo" />
-		Class:
+			package:
+			<a href="{=str_replace('\\','/',$sFullPackageName)}/{=$sChildName}/index.html">{=$sChildName}</a>
+		<else "$packageChild instanceof \jc\doc\classes\builder\ClassInfo" />
+			class:
+			<a href="{=str_replace('\\','/',$sFullPackageName)}/{=$sChildName}.html">{=$sChildName}</a>
 		</if>
-		<a href="{=str_replace('\\','/',$sFullPackageName)}/{=$sChildName}.html">{=$sChildName}</a>
+		
+		
+		
 	</div>
 	</foreach>
 	

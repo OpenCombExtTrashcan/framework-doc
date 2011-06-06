@@ -14,13 +14,11 @@
 <body>
 
 	<div id="classes_index">
-		hello world ~1
-<subtemplate name="">
-<div>
-</div>
-</subtemplate>
+		
 
-<subtemplate:call name="" param.arrItem="$ssdd" />	</div>
+
+<div>-----1</div>
+	</div>
 	
 	<div class="main-area">
 	
@@ -32,268 +30,276 @@
 	 -->\<a href="jc/system/index.html">system</a><!-- 
  --><!--
 			-->\Application		</h4>
-
-		<!-- functions -->
-				<div class="method">
 		
-			<!-- function name -->
-			singletonInstance			
-			<!-- arg list -->
-			(
-											
-								
-				$sClass				
-								
-							,				
-								
-				$bCreateNew				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+		<!-- 回溯继承关系 -->
+					继承：
+							<div>
+					<a href="jc/system/CoreApplication.html">\jc\system\CoreApplication</a>
+				</div>
+							<div>
+					<a href="jc/lang/Object.html">\jc\lang\Object</a>
+				</div>
+							
+		<!-- 实现接口 -->
+				<div>
+			实现接口: 
+							<a href="jc/lang/IObject.html">\jc\lang\IObject</a>
+					</div>
 		
-			<!-- function name -->
-			setSingletonInstance			
-			<!-- arg list -->
-			(
-											
-								
-				$sClass				
-								
-							,				
-								
-				$aInstance				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+				
+		<!-- methods list -->
+		<div class="method-list">
+			公共方法:
+							<div class="method-list-item">
 		
-			<!-- function name -->
-			singleton			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	singletonInstance	
+	<!-- arg list -->
+	(
+					
+				
+		$sClass		
 								
-				$bCreateNew				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+			,		
+				
+		$bCreateNew		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setSingleton			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/Application.html">jc\system\Application</a>
+	<!-- function name -->
+	setSingletonInstance	
+	<!-- arg list -->
+	(
+					
+				
+		$sClass		
 								
-				$aInstance				
-									= 								
-						 )
-		 
-		</div>
-				<div class="method">
+			,		
+				
+		$aInstance		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			__construct			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	singleton	
+	<!-- arg list -->
+	(
+					
+				
+		$bCreateNew		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setClassLoader			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/ClassLoader.html">jc\system\ClassLoader</a>
-								
-				$aClassLoader				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	setSingleton	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/Application.html">jc\system\Application</a>
+				
+		$aInstance		
+							= 						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			classLoader			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	__construct	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setRequest			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/Request.html">jc\system\Request</a>
+	<!-- function name -->
+	setClassLoader	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/ClassLoader.html">jc\system\ClassLoader</a>
+				
+		$aClassLoader		
 								
-				$aRequest				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			request			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	classLoader	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setResponse			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/Response.html">jc\system\Response</a>
+	<!-- function name -->
+	setRequest	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/Request.html">jc\system\Request</a>
+				
+		$aRequest		
 								
-				$aResponse				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			response			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	request	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			accessRouter			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	setResponse	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/Response.html">jc\system\Response</a>
+				
+		$aResponse		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setAccessRouter			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/AccessRouter.html">jc\system\AccessRouter</a>
-								
-				$aAccessRouter				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	response	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			localeManager			
-			<!-- arg list -->
-			(
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	accessRouter	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setLocaleManager			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/locale/LocaleManager.html">jc\locale\LocaleManager</a>
+	<!-- function name -->
+	setAccessRouter	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/AccessRouter.html">jc\system\AccessRouter</a>
+				
+		$aAccessRouter		
 								
-				$aLocaleManager				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			create			
-			<!-- arg list -->
-			(
-											
-								
-				$sClassName				
-								
-							,				
-								
-				$sNamespace				
-									= \								
-							,				
-								
-				$arrArgvs				
-									= Array								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	localeManager	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			application			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setLocaleManager	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/locale/LocaleManager.html">jc\locale\LocaleManager</a>
+				
+		$aLocaleManager		
 								
-				$bDefaultGlobal				
-									= 1								
-						 )
-		 
-		</div>
-				<div class="method">
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			setApplication			
-			<!-- arg list -->
-			(
-											
-									<a href="jc/system/Application.html">jc\system\Application</a>
+	<!-- function name -->
+	create	
+	<!-- arg list -->
+	(
+					
+				
+		$sClassName		
 								
-				$aApp				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+			,		
+				
+		$sNamespace		
+							= \						
+			,		
+				
+		$arrArgvs		
+							= Array						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			findApplicationOnCallStack			
-			<!-- arg list -->
-			(
-											
-								
-				$arrCallStack				
-								
-						 )
-		 
-		</div>
-				<div class="method">
+	<!-- function name -->
+	application	
+	<!-- arg list -->
+	(
+					
+				
+		$bDefaultGlobal		
+							= 1						
+		 )
+ 
+</div>							<div class="method-list-item">
 		
-			<!-- function name -->
-			flyweight			
-			<!-- arg list -->
-			(
-											
+	<!-- function name -->
+	setApplication	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/system/Application.html">jc\system\Application</a>
+				
+		$aApp		
 								
-				$sKey				
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	findApplicationOnCallStack	
+	<!-- arg list -->
+	(
+					
+				
+		$arrCallStack		
 								
-						 )
-		 
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	flyweight	
+	<!-- arg list -->
+	(
+					
+				
+		$sKey		
+								
+		 )
+ 
+</div>						
+			受保护方法:
+							无
+						
+			私有方法:
+							无
+						
+			
 		</div>
-			</div>
+	</div>
 
 </body>
 

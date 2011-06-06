@@ -6,8 +6,8 @@
 	<meta name="author" content="jc\doc\builder" /> 
 	<meta name="keywords" content="" /> 
 	<meta name="description" content="" /> 
-	<base href="../../" />
-	<title> class: jc\io\OutputStreamBuffer  -- JeCat PHP Framework Classes  </title> 
+	<base href="../../../../../" />
+	<title> class: jc\ui\xhtml\compiler\node\SubTemplateDefineCompiler  -- JeCat PHP Framework Classes  </title> 
 	<link rel="stylesheet" type="text/css" href="css/ClassInfo.css" />
 </head> 
 
@@ -27,17 +27,23 @@
 			<!-- 
 	 -->\<a href="jc/index.html">jc</a><!-- 
  --><!-- 
-	 -->\<a href="jc/io/index.html">io</a><!-- 
+	 -->\<a href="jc/ui/index.html">ui</a><!-- 
+ --><!-- 
+	 -->\<a href="jc/ui/xhtml/index.html">xhtml</a><!-- 
+ --><!-- 
+	 -->\<a href="jc/ui/xhtml/compiler/index.html">compiler</a><!-- 
+ --><!-- 
+	 -->\<a href="jc/ui/xhtml/compiler/node/index.html">node</a><!-- 
  --><!--
-			-->\OutputStreamBuffer		</h4>
+			-->\SubTemplateDefineCompiler		</h4>
 		
 		<!-- 回溯继承关系 -->
 					继承：
 							<div>
-					<a href="jc/io/OutputStream.html">\jc\io\OutputStream</a>
+					<a href="jc/ui/xhtml/compiler/NodeCompiler.html">\jc\ui\xhtml\compiler\NodeCompiler</a>
 				</div>
 							<div>
-					<a href="jc/io/Stream.html">\jc\io\Stream</a>
+					<a href="jc/ui/xhtml/compiler/BaseCompiler.html">\jc\ui\xhtml\compiler\BaseCompiler</a>
 				</div>
 							<div>
 					<a href="jc/lang/Object.html">\jc\lang\Object</a>
@@ -46,11 +52,8 @@
 		<!-- 实现接口 -->
 				<div>
 			实现接口: 
-							<a href="jc/io/ILockable.html">\jc\io\ILockable</a>
-							<a href="jc/io/IOutputStream.html">\jc\io\IOutputStream</a>
 							<a href="jc/lang/IObject.html">\jc\lang\IObject</a>
-							<a href="jc/io/IStream.html">\jc\io\IStream</a>
-							<a href="jc/io/IClosable.html">\jc\io\IClosable</a>
+							<a href="jc/ui/ICompiler.html">\jc\ui\ICompiler</a>
 					</div>
 		
 		<!-- 派生子类，或实现类（当前类为一个接口时） -->
@@ -61,111 +64,114 @@
 							<div class="method-list-item">
 		
 	<!-- function name -->
-	write	
+	compile	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/ui/IObject.html">jc\ui\IObject</a>
+				
+		$aObject		
+								
+			,		
+					<a href="jc/io/IOutputStream.html">jc\io\IOutputStream</a>
+				
+		$aDev		
+								
+			,		
+					<a href="jc/ui/CompilerManager.html">jc\ui\CompilerManager</a>
+				
+		$aCompilerManager		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	compileChildren	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/ui/xhtml/Node.html">jc\ui\xhtml\Node</a>
+				
+		$aNode		
+								
+			,		
+					<a href="jc/io/IOutputStream.html">jc\io\IOutputStream</a>
+				
+		$aDev		
+								
+			,		
+					<a href="jc/ui/CompilerManager.html">jc\ui\CompilerManager</a>
+				
+		$aCompilerManager		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	addSubCompiler	
 	<!-- arg list -->
 	(
 					
 				
-		$Content		
+		$sTagName		
 								
 			,		
 				
-		$nLen		
-							= 						
-			,		
+		$sCompilerClass		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	removeSubCompiler	
+	<!-- arg list -->
+	(
+					
 				
-		$bFlush		
+		$sTagName		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	clearSubCompiler	
+	<!-- arg list -->
+	(
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	subCompiler	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/ui/xhtml/Node.html">jc\ui\xhtml\Node</a>
+				
+		$aNode		
+								
+		 )
+ 
+</div>							<div class="method-list-item">
+		
+	<!-- function name -->
+	assignVariableName	
+	<!-- arg list -->
+	(
+					
+				
+		$sPrefix		
 							= 						
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	__toString	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	bufferBytes	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	clean	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	flush	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	lock	
-	<!-- arg list -->
-	(
 		 )
  
 </div>							<div class="method-list-item">
 		
 	<!-- function name -->
 	__construct	
-	<!-- arg list -->
-	(
-					
-				
-		$hHandle		
-							= 						
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	__destruct	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	close	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	isActiving	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	supportsLock	
-	<!-- arg list -->
-	(
-		 )
- 
-</div>							<div class="method-list-item">
-		
-	<!-- function name -->
-	unlock	
 	<!-- arg list -->
 	(
 		 )
@@ -270,8 +276,30 @@
  
 </div>						
 			受保护方法:
-							无
-						
+							<div class="method-list-item">
+		
+	<!-- function name -->
+	compileTag	
+	<!-- arg list -->
+	(
+					
+					<a href="jc/ui/xhtml/Tag.html">jc\ui\xhtml\Tag</a>
+				
+		$aTag		
+								
+			,		
+					<a href="jc/io/IOutputStream.html">jc\io\IOutputStream</a>
+				
+		$aDev		
+								
+			,		
+					<a href="jc/ui/CompilerManager.html">jc\ui\CompilerManager</a>
+				
+		$aCompilerManager		
+								
+		 )
+ 
+</div>						
 			私有方法:
 							无
 						

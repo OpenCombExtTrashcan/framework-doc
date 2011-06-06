@@ -1,12 +1,7 @@
-<script type="php">
-$i = 1 ;
-echo 'hello world ~' ; 
-echo $i ;
-</script>
 
-<subtemplate name=''>
-<div>
+<subtemplate name='renderPackageItem'>
+<div>-----{=$sItem}
 </div>
 </subtemplate>
 
-<subtemplate:call name='' param.arrItem='$ssdd' />
+<subtemplate:call name='renderPackageItem' var.sItem='1' />

@@ -27,34 +27,67 @@
 					var.aBuilder="$aBuilder" /><!--
 			-->\{=$aClass->getShortName()}
 		</h4>
-
-		<!-- functions -->
-		<foreach for="$aClass->getMethods()" item='aMethodRef'>
-		<div class="method">
 		
-			<!-- function name -->
-			{=$aMethodRef->getName()}
-			
-			<!-- arg list -->
-			(
-			<foreach for='$aMethodRef->getParameters()' key='nParamIdx' item='aRefMetdParam' >
-				<if "$nParamIdx>0">,</if>
-				
-				<if "$aRefMetdParamClass=$aRefMetdParam->getClass()" >
-					<a href="{=str_replace('\\','/',$aRefMetdParamClass->getName())}.html">{= $aRefMetdParamClass->getName() }</a>
-				</if>
-				
-				${=$aRefMetdParam->getName()}
-				
-				<if "$aRefMetdParam->isOptional()">
-					= {=$aRefMetdParam->getDefaultValue()}
-				</if>
-				
+		<!-- 回溯继承关系 -->
+		<if "$aParentClass=$aClass->getParentClass()">
+			继承：
+			<dowhile "$aParentClass=$aParentClass->getParentClass()">
+				<div>
+					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html">\{=$aParentClass->getName()}</a>
+				</div>
+			</dowhile>
+		</if>
+		
+		<!-- 实现接口 -->
+		<if "$arrInterfaceRefs=$aClass->getInterfaces()">
+		<div>
+			实现接口: 
+			<foreach for=$arrInterfaceRefs item='aInterfaceRef'>
+				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html">\{=$aInterfaceRef->getName()}</a>
 			</foreach>
-			 )
-		 
 		</div>
-		</foreach>
+		</if>
+
+		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+		<if "$aClass->subClassCount()">
+		<div>
+			<if "$aClass->isInterface()">
+			实现此接口的类：
+			<else />
+			派生子类:
+			</if>
+			
+			<foreach for="$aClass->subClassIterator()" item='aSubClass'>
+				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html">\{=$aSubClass->getName()}</a> ;
+			</foreach>
+		</div>
+		</if>
+		
+		<!-- methods list -->
+		<div class="method-list">
+			公共方法:
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PUBLIC)" item='aMethodRef'>
+				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+			<foreach:else />
+				无
+			</foreach>
+			
+			受保护方法:
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED)" item='aMethodRef'>
+				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+			<foreach:else />
+				无
+			</foreach>
+			
+			私有方法:
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE)" item='aMethodRef'>
+				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+			<foreach:else />
+				无
+			</foreach>
+			
+			
+		</div>
 	</div>
 
 </body>

@@ -37,7 +37,24 @@ class ClassInfo
 		return call_user_func_array(array($this->aRefClass,$sFunc), $arrArgvs) ;
 	}
 	
+	public function addSubClass(self $aClass)
+	{
+		$this->arrSubClasses[] = $aClass ;
+	}
+	
+	public function subClassCount()
+	{
+		return count($this->arrSubClasses) ;
+	}
+	
+	public function subClassIterator()
+	{
+		return new \ArrayIterator($this->arrSubClasses) ;
+	}
+	
 	private $aRefClass ;
+	
+	private $arrSubClasses = array() ;
 }
 
 ?>

@@ -28,7 +28,9 @@ class ClassesBuilder
 		}
 	
 		$this->arrClasses = array() ;
+		$this->arrClassIndexies = array() ;
 		
+		// 加载所有类
 		foreach(array_merge(get_declared_classes(),get_declared_interfaces()) as $sFullClassName)
 		{
 			if(!preg_match("|^jc\\\\|",$sFullClassName))
@@ -51,9 +53,29 @@ class ClassesBuilder
 			}
 			
 			$arrPackage[$sClassName] = new ClassInfo(new \ReflectionClass($sFullClassName)) ;
+			$this->arrClassIndexies[$sFullClassName] =& $arrPackage[$sClassName] ;
 		}
 	
 		unset($this->arrClasses['jc']['doc']) ;
+		
+		// 建立所有类的继承关系	
+		foreach($this->arrClassIndexies as $aClassInfo)
+		{
+			// parent class
+			if( $aParentClassRef = $aClassInfo->getParentClass() and isset($this->arrClassIndexies[$aParentClassRef->getName()]) )
+			{
+				$this->arrClassIndexies[$aParentClassRef->getName()]->addSubClass( $aClassInfo ) ;
+			}
+			
+			// implements interfaces
+			foreach( $aClassInfo->getInterfaces() as $aInterfaceRef )
+			{
+				if( isset($this->arrClassIndexies[$aInterfaceRef->getName()]) )
+				{
+					$this->arrClassIndexies[$aInterfaceRef->getName()]->addSubClass( $aClassInfo ) ;
+				}
+			}
+		}
 	}
 	
 	public function build($sFolder,$sPackageName='',$arrChildren=null)
@@ -173,6 +195,7 @@ class ClassesBuilder
 	}
 	
 	private $arrClasses = array() ;
+	private $arrClassIndexies = array() ;
 	
 	/**
 	 * @var jc\ui\UI
