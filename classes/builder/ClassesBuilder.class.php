@@ -119,6 +119,7 @@ class ClassesBuilder
 					$arrPackagePath[$sPath] = $sSubName ;
 				}
 				$this->aUI->variables()->set('arrPackagePath',$arrPackagePath) ;
+				$this->aUI->variables()->set('sThisUri',$sPath.'/index.html') ;
 				
 				$this->aUI->display('Package.template.html',null,$aStream) ;
 
@@ -145,6 +146,7 @@ class ClassesBuilder
 		
 		$this->aUI->variables()->set('aClass',$aClass) ;				
 		$this->aUI->variables()->set('sBaseUri',str_repeat('../',substr_count($aClass->getNamespaceName(),'\\')+1)) ;
+		$this->aUI->variables()->set('sThisUri',str_replace('\\', '/', $aClass->getName()).'.html') ;
 		$this->aUI->display('Class.template.html',null,$aStream) ;
 		
 		$aStream->close () ;

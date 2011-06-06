@@ -8,7 +8,7 @@
 	<meta name="description" content="" /> 
 	<base href="{=$sBaseUri}" />
 	<title> class: {=$aClass->getName()}  -- JeCat PHP Framework Classes  </title> 
-	<link rel="stylesheet" type="text/css" href="css/ClassInfo.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head> 
 
 <body>
@@ -17,7 +17,7 @@
 		<include file='index.template.html' vars='true' />
 	</div>
 	
-	<div class="main-area">
+	<div id="main-area">
 	
 		<!-- title -->
 		<h4> 
@@ -30,27 +30,31 @@
 		
 		<!-- 回溯继承关系 -->
 		<if "$aParentClass=$aClass->getParentClass()">
+		<div id="extend-trace-div">
 			继承：
+			<ul id="extend-trace-ul">
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
-				<div>
+				<li>
 					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html">\{=$aParentClass->getName()}</a>
-				</div>
+				</li>
 			</dowhile>
+			</ul>
+		</div>
 		</if>
 		
 		<!-- 实现接口 -->
 		<if "$arrInterfaceRefs=$aClass->getInterfaces()">
-		<div>
+		<div id="implements-interfaces">
 			实现接口: 
 			<foreach for=$arrInterfaceRefs item='aInterfaceRef'>
-				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html">\{=$aInterfaceRef->getName()}</a>
+				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html">\{=$aInterfaceRef->getName()}</a>;
 			</foreach>
 		</div>
 		</if>
 
 		<!-- 派生子类，或实现类（当前类为一个接口时） -->
 		<if "$aClass->subClassCount()">
-		<div>
+		<div id="derivative-subclasses">
 			<if "$aClass->isInterface()">
 			实现此接口的类：
 			<else />
@@ -58,7 +62,7 @@
 			</if>
 			
 			<foreach for="$aClass->subClassIterator()" item='aSubClass'>
-				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html">\{=$aSubClass->getName()}</a> ;
+				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html">\{=$aSubClass->getName()}</a>;
 			</foreach>
 		</div>
 		</if>
@@ -66,28 +70,46 @@
 		<!-- methods list -->
 		<div class="method-list">
 			公共方法:
+			<ui class="method-list">
 			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PUBLIC)" item='aMethodRef'>
-				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 			<foreach:else />
-				无
+				<li>无</li>
 			</foreach>
-			
-			受保护方法:
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED)" item='aMethodRef'>
-				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
-			<foreach:else />
-				无
-			</foreach>
-			
-			私有方法:
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE)" item='aMethodRef'>
-				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
-			<foreach:else />
-				无
-			</foreach>
-			
-			
+			</ui>
 		</div>
+			
+		<div class="method-list">
+			受保护方法:
+			<ui class="method-list">
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED)" item='aMethodRef'>
+				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+			<foreach:else />
+				<li>无</li>
+			</foreach>
+			</ui>
+		</div>
+			
+		<div class="method-list">
+			私有方法:
+			<ui class="method-list">
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE)" item='aMethodRef'>
+				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+			<foreach:else />
+				<li>无</li>
+			</foreach>
+			</ui>
+		</div>
+		
+		
+		<hr />
+		
+		<div class="method-detail-list">
+			<foreach for="$aClass->getMethods()" item='aMethodRef'>
+				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+			</foreach>
+		</div>
+		
 	</div>
 
 </body>

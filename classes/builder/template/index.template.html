@@ -1,7 +1,22 @@
 
 <subtemplate name='renderPackageItem'>
-<div>-----{=$sItem}
-</div>
+
+<span>{=$sPackageName}</span>
+<ul class="index-list">
+	<foreach for=$arrChildren key='sChildName' item=child>
+		<if "is_array($child)">
+			<li class="index-item index-item-package">
+			<subtemplate:call name='renderPackageItem' var.arrChildren='$child' var.sPackageName="$sChildName" />
+			</li>
+		<else "$child instanceof \jc\doc\classes\builder\ClassInfo"/>
+			<li class="index-item index-item-class">
+				<a href="{=str_replace('\\','/',$child->getName())}.html">{=$child->getShortName()}</a>
+			</li>
+		</if>
+	</foreach>
+</ul>
+
 </subtemplate>
 
-<subtemplate:call name='renderPackageItem' var.sItem='1' />
+<subtemplate:call name='renderPackageItem' var.sPackageName='' var.arrChildren="$aBuilder->classes()" />
+

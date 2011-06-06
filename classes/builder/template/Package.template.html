@@ -8,7 +8,7 @@
 	<meta name="description" content="" /> 
 	<base href="{=$sBaseUri}" />
 	<title> package: {=$sFullPackageName}  -- JeCat PHP Framework Classes  </title> 
-	<link rel="stylesheet" type="text/css" href="css/ClassInfo.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head> 
 
 
@@ -18,7 +18,7 @@
 	<include file='index.template.html' />
 </div>
 
-<div class="main-area">
+<div id="main-area">
 	<h4>
 		<foreach for="$arrPackagePath" key='sPackagePath' item='sPackageName'><!--
 		--><a href="{=$sPackagePath}/index.html">{=$sPackageName}</a>\<!--

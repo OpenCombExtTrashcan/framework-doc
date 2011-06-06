@@ -1,0 +1,45 @@
+#classes_index{ 
+	float: left;
+	width: 350px;
+}
+#main-area{ 
+	float: left;
+}
+
+
+#extend-trace-div{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+#implements-interfaces{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+#derivative-subclasses{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+
+.method-list{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+
+
+.index-list{
+	padding-left: 0px;
+}
+.index-item{
+	padding-left: 10px;
+}
+.index-item-package{
+	list-style-type: circle;
+}
+.index-item-class{
+	list-style-type: square;
+}
+
+.method-detail-item{
+	margin-top: 10px;	
+	margin-bottom: 20px;
+}
