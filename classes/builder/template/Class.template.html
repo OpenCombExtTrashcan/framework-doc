@@ -6,15 +6,57 @@
 	<meta name="author" content="jc\doc\builder" /> 
 	<meta name="keywords" content="" /> 
 	<meta name="description" content="" /> 
-	<meta name="robots" content="all" /> 
-	<title></title> 
- 
-	<!-- to correct the unsightly Flash of Unstyled Content. http://www.bluerobot.com/web/css/fouc.asp --> 
-	<script type="text/javascript"></script> 
-	 
+	<base href="{=$sBaseUri}" />
+	<title> class: {=$aClass->getName()}  -- JeCat PHP Framework Classes  </title> 
+	<link rel="stylesheet" type="text/css" href="css/ClassInfo.css" />
 </head> 
- 
- 
-<body id="css-zen-garden"> 
+
+<body>
+
+	<div id="classes_index">
+		<include file='index.template.html' vars='true' />
+	</div>
+	
+	<div class="main-area">
+	
+		<!-- title -->
+		<h4> 
+			<include file='namespacePath.template.html'
+					vars='false'
+					var.sPath="$aClass->getNamespaceName()"
+					var.aBuilder="$aBuilder" /><!--
+			-->\{=$aClass->getShortName()}
+		</h4>
+
+		<!-- functions -->
+		<foreach for="$aClass->getMethods()" item='aMethodRef'>
+		<div class="method">
+		
+			<!-- function name -->
+			{=$aMethodRef->getName()}
+			
+			<!-- arg list -->
+			(
+			<foreach for='$aMethodRef->getParameters()' key='nParamIdx' item='aRefMetdParam' >
+				<if "$nParamIdx>0">,</if>
+				
+				<if "$aRefMetdParamClass=$aRefMetdParam->getClass()" >
+					<a href="{=str_replace('\\','/',$aRefMetdParamClass->getName())}.html">{= $aRefMetdParamClass->getName() }</a>
+				</if>
+				
+				${=$aRefMetdParam->getName()}
+				
+				<if "$aRefMetdParam->isOptional()">
+					= {=$aRefMetdParam->getDefaultValue()}
+				</if>
+				
+			</foreach>
+			 )
+		 
+		</div>
+		</foreach>
+	</div>
+
 </body>
+
 </html>

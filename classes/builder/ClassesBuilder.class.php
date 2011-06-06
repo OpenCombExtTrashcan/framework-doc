@@ -2,7 +2,6 @@
 namespace jc\doc\classes\builder ;
 
 use jc\ui\xhtml;
-
 use jc\fs;
 
 class ClassesBuilder
@@ -10,6 +9,7 @@ class ClassesBuilder
 	public function __construct()
 	{
 		$this->aUI = xhtml\Factory::singleton()->create() ;
+		$this->aUI->variables()->set('aBuilder',$this) ;
 	}
 	
 	public function load($sEntrance)
@@ -50,51 +50,133 @@ class ClassesBuilder
 				$arrPackage =& $arrPackage[$sPackageName] ;
 			}
 			
-			$arrPackage[$sClassName] = new \ReflectionClass($sFullClassName) ;
+			$arrPackage[$sClassName] = new ClassInfo(new \ReflectionClass($sFullClassName)) ;
 		}
 	
 		unset($this->arrClasses['jc']['doc']) ;
 	}
 	
-	public function build($sFolder,$arrPackage=null)
+	public function build($sFolder,$sPackageName='',$arrChildren=null)
 	{
-		if(!$arrPackage)
+		if(!$arrChildren)
 		{
-			$arrPackage = $this->arrClasses['jc'] ;
+			$arrChildren = $this->arrClasses ;
 		}
 		
-		foreach($arrPackage as $sName=>$child)
+		foreach($arrChildren as $sName=>$child)
 		{
 			// package
 			if( is_array($child) )
 			{
-				if( !file_exists($sFolder.'/'.$sName) )
+				$sName = $sPackageName? ($sPackageName.'\\'.$sName): $sName ;
+				
+				$sPath = $sFolder.'/'.str_replace('\\', '//', $sName) ;
+				if( !file_exists($sPath) )
 				{
-					mkdir( $sFolder.'/'.$sName ) ;
-					echo "build package: ", $sName, "\r\n" ;
+					mkdir( $sPath ) ;
 				}
 				
+				$aFile = new fs\File( $sPath.'/index.html' ) ;
+				$aStream = $aFile->openWriter() ;
+				
+				// variable: arrChildren
+				$this->aUI->variables()->set('arrChildren',$child);
+				
+				// variable: sBaseUri
+				$this->aUI->variables()->set('sBaseUri',str_repeat('../',substr_count($sName,'\\')+1)) ;
+		
+				// variable: sFullPackageName
+				$this->aUI->variables()->set('sFullPackageName',$sName) ;	
+				
+				// variable: arrPackagePath
+				$arrPackagePath = array() ;
+				$sPath = '' ;
+				foreach(explode('\\',$sName) as $sSubName)
+				{
+					$sPath.= ($sPath?'\\':'').$sSubName ;
+					$arrPackagePath[$sPath] = $sSubName ;
+				}
+				$this->aUI->variables()->set('arrPackagePath',$arrPackagePath) ;
+				
+				$this->aUI->display('Package.template.html',null,$aStream) ;
+
+				$aStream->close () ;
+				
+				echo "build package: ", $sName, "\r\n" ;
+					
 				// 递归
-				$this->build($sFolder.'/'.$sName,$child) ;
+				$this->build($sFolder,$sName,$child) ;
 			}
 			
 			// class
-			else if( $child instanceof \ReflectionClass )
+			else if( $child instanceof ClassInfo )
 			{
-				$aFile = new fs\File( $sFolder.'/'.$sName.'.html' ) ;
-				$aStream = $aFile->openWriter() ;
-				
-				$this->aUI->display('Class.template.html',null,$aStream) ;
-				
-				$aStream->close () ;
-				
-				echo "build class: ", $child->getName(), "\r\n" ;
+				$this->buildClass($sFolder,$child) ;
 			}
 		}
+	}
+
+	private function buildClass($sFolder,ClassInfo $aClass)
+	{
+		$aFile = new fs\File( $sFolder.'/'.str_replace('\\', '/', $aClass->getName()).'.html' ) ;
+		$aStream = $aFile->openWriter() ;
+		
+		$this->aUI->variables()->set('aClass',$aClass) ;				
+		$this->aUI->variables()->set('sBaseUri',str_repeat('../',substr_count($aClass->getNamespaceName(),'\\')+1)) ;
+		$this->aUI->display('Class.template.html',null,$aStream) ;
+		
+		$aStream->close () ;
+		
+		echo "build class: ", $aClass->getName(), "\r\n" ;
+	}
+	
+	public function classes()
+	{
+		return $this->arrClasses ;
+	}
+	
+	static public function classUri($sClass)
+	{
+		return str_replace("\\", "/", $sClass).'.html' ;
+	}
+	
+	static public function packageUri($sPackage)
+	{
+		return str_replace("\\", "/", $sPackage).'/index.html' ;
+	}
+	
+	public function decomposePath($sPathInput)
+	{
+		$bReqClass = class_exists($sPathInput) ;
+		
+		$arrRet = array() ;
+		$arrStack = explode('\\',$sPathInput) ;
+		
+		if($bReqClass)
+		{
+			$sClassName = array_pop($arrStack) ;
+		}
+		
+		$sPath = '' ;
+		while($sName=array_shift($arrStack))
+		{
+			$sPath.= ($sPath?'/':'').$sName ;
+			$arrRet[$sPath.'/index.html'] = $sName ;
+		}
+		
+		if($bReqClass)
+		{
+			$arrRet[$sPath.'/'.$sName.'.html'] = $sName ;
+		}
+		
+		return $arrRet ;
 	}
 	
 	private $arrClasses = array() ;
 	
+	/**
+	 * @var jc\ui\UI
+	 */
 	private $aUI ;
 }
 
