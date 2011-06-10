@@ -1,6 +1,8 @@
 <?php 
 namespace jc\doc\classes\builder ;
 
+use jc\lang\Exception;
+
 use jc\ui\xhtml;
 use jc\fs;
 
@@ -121,7 +123,13 @@ class ClassesBuilder
 				$this->aUI->variables()->set('arrPackagePath',$arrPackagePath) ;
 				$this->aUI->variables()->set('sThisUri',$sPath.'/index.html') ;
 				
-				$this->aUI->display('Package.template.html',null,$aStream) ;
+				try{
+					$this->aUI->display('Package.template.html',null,$aStream) ;
+				}
+				catch(\ReflectionException $e)
+				{
+					throw new Exception("生成package %s的文档时遇到到了错误。",$sName,$e) ;
+				}
 
 				$aStream->close () ;
 				
@@ -147,7 +155,14 @@ class ClassesBuilder
 		$this->aUI->variables()->set('aClass',$aClass) ;				
 		$this->aUI->variables()->set('sBaseUri',str_repeat('../',substr_count($aClass->getNamespaceName(),'\\')+1)) ;
 		$this->aUI->variables()->set('sThisUri',str_replace('\\', '/', $aClass->getName()).'.html') ;
-		$this->aUI->display('Class.template.html',null,$aStream) ;
+		
+		try{
+			$this->aUI->display('Class.template.html',null,$aStream) ;
+		}
+		catch(\ReflectionException $e)
+		{
+			throw new Exception("生成class %s的文档时遇到到了错误。",$aClass->getName(),$e) ;
+		}
 		
 		$aStream->close () ;
 		

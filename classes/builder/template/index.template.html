@@ -1,7 +1,10 @@
 
 <subtemplate name='renderPackageItem'>
 
-<span>{=$sPackageName}</span>
+<span>
+	{=$sPackageName}
+</span>
+
 <ul class="index-list">
 	<foreach for=$arrChildren key='sChildName' item=child>
 		<if "is_array($child)">

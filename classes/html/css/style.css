@@ -43,3 +43,12 @@
 	margin-top: 10px;	
 	margin-bottom: 20px;
 }
+
+
+.method-list{
+	width: 500px ;
+}
+.method-list-item{
+	width: 250px ;
+	float: left ;
+}

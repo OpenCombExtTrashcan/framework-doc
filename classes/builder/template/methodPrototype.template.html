@@ -1,28 +1,126 @@
 
 <a name="method-{=$aMethodRef->getName()}"></a>
-<div class="method-detail-item">
+<div class="method-detail-item" style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}">
 		
-	<!-- function name -->
-	{=$aMethodRef->getName()}
+	<!-- 函数原型 -->
+	<div class="method-prototype">
 	
-	<!-- arg list -->
-	(
-	<foreach for='$aMethodRef->getParameters()' key='nParamIdx' item='aRefMetdParam' >
-		<if "$nParamIdx>0">,</if>
-		
-		<if "$aRefMetdParamClass=$aRefMetdParam->getClass()" >
-			<a href="{=str_replace('\\','/',$aRefMetdParamClass->getName())}.html">{= $aRefMetdParamClass->getName() }</a>
+		<if "$aMethodRef->isAbstract()">
+			abstract
 		</if>
 		
-		${=$aRefMetdParam->getName()}
-		
-		<script type="text/php">try{</script>
-		<if "$aRefMetdParam->isOptional()">
-			= {=$aRefMetdParam->getDefaultValue()}
+		<!-- 函数可见性 -->
+		<if "$aMethodRef->isPublic()">
+			<span title="公共方法(public)"> public </span>
+		<else "$aMethodRef->isProtected()"/>
+			<span title="保护方法(protected)"> protected </span>
+		<else "$aMethodRef->isPrivate()"/>
+			<span title="私有方法(private)"> private </span>
 		</if>
-		<script type="text/php">}catch(\ReflectionException $e){}</script>
 		
-	</foreach>
-	 )
- 
+		<!-- 静态 -->
+		<if "$aMethodRef->isStatic()">
+			static
+		</if>
+	
+		<!-- 最终 -->
+		<if "$aMethodRef->isFinal()">
+			final
+		</if>
+		
+		<!-- 按引用返回 -->
+		<if "$aMethodRef->returnsReference()">
+			<span title="按引用返回"> & </span>
+		</if>
+		
+		<!-- 函数返回值 -->
+		{= $sReturnType=$aMethodRef->getReturnType() }
+		
+		<!-- function name -->
+		<strong>{=$aMethodRef->getName()}</strong>
+		
+		<!-- arg list -->
+		(
+		<foreach for='$arrParamsList=$aMethodRef->getParameters()' idx='nParamIdx' item='aRefMetdParam' >
+			<if "$nParamIdx>0">,</if>
+			
+			{=$aRefMetdParam->type(false)}
+			
+			<!-- 按引用传递 -->
+			<if "$aRefMetdParam->isPassedByReference()">
+				<span title="按引用传递"> & </span>
+			</if>
+			
+			
+			${=$aRefMetdParam->getName()}
+			
+			{=$aRefMetdParam->getDefaultValue(true)}
+			
+		</foreach>
+		 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+	<if "count($arrParamsList)">
+	参数说明：
+	<ul class="method-parameter-description-list">
+	
+		<foreach for='$arrParamsList' item='aRefMetdParam' >
+		<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>${=$aRefMetdParam->getName()}</strong>
+				
+				<if "$sDefaultValue=$aRefMetdParam->getDefaultValue(false)">
+					= {= $sDefaultValue }
+				</if>
+				
+
+				
+				<div>
+					类型：{=$aRefMetdParam->type(true)}
+				</div>
+				
+				<div>
+					<if "$sDefaultValue">
+						默认值：{=$sDefaultValue}
+					</if>
+					({= $aRefMetdParam->allowsNull()?"允许":"不允许" }NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre>说明：{= $aRefMetdParam->getCommentDescription() }</pre>
+			</div>
+			
+		</li>
+		</foreach>
+		
+	</ul>
+	</if>
+	
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		返回值类型：
+		<if "$sReturnType">
+			{=$sReturnType}
+		<else />
+			mixed
+		</if>
+	</div>
+	
+	<!-- 函数说明 -->
+	<if "$sDescription=$aMethodRef->getCommentDescription()">
+	<div class="method-description">
+		函数说明：
+		<pre>{= $sDescription }</pre>
+	</div>
+	</if>
+ 	
 </div>
+
+<hr />

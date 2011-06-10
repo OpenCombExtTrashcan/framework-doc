@@ -20,22 +20,22 @@
 	<div id="main-area">
 	
 		<!-- title -->
-		<h4> 
+		<h3> 
 			<include file='namespacePath.template.html'
 					vars='false'
 					var.sPath="$aClass->getNamespaceName()"
 					var.aBuilder="$aBuilder" /><!--
 			-->\{=$aClass->getShortName()}
-		</h4>
+		</h3>
 		
 		<!-- 回溯继承关系 -->
 		<if "$aParentClass=$aClass->getParentClass()">
 		<div id="extend-trace-div">
-			继承：
+			继承路径：
 			<ul id="extend-trace-ul">
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
 				<li>
-					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html">\{=$aParentClass->getName()}</a>
+					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a>
 				</li>
 			</dowhile>
 			</ul>
@@ -47,7 +47,7 @@
 		<div id="implements-interfaces">
 			实现接口: 
 			<foreach for=$arrInterfaceRefs item='aInterfaceRef'>
-				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html">\{=$aInterfaceRef->getName()}</a>;
+				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html" title="{=$aInterfaceRef->getName()}">{=$aInterfaceRef->getShortName()}</a>;
 			</foreach>
 		</div>
 		</if>
@@ -62,50 +62,94 @@
 			</if>
 			
 			<foreach for="$aClass->subClassIterator()" item='aSubClass'>
-				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html">\{=$aSubClass->getName()}</a>;
+				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html" title="{=$aSubClass->getName()}">{=$aSubClass->getShortName()}</a>;
 			</foreach>
 		</div>
 		</if>
 		
+		<hr />
+		
 		<!-- methods list -->
+		<span>公共方法:</span>
 		<div class="method-list">
-			公共方法:
 			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PUBLIC)" item='aMethodRef'>
-				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)" item='aMethodRef'>
+				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 			<foreach:else />
-				<li>无</li>
+				无
 			</foreach>
 			</ui>
 		</div>
 			
+		<span style="float:clear">受保护方法:</span>
 		<div class="method-list">
-			受保护方法:
 			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED)" item='aMethodRef'>
-				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)" item='aMethodRef'>
+				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 			<foreach:else />
-				<li>无</li>
+				无
 			</foreach>
 			</ui>
 		</div>
 			
+		<span style="float:clear">私有方法:</span>
 		<div class="method-list">
-			私有方法:
 			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE)" item='aMethodRef'>
-				<li><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)" item='aMethodRef'>
+				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 			<foreach:else />
-				<li>无</li>
+				无
 			</foreach>
 			</ui>
 		</div>
 		
+		<!-- 回溯继承关系 -->
+		<if "$aParentClass=$aClass->getParentClass()">
+		<div>
+			
+			<dowhile "$aParentClass=$aParentClass->getParentClass()">
+				从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：
+				<div class="method-list">
+					<ui class="method-list">
+	
+						<foreach for="$aParentClass->getMethods(null,$aParentClass)" item='aMethodRef'>
+							<li style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}" >
+							
+								<!-- 函数可见性 -->
+								<if "$aMethodRef->isPublic()">
+									<span title="公共方法(public)"> + </span>
+								<else "$aMethodRef->isProtected()"/>
+									<span title="保护方法(protected)"> # </span>
+								<else "$aMethodRef->isPrivate()"/>
+									<span title="私有方法(private)"> - </span>
+								</if>
+								
+							
+								<!-- 最终 -->
+								<if "$aMethodRef->isFinal()">
+									final
+								</if>
+								
+								<!-- 静态 -->
+								<if "$aMethodRef->isStatic()">
+									static
+								</if>
+								
+								<a href="{=str_replace('\\','/',$aParentClass->getName())}.html#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a>
+							</li>
+						</foreach>
+						
+					</ui>
+				</div>
+			</dowhile>
+			
+		</div>
+		</if>
 		
 		<hr />
 		
 		<div class="method-detail-list">
-			<foreach for="$aClass->getMethods()" item='aMethodRef'>
+			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
 				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
 			</foreach>
 		</div>

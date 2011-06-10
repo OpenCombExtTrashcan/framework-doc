@@ -52,6 +52,40 @@ class ClassInfo
 		return new \ArrayIterator($this->arrSubClasses) ;
 	}
 	
+	public function getParentClass()
+	{
+		$aParentClassRef = $this->aRefClass->getParentClass() ;
+		return $aParentClassRef? new self( $aParentClassRef ): $aParentClassRef ;
+	}
+	
+	public function getMethods($nFlags,$class=null)
+	{
+		$arrMethods = $nFlags? $this->aRefClass->getMethods($nFlags): $this->aRefClass->getMethods() ;
+	
+		if($class)
+		{
+			if( $class instanceof self )
+			{
+				$class = $class->getName() ;
+			}
+		}
+		
+		foreach($arrMethods as $idx=>$aMethodRef)
+		{
+			if( $class and $aMethodRef->getDeclaringClass()->getName()!=$class)
+			{
+				unset($arrMethods[$idx]) ;
+			}
+			else 
+			{
+				$arrMethods[$idx] = new MethodInfo($aMethodRef) ;
+			}
+		}
+			
+		
+		return $arrMethods ;
+	}
+	
 	private $aRefClass ;
 	
 	private $arrSubClasses = array() ;
