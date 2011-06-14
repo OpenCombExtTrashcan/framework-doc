@@ -5,7 +5,10 @@ class ClassInfo
 {
 	public function __construct(\ReflectionClass $aRefClass)
 	{
+		$arrDefaultProperties = $aRefClass->getDefaultProperties() ;
 		$this->aRefClass = $aRefClass ;
+
+		
 	}
 	
 	public function packagePath()
@@ -81,14 +84,37 @@ class ClassInfo
 				$arrMethods[$idx] = new MethodInfo($aMethodRef) ;
 			}
 		}
-			
-		
+
 		return $arrMethods ;
 	}
+
+	public function getCommentDescription()
+	{
+		$sComment = $this->getDocComment() ;
+		if(!$sComment)
+		{
+			return '' ;
+		}
+		return ClassesBuilder::trimCommentDescription($sComment) ;
+	}
+	
+	public function getPropertyType($sName)
+	{
+		$sDocComment = $this->getProperty($sName)->getDocComment() ;
+		if( preg_match( "|\\n\\s+@var\\s+([^\\n]+)|i",$sDocComment,$arrRes ) )
+		{
+			return trim($arrRes[1]) ;
+		}
+		
+		return ParameterInfo::detemineTypeByName($sName) ;
+	}
+		
 	
 	private $aRefClass ;
 	
 	private $arrSubClasses = array() ;
+	
+	private $axx ;
 }
 
 ?>

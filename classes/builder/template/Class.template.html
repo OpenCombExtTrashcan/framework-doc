@@ -70,40 +70,46 @@
 		<hr />
 		
 		<!-- methods list -->
-		<span>公共方法:</span>
-		<div class="method-list">
-			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)" item='aMethodRef'>
-				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
-			<foreach:else />
-				无
-			</foreach>
-			</ui>
-		</div>
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
+			<span>公共方法:</span>
+			<div class="method-list">
+				<ui class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ui>
+			</div>
+		</if>
 			
-		<span style="float:clear">受保护方法:</span>
-		<div class="method-list">
-			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)" item='aMethodRef'>
-				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
-			<foreach:else />
-				无
-			</foreach>
-			</ui>
-		</div>
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)">
+			<span style="float:clear">受保护方法:</span>
+			<div class="method-list">
+				<ui class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ui>
+			</div>
+		</if>
 			
-		<span style="float:clear">私有方法:</span>
-		<div class="method-list">
-			<ui class="method-list">
-			<foreach for="$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)" item='aMethodRef'>
-				<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
-			<foreach:else />
-				无
-			</foreach>
-			</ui>
-		</div>
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)">
+			<span style="float:clear">私有方法:</span>
+			<div class="method-list">
+				<ui class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ui>
+			</div>
+		</if>
 		
-		<!-- 回溯继承关系 -->
+		<!-- 继承到的方法 -->
 		<if "$aParentClass=$aClass->getParentClass()">
 		<div>
 			
@@ -148,11 +154,66 @@
 		
 		<hr />
 		
+		<!-- 类常量 -->
+		<if "$arrConst=$aClass->getConstants()">
+			<div>类常量：	</div>
+			<ul>
+			<foreach for="$arrConst" item="sConstName">
+				<li>
+					const {=$sConstName}
+				</li>
+			</foreach>
+			</ul>
+		</if>
+		
+		
+		
+		<!-- 类属性 -->
+				
+		<div>类属性：	</div>
+		<ul>
+		<foreach for="$aClass->getProperties()" item="aRefProp">
+			<li>
+						
+				<!-- 函数可见性 -->
+				<if "$aRefProp->isPublic()">
+					<span title="公共方法(public)"> public </span>
+				<else "$aRefProp->isProtected()"/>
+					<span title="保护方法(protected)"> protected </span>
+				<else "$aRefProp->isPrivate()"/>
+					<span title="私有方法(private)"> private </span>
+				</if>
+				
+				<!-- 静态方法 -->
+				<if "$aRefProp->isStatic()">
+					static
+				</if>
+				
+				<!-- 类型 -->
+				{=$aClass->getPropertyType($aRefProp->getName())}
+				
+				<!-- 属性名称 -->
+				${=$aRefProp->getName()}
+				
+				<!-- 默认值 -->
+				<if "$aRefProp->isDefault()">
+				</if>
+			</li>
+		</foreach>
+		</ul>
+		
+		<hr />
+		
+		<pre>{=$aClass->getCommentDescription()}</pre>
+		
+		<hr />
+		
 		<div class="method-detail-list">
 			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
 				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
 			</foreach>
 		</div>
+		
 		
 	</div>
 

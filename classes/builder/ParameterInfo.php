@@ -71,7 +71,15 @@ class ParameterInfo
 			return 'array' ;
 		}
 		
-		else if( preg_match('/^([snfba]|arr)[A-Z\\d]/',$this->getName(),$arrRes) )
+		else
+		{
+			return self::detemineTypeByName($this->getName()) ;
+		}
+	}
+	
+	static public function detemineTypeByName($sName)
+	{
+		if( preg_match('/^([snfba]|arr)[A-Z\\d]/',$sName,$arrRes) )
 		{
 			switch($arrRes[1])
 			{
@@ -89,8 +97,10 @@ class ParameterInfo
 					return 'array' ;
 			}
 		}
-		
-		return 'mixed' ;
+		else 
+		{
+			return 'mixed' ;
+		}
 	}
 	
 	public function getCommentDescription()

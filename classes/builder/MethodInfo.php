@@ -44,34 +44,7 @@ class MethodInfo
 		{
 			return '' ;
 		}
-
-		// 去头,去尾 （"/**","*/"）
-		$sComment = preg_replace('|^\\s*/\\*\\*|', '', $sComment) ;
-		$sComment = preg_replace('|\\*/\\s*$|', '', $sComment) ;
-		
-		// 统一换行符
-		$sComment = str_replace("\r","\n",$sComment) ;
-		
-		$arrLines = explode("\n", $sComment) ;
-		foreach($arrLines as $idx=>&$sLine)
-		{
-			$sLine = trim($sLine) ;
-			if(!$sLine)
-			{
-				unset($arrLines[$idx]) ;
-				continue ;
-			}
-			
-			$sLine = preg_replace('|^\\s*\\*\\s*|', '', $sLine) ;
-			
-			if( preg_match('|^\\s*@\\w+|',$sLine) )
-			{
-				unset($arrLines[$idx]) ;
-				continue ;
-			}
-		}
-		
-		return implode("\r\n",$arrLines) ;
+		return ClassesBuilder::trimCommentDescription($sComment) ;
 	}
 	
 	public function getParameters()
