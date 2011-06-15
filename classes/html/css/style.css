@@ -32,12 +32,13 @@
 .index-item{
 	padding-left: 10px;
 }
+/*
 .index-item-package{
 	list-style-type: circle;
 }
 .index-item-class{
 	list-style-type: square;
-}
+}*/
 
 .method-detail-item{
 	margin-top: 10px;	

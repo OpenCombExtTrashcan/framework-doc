@@ -9,12 +9,22 @@
 	<base href="{=$sBaseUri}" />
 	<title> class: {=$aClass->getName()}  -- JeCat PHP Framework Classes  </title> 
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
 </head> 
 
 <body>
 
 	<div id="classes_index">
 		<include file='index.template.html' vars='true' />
+		<script type='text/javascript'>
+		Ext.onReady(function(){
+			var curNodeId = '{=str_replace('\\','::',$aClass->getName())}' ;
+			var curNode = docTree.getNodeById(curNodeId);
+			var nodePath = curNode.getPath();
+			docTree.expandPath(nodePath);
+			curNode.select();
+		});
+		</script>
 	</div>
 	
 	<div id="main-area">
