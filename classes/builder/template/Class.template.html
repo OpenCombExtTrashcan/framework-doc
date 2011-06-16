@@ -77,7 +77,6 @@
 		</div>
 		</if>
 		
-		<hr />
 		
 		<!-- methods list -->
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
@@ -162,7 +161,6 @@
 		</div>
 		</if>
 		
-		<hr />
 		
 		<!-- 类常量 -->
 		<if "$arrConst=$aClass->getConstants()">
@@ -212,11 +210,9 @@
 		</foreach>
 		</ul>
 		
-		<hr />
 		
 		<pre>{=$aClass->getCommentDescription()}</pre>
 		
-		<hr />
 		
 		<div class="method-detail-list">
 			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
