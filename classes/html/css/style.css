@@ -1,9 +1,10 @@
 #classes_index{ 
 	float: left;
-	width: 350px;
+	width:240px;
+	margin-left:5px;
 }
 #main-area{ 
-	float: left;
+	margin: 0 5px 0 248px;
 }
 
 
