@@ -60,7 +60,7 @@ textarea{
 }
 
 /* document css */
-body{ font:12px Arial, Helvetica, sans-serif; background:#0a6666}
+body{ font:12px Arial, Helvetica, sans-serif; background:#108AC6}
 a{color:#0073e5; text-decoration:none; margin:0 1px;}
 a:hover{color:#0055a9; text-decoration:underline}
 #classes_index{ 
@@ -79,7 +79,7 @@ a:hover{color:#0055a9; text-decoration:underline}
 	-webkit-border-radius:5px;
 	border-radius:5px;
     margin:10px 10px 20px 255px;
-    padding:10px;
+    padding:10px 10px 10px 20px
 }
 
 
