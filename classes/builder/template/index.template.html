@@ -41,16 +41,14 @@ Ext.onReady(function(){
 	docTree = new Ext.tree.TreePanel({
 		renderTo:'docTree',
 		rootVisible:false,
-		width:200,
 		border:false,
 		animate :false,
-		autoScroll:true,
+		autoScroll:false,
 		tbar:new Ext.Toolbar(),
 		root:new Ext.tree.AsyncTreeNode(<subtemplate:call name='renderPackageItem' var.arrChildren="$aBuilder->classes()" />)
 	});
 	
 	var filterFiled = new Ext.form.TextField({
-		width:200,
 		emptyText:'快速检索',
 		enableKeyEvents: true,
 		listeners:{
