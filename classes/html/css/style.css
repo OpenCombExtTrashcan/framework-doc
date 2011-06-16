@@ -1,10 +1,85 @@
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table { border-collapse:collapse; border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal;}
+ol,ul { list-style:none;}
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+img {
+	color: transparent;
+	font-size: 0;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;/*Only fot IE7*/
+}
+b, strong {
+	/*
+  Makes browsers agree.
+  IE + Opera = font-weight: bold.
+  Gecko + WebKit = font-weight: bolder.
+*/
+  font-weight: bold;
+}
+*:focus {
+	/* 去掉获得焦点时出现的虚线框 */
+	outline: none;
+}  
+textarea{
+	/* chrome 不允许 textarea 可更改大小  */
+	resize:none;
+}
+
+/* 文字排版 */
+.f12{font-size:12px}
+.f13{font-size:13px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f18{font-size:18px}
+.f20{font-size:20px}
+.fb{ font-weight:bold}
+.fn{ font-weight:normal}
+.t2{ text-indent:2em}
+
+/*定位*/
+.tl{ text-align:left}
+.tr{ text-align:right}
+.tc{ text-align:center}
+.bc{ margin-left:auto; margin-right:auto;}
+.fl{ float:left;}
+.fr{ float:right;}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* document css */
+body{ font:12px Arial, Helvetica, sans-serif; background:#0a6666}
+a{color:#0073e5; text-decoration:none; margin:0 1px;}
+a:hover{color:#0055a9; text-decoration:underline}
 #classes_index{ 
-	float: left;
-	width:240px;
-	margin-left:5px;
+	background:#FFF;
+    -moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+    float: left;
+    margin-left: 10px;
+    padding: 10px;
+    width: 220px;
 }
 #main-area{ 
-	margin: 0 5px 0 248px;
+	background:#FFF;
+    -moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+    margin:10px 10px 20px 255px;
+    padding:10px;
 }
 
 
