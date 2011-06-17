@@ -20,11 +20,11 @@ $arrEpubOrmConf = array(
 
 	'hasOne' => array(
 		array(
-			'prop' => 'categories' ,
+			'prop' => 'category' ,
 			'fromk' => 'cid' ,
 			'tok' => 'cid' ,
 			'model' => array(
-				'name' => 'epubcategories' ,
+				'name' => 'category' ,
 				'keys' => 'cid' ,
 				'table' => 'epubcategories' ,
 			),
@@ -33,7 +33,7 @@ $arrEpubOrmConf = array(
 	
 	'hasAndBelongsToMany' => array(
 		array(
-			'prop' => 'author' ,
+			'prop' => 'authors' ,
 			'fromk' => 'eid' ,
 			'tok' => 'eid' ,
 			'bfromk' => 'uid' ,
