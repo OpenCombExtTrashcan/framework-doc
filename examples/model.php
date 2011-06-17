@@ -45,27 +45,28 @@ $aAssocMap->addOrm(
 				'bfromk' => 'uid' ,
 				'btok' => 'fuid' ,	
 				'bridge' => 'userfriends' ,
-				'model' => 'user'
+				'model' => 'user',
 			) ,
 			array(
-				'prop' => 'author' ,
+				'prop' => 'equb' ,
 				'fromk' => 'uid' ,
 				'tok' => 'uid' ,
 				'btok' => 'eid' ,	
 				'bfromk' => 'eid' ,
 				'bridge' => 'epubauthor' ,
-				'model' => 'equb'
+				'model' => 'equb',
 			),
 		),
 	)
 ) ;
+
 
 $aAssocMap->addOrm(
 	array(
 		'name' => 'userinfo' ,
 		'keys' => 'uid' ,
 		'table' => 'userinfo' ,
-		'hasOne' => array(
+		'belongsTo' => array(
 			array(
 				'prop' => 'user' ,
 				'fromk' => 'uid' ,
@@ -83,17 +84,22 @@ $aAssocMap->addOrm(
 		'table' => 'epub' ,
 		'hasOne' => array(
 			array(
-				'prop' => 'author' ,
-				'fromk' => 'eid' ,
-				'tok' => 'eid' ,
-				'model' => 'epubauthor'
-			),
-			array(
 				'prop' => 'categories' ,
 				'fromk' => 'cid' ,
 				'tok' => 'cid' ,
 				'model' => 'epubcategories'
 			),
+		),
+		'hasAndBelongsToMany' => array(
+			array(
+				'prop' => 'author' ,
+				'fromk' => 'eid' ,
+				'tok' => 'eid' ,
+				'bfromk' => 'uid' ,
+				'btok' => 'uid' ,	
+				'bridge' => 'epubauthor' ,
+				'model' => 'user',
+			) ,
 		),
 	)
 );
@@ -103,7 +109,7 @@ $aAssocMap->addOrm(
 		'name' => 'epubcategories' ,
 		'keys' => 'cid' ,
 		'table' => 'epubcategories' ,
-		'hasOne' => array(
+		'belongsTo' => array(
 			array(
 				'prop' => 'epub' ,
 				'fromk' => 'cid' ,
