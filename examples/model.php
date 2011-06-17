@@ -26,8 +26,6 @@ $aAssocMap = ModelAssociationMap::singleton() ;
 // 分别为每个数据表添加 ORM 配置
 $aAssocMap->addOrm(
 	array(
-		'name' => 'user' ,
-		'keys' => 'uid' ,
 		'table' => 'user' ,
 		'hasOne' => array(
 			array(
@@ -77,6 +75,7 @@ $aAssocMap->addOrm(
 	)
 );
 
+
 $aAssocMap->addOrm(
 	array(
 		'name' => 'epub' ,
@@ -123,7 +122,14 @@ $aAssocMap->addOrm(
 // 使用“关系图” 创建模型对象
 
 // 从关系图中取出关系片段
-$aFragment = $aAssocMap->fragment('') ;
+$aFragment = $aAssocMap->fragment('epub',
+		array(
+			'categories' ,
+			'author'=>array(
+				'friends'
+			) ,
+		)
+) ;
 
 // 用“片段”创建模型
 $aModel = new Model($aFragment) ;

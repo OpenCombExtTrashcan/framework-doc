@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/frame.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>无标题文档</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+<ul>
+	<li>数据库</li>
+	<li>模板引擎</li>
+	<li>
+		MVC<ul><li>模型(model)
+		    <ul>
+		      <li>ORM 在 JeCat 中的实现 </li>
+	      </ul>
+		</li>
+          <ul>
+            <li>模型的原型(model prototype)</li>
+            <li>模型关系的原型(Association prototype)</li>
+            <ul>
+              <li>一对一拥有关系(hasOne)</li>
+              <li>一对一从属关系(belongsTo)</li>
+              <li>一对多拥有关系(hasMany)</li>
+              <li>多对多关系(hasAndBelongsMany)</li>
+            </ul>
+            <li>访问模型中的数据</li>
+          </ul>
+          <li>视图</li>
+          <ul>
+            <li>视图基础</li>
+            <li>视图的组合模式</li>
+            <li>
+              窗体控件
+              <ul>
+                <li>
+                  表单类型窗体控件
+                  <ul>
+                    <li>Text(文本)窗体</li>
+                    <li>Select(选择)窗体</li>
+                    <li>Check(勾选)窗体</li>
+                    <li>Group(组合)窗体</li>
+                  </ul>
+                </li>
+                <li>数据校验器</li>
+                <li>数据交换</li>
+              </ul>
+            </li>
+            <li>消息队列</li>
+            <li>模板标签</li>
+          </ul>
+          <li>
+            控制器
+            <ul>
+              <li>控制器和视图</li>
+              <li>视图收容</li>
+              <li>控制器执行流程</li>
+            </ul>
+          </li>
+          </ul>
+	</li>
+</ul>
+
+<!-- InstanceBeginEditable name="main" -->
+<h2>对象关系映射（ORM：Object/Relation Mapping）</h2>
+<p>JeCat 框架通过 jc\mvc\model\db\Model 对象来维护一组数据。在Web开发的绝大多数情况下， 一个jc\mvc\model\db\Model 对象对应数据库中的一行数据，Model对象中的其中一项数据则对应数据库中的一个字段。</p>
+<p>每个 jc\mvc\model\db\Model 对象都拥有一个 jc\mvc\model\db\orm\ModelPrototype 对象(Model has a ModelPrototype)。Prototype 类负责描述数据库，Model对象根据 Prototype 对象提供的信息，对数据库中的数据表进行 增、删、改、查 操作 。</p>
+<p>一共有两种 Prototype 类：</p>
+<ul>
+  <li>jc\mvc\model\db\orm\ModelPrototype 描述一个数据表的信息（表名、主键名、字段名等）</li>
+  <li> jc\mvc\model\db\orm\AssociationPrototype 描述多个数据表之间的关系</li>
+</ul>
+<p>可以通过一个数组来创建 ModelPrototype 和 AssociationPrototype 对象。</p>
+<p>配置 ModelPrototype 对象的数组：</p>
+<pre>
+array(
+	'table' =>		'数据表名称' ,					// 必须
+	'name' =>		'原型名称' ,					// 可选，默认与 table 相同
+	'keys' =>		'用于搜索记录的字段名' ,			// 可选，默认为数据表主键，如果数据表没有主键则此属性是必须的；可以使用数组表示多个字段
+	'clms' =>		'字段列表' ,					// 可选，默认使用数据表的所有字段
+	'class' =>		'模型类名'					// 可选，默认为 jc\mvc\model\db\Model ；
+	'hasOne' =>		array() ,					// 可选，所有 hasOne 类型的 AssociationPrototype 配置
+	'belongsTo' =>	 	array() ,					// 可选，所有 belongsTo 类型的 AssociationPrototype 配置
+	'hasMany' =>	 	array() ,					// 可选，所有 hasMany 类型的 AssociationPrototype 配置
+	'hasAndBelongsMany' =>	array() ,					// 可选，所有 hasAndBelongsMany 类型的 AssociationPrototype 配置
+)
+</pre>
+
+配置 AssociationPrototype 对象的数组：
+<pre>
+array(
+	'model' =>		array(					// 必须，关联模型的原型，这是一个 ModelPrototype 配置
+	) ,
+	'prop' =>		'属性名称' ,					// 可选，默认与 model 的原型名称相同
+	'keys' =>		'用于搜索记录的字段名' ,			// 可选，默认为数据表主键，如果数据表没有主键则此属性是必须的；可以使用数组表示多个字段
+	'clms' =>		'字段列表' ,					// 可选，默认使用数据表的所有字段
+	'class' =>		'模型类名'					// 可选，默认为 jc\mvc\model\db\Model ；
+	'hasOne' =>		array() ,					// 可选，所有 hasOne 类型的 AssociationPrototype 配置
+	'belongsTo' =>	 	array() ,					// 可选，所有 belongsTo 类型的 AssociationPrototype 配置
+	'hasMany' =>	 	array() ,					// 可选，所有 hasMany 类型的 AssociationPrototype 配置
+	'hasAndBelongsMany' =>	array() ,					// 可选，所有 hasAndBelongsMany 类型的 AssociationPrototype 配置
+)
+</pre>
+
+<h2>模型的原型（model prototype）</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

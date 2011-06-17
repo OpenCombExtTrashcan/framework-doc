@@ -1,7 +1,7 @@
 <?php 
 namespace jc\doc\examples ;
 
-use jc\lang\Factory as UIFactory ;
+use jc\ui\xhtml\Factory as UIFactory ;
 use jc\system\Application ;
 use jc\db\DB ;
 use jc\db\PDODriver ;
@@ -13,7 +13,7 @@ require __DIR__."/../../framework/inc.entrance.php" ;
 $aApp = Application::singleton(true) ;
 
 // 数据库设定
-DB::singleton()->setDriver( new PDODriver("mysql:host=127.0.0.1;dbname=www",'root','1') ) ;
+DB::singleton()->setDriver( new PDODriver("mysql:host=127.0.0.1;dbname=jc-example",'root','1') ) ;
 
 // 设置 ui 模板目录
 UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/templates') ;
