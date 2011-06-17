@@ -26,13 +26,93 @@ $aAssocMap = ModelAssociationMap::singleton() ;
 // 分别为每个数据表添加 ORM 配置
 $aAssocMap->addOrm(
 	array(
-		
+		'name' => 'user' ,
+		'keys' => 'uid' ,
+		'table' => 'user' ,
+		'hasOne' => array(
+			array(
+				'prop' => 'info' ,
+				'fromk' => 'uid' ,
+				'tok' => 'uid' ,
+				'model' => 'userinfo'
+			),
+		) ,
+		'hasAndBelongsToMany' => array(
+			array(
+				'prop' => 'friends' ,
+				'fromk' => 'uid' ,
+				'tok' => 'uid' ,
+				'bfromk' => 'uid' ,
+				'btok' => 'fuid' ,	
+				'bridge' => 'userfriends' ,
+				'model' => 'user'
+			) ,
+			array(
+				'prop' => 'author' ,
+				'fromk' => 'uid' ,
+				'tok' => 'uid' ,
+				'btok' => 'eid' ,	
+				'bfromk' => 'eid' ,
+				'bridge' => 'epubauthor' ,
+				'model' => 'equb'
+			),
+		),
 	)
 ) ;
 
+$aAssocMap->addOrm(
+	array(
+		'name' => 'userinfo' ,
+		'keys' => 'uid' ,
+		'table' => 'userinfo' ,
+		'hasOne' => array(
+			array(
+				'prop' => 'user' ,
+				'fromk' => 'uid' ,
+				'tok' => 'uid' ,
+				'model' => 'user'
+			),
+		),
+	)
+);
 
+$aAssocMap->addOrm(
+	array(
+		'name' => 'epub' ,
+		'keys' => 'eid' ,
+		'table' => 'epub' ,
+		'hasOne' => array(
+			array(
+				'prop' => 'author' ,
+				'fromk' => 'eid' ,
+				'tok' => 'eid' ,
+				'model' => 'epubauthor'
+			),
+			array(
+				'prop' => 'categories' ,
+				'fromk' => 'cid' ,
+				'tok' => 'cid' ,
+				'model' => 'epubcategories'
+			),
+		),
+	)
+);
 
-
+$aAssocMap->addOrm(
+	array(
+		'name' => 'epubcategories' ,
+		'keys' => 'cid' ,
+		'table' => 'epubcategories' ,
+		'hasOne' => array(
+			array(
+				'prop' => 'epub' ,
+				'fromk' => 'cid' ,
+				'tok' => 'cid' ,
+				'model' => 'epub'
+			),
+		),
+	)
+);
 ////////////////////////////////////////////////
 // 使用“关系图” 创建模型对象
 

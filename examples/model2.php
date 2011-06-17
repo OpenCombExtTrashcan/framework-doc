@@ -13,12 +13,45 @@ use jc\mvc\model\db\orm\ModelAssociationMap;
 $aApp = require __DIR__.'/common.php' ;
 
 // 定义一个 orm配置
-$arrOrmConf = array(
+$arrEpubOrmConf = array(
+	'name' => 'epub' ,
+	'keys' => 'eid' ,
+	'table' => 'epub' ,
 
+	'hasOne' => array(
+		array(
+			'prop' => 'categories' ,
+			'fromk' => 'cid' ,
+			'tok' => 'cid' ,
+			'model' => array(
+				'name' => 'epubcategories' ,
+				'keys' => 'cid' ,
+				'table' => 'epubcategories' ,
+			),
+		),
+	),
+	
+	'hasAndBelongsToMany' => array(
+		array(
+			'prop' => 'author' ,
+			'fromk' => 'eid' ,
+			'tok' => 'eid' ,
+			'bfromk' => 'uid' ,
+			'btok' => 'uid' ,	
+			'bridge' => 'epubauthor' ,
+			'model' => array(
+				'name' => 'user' ,
+				'keys' => 'uid' ,
+				'table' => 'user' ,
+			),
+		) ,
+	),
 ) ;
 
 // 用 orm配置 创建模型
-$aModel = new Model($arrOrmConf) ;
+$aEpub = new Model($arrEpubOrmConf) ;
+
+
 
 // 查询数据
 $aModel->load( 521 ) ;
