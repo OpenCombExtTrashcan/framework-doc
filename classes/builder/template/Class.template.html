@@ -82,39 +82,39 @@
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
 			<span>公共方法:</span>
 			<div class="method-list">
-				<ui class="method-list">
+				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 				<foreach:else />
 					无
 				</foreach>
-				</ui>
+				</ul>
 			</div>
 		</if>
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)">
 			<span style="float:clear">受保护方法:</span>
 			<div class="method-list">
-				<ui class="method-list">
+				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 				<foreach:else />
 					无
 				</foreach>
-				</ui>
+				</ul>
 			</div>
 		</if>
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)">
 			<span style="float:clear">私有方法:</span>
 			<div class="method-list">
-				<ui class="method-list">
+				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
 				<foreach:else />
 					无
 				</foreach>
-				</ui>
+				</ul>
 			</div>
 		</if>
 		
@@ -125,7 +125,7 @@
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
 				从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：
 				<div class="method-list">
-					<ui class="method-list">
+					<ul class="method-list">
 	
 						<foreach for="$aParentClass->getMethods(null,$aParentClass)" item='aMethodRef'>
 							<li style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}" >
@@ -154,7 +154,7 @@
 							</li>
 						</foreach>
 						
-					</ui>
+					</ul>
 				</div>
 			</dowhile>
 			
