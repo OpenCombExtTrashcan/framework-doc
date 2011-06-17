@@ -862,19 +862,7 @@ ul.x-tab-strip li.x-tab-edge {
     position:relative;    
 }
 
-.x-tab-panel-bbar .x-toolbar {
-    border:1px solid;
-    border-top:0 none;
-    overflow:hidden;
-    padding:2px;
-}
-
-.x-tab-panel-tbar .x-toolbar {
-    border:1px solid;
-    border-top:0 none;
-    overflow:hidden;
-    padding:2px;
-}/* all fields */
+/* all fields */
 .x-form-field{
     margin: 0 0 0 0;
 }
@@ -930,9 +918,6 @@ textarea.x-form-field {
     margin:-1px 0; /* ie bogus margin bug */
 }
 
-.ext-strict .x-form-text {
-    height:18px;
-}
 
 .ext-safari.ext-mac textarea.x-form-field {
     margin-bottom:-2px; /* another bogus margin bug, safari/mac only */
@@ -1172,32 +1157,6 @@ textarea {
 }
 
 /* Editor small font for grid, toolbar and tree */
-.x-small-editor .x-form-text {
-    height:20px;
-    line-height:16px;
-    vertical-align:middle;
-}
-
-.ext-ie6 .x-small-editor .x-form-text, .ext-ie7 .x-small-editor .x-form-text {
-    margin-top:-1px !important; /* ie bogus margin bug */
-    margin-bottom:-1px !important;
-    height:20px !important; /* ie quirks */
-    line-height:16px !important;
-}
-
-.ext-strict .x-small-editor .x-form-text {
-    height:16px !important;
-}
-
-.ext-ie6 .x-small-editor .x-form-text, .ext-ie7 .x-small-editor .x-form-text {
-    height:20px;
-    line-height:16px;
-}
-
-.ext-border-box .x-small-editor .x-form-text {
-    height:20px;
-}
-
 .x-small-editor .x-form-select-one {
     height:20px;
     line-height:16px;
@@ -1212,11 +1171,6 @@ textarea {
     height:19px;
 }
 
-.ext-webkit .x-small-editor .x-form-text{padding-top:3px;font-size:100%;}
-
-.ext-strict .ext-webkit .x-small-editor .x-form-text{
-    height:14px !important;
-}
 
 .x-form-clear {
     clear:both;
@@ -1903,17 +1857,12 @@ fieldset.x-panel-collapsed .x-fieldset-bwrap {
 	background: transparent repeat-x 0 0;
 	overflow:hidden;
     height:2px;
-}.x-toolbar{
-    border-style:solid;
-    border-width:0 0 1px 0;
-    display: block;
-	padding:2px;
-    background:repeat-x top left;
-    position:relative;
-    left:0;
-    top:0;
-    zoom:1;
-    overflow:hidden;
+}
+
+.x-toolbar{
+	margin: 0 auto 10px;
+    width: 214px;
+ 
 }
 
 .x-toolbar-left {
@@ -2076,10 +2025,7 @@ fieldset.x-panel-collapsed .x-fieldset-bwrap {
     text-align: center;
 }
 
-.x-panel-tbar, .x-panel-bbar, .x-window-tbar, .x-window-bbar, .x-tab-panel-tbar, .x-tab-panel-bbar, .x-plain-tbar, .x-plain-bbar {
-    overflow:hidden;
-    zoom:1;
-}
+
 
 .x-toolbar-more .x-btn-small .x-btn-text{
 	height: 16px;
@@ -3830,17 +3776,7 @@ a.x-menu-item {
     position: relative; /* added for item scroll positioning */
 }
 
-.x-panel-bbar .x-toolbar, .x-panel-tbar .x-toolbar {
-    border:1px solid;
-    border-top:0 none;
-    overflow:hidden;
-    padding:2px;
-}
 
-.x-panel-tbar-noheader .x-toolbar, .x-panel-mc .x-panel-tbar .x-toolbar {
-    border-top:1px solid;
-    border-bottom: 0 none;
-}
 
 .x-panel-body-noheader, .x-panel-mc .x-panel-body {
     border-top:1px solid;
@@ -4729,11 +4665,6 @@ body.ext-ie6.x-body-masked .x-window select {
     border-style:solid;
 }
 
-.x-panel-noborder .x-panel-tbar-noborder .x-toolbar {
-    border-width:0 0 1px;
-    border-style:solid;
-}
-
 .x-panel-noborder .x-panel-bbar-noborder .x-toolbar {
     border-width:1px 0 0 0;
     border-style:solid;
@@ -4759,15 +4690,7 @@ body.ext-ie6.x-body-masked .x-window select {
     border-width: 1px 0 0 0;
 }
 
-.x-tab-panel-bbar-noborder .x-toolbar {
-    border-width: 1px 0 0 0;
-    border-style:solid;
-}
-
-.x-tab-panel-tbar-noborder .x-toolbar {
-    border-width:0 0 1px;
-    border-style:solid;
-}.x-border-layout-ct {
+.x-border-layout-ct {
     position: relative;
 }
 
@@ -5517,17 +5440,20 @@ ul.x-tab-strip-bottom{
     background-image:url(../images/default/tabs/scroll-right.gif);
     border-bottom-color:#8db2e3;
 }
-
-.x-tab-panel-bbar .x-toolbar, .x-tab-panel-tbar .x-toolbar {
-    border-color:#99bbe8;
-}.x-form-field {
+.x-form-field {
     font:normal 12px tahoma, arial, helvetica, sans-serif;
 }
 
 .x-form-text, textarea.x-form-field {
-    background-color:#fff;
-    background-image:url(../images/default/form/text-bg.gif);
-    border-color:#b5b8c8;
+   background:#fff url(../images/search.jpg) no-repeat 3px center;
+   border:1px solid #9b9b9b;
+   border-radius:5px;
+   -moz-border-radius:5px;
+   -webkit-border-radius:5px;
+   width:186px;
+   padding:2px 2px 2px 26px;
+   height:20px;
+   line-height:20px;
 }
 
 .x-form-select-one {
@@ -5724,15 +5650,9 @@ ul.x-tab-strip-bottom{
 
 .x-btn-group-notitle .x-btn-group-tc {
 	background-image: url(../images/default/button/group-tb.gif);
-}.x-toolbar{
-	border-color:#a9bfd3;
-    background-color:#d0def0;
-    background-image:url(../images/default/toolbar/bg.gif);
 }
 
-.x-toolbar td,.x-toolbar span,.x-toolbar input,.x-toolbar div,.x-toolbar select,.x-toolbar label{
-    font:normal 11px arial,tahoma, helvetica, sans-serif;
-}
+
 
 .x-toolbar .x-item-disabled {
 	color:gray;
@@ -6683,13 +6603,7 @@ a.x-menu-item {
     background-color:#fff;
 }
 
-.x-panel-bbar .x-toolbar, .x-panel-tbar .x-toolbar {
-    border-color:#99bbe8;
-}
 
-.x-panel-tbar-noheader .x-toolbar, .x-panel-mc .x-panel-tbar .x-toolbar {
-    border-top-color:#99bbe8;
-}
 
 .x-panel-body-noheader, .x-panel-mc .x-panel-body {
     border-top-color:#99bbe8;
@@ -6835,9 +6749,6 @@ body.x-body-masked .x-window-plain .x-window-mc {
     border-bottom-color:#99bbe8;
 }
 
-.x-panel-noborder .x-panel-tbar-noborder .x-toolbar {
-    border-bottom-color:#99bbe8;
-}
 
 .x-panel-noborder .x-panel-bbar-noborder .x-toolbar {
     border-top-color:#99bbe8;
