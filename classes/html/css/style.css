@@ -68,7 +68,7 @@ pre {/*pre ¶ÏÐÐ*/
 }
 /* document css */
 body{ font:12px Arial, Helvetica, sans-serif; background:#108AC6}
-a{color:#0073e5; text-decoration:none; margin:0 1px;}
+a{color:#0073e7; text-decoration:none; margin:0 1px;}
 a:hover{color:#0055a9; text-decoration:underline}
 #classes_index{ 
 	background:#FFF;
@@ -86,7 +86,7 @@ a:hover{color:#0055a9; text-decoration:underline}
 	-webkit-border-radius:5px;
 	border-radius:5px;
     margin:10px 10px 20px 255px;
-    padding:10px 10px 10px 20px
+    padding:10px 20px 10px 20px
 }
 
 .next{  background:url(../images/next.gif) no-repeat right center;padding-right:14px;}
@@ -121,12 +121,16 @@ a:hover{color:#0055a9; text-decoration:underline}
 /*cross*/
 .ggff{ font-size:15px; color:#000; height:16px; line-height:16px; float:left}
 .title{ display:block; float:left; width:6px;  height: 15px; margin: 1px 5px 0 0;background:#108ac6}
-.method-list{ background:url(../images/classbg.png) repeat-y 0 0; border:1px solid #d5d5d5; border-width:1px 1px 0; width:601px; float:left;margin:10px 0 0;}
+.method-list{ font-size:13px;background:url(../images/classbg.png) repeat-y 0 0; border:1px solid #d5d5d5; border-width:1px 1px 0; width:601px; float:left;margin:10px 0 0;}
 .method-detail-item{
-	margin-top: 10px;	
-	margin-bottom: 20px;
+	border-bottom:1px solid #d5d5d5;
+	background: url(../images/methodbg.png) no-repeat 0 0;
+    border-bottom: 1px solid #D5D5D5;
+    padding:6px 6px 6px 16px;
 }
-
+.method-detail-item:hover{
+	background: url(../images/methodbg.png) no-repeat 0 -500px;
+}
 .method-list-item,.method-list li{
 	width: 290px ;
 	height:21px;
@@ -136,3 +140,6 @@ a:hover{color:#0055a9; text-decoration:underline}
 }
 
 .normalfloat{float:left;width:100%;margin-bottom:10px;}
+
+.methodlist{border:1px solid #d5d5d5; border-width:1px 1px 0 1px;font-size:13px; line-height:20px;}
+.method-prototype strong{color:#083772; font-weight:bold}
