@@ -80,8 +80,8 @@
 		
 		<!-- methods list -->
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
-			<span>公共方法:</span>
-			<div class="method-list">
+			<h5 class="ggff"><span class="title"></span>公共方法:</h5>
+			<div>
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
