@@ -9,14 +9,14 @@
 *****************************************************************************/
 namespace jc\doc\examples ;
 
+use jc\mvc\controller\Controller;
 use jc\message\Message;
-
 use jc\verifier\Email;
 use jc\verifier\Length;
 use jc\mvc\view\widget\Text;
 use jc\mvc\view\View;
 
-class MyController
+class MyController extends Controller
 {
 	protected function init()
 	{

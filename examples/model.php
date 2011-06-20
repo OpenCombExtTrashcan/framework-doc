@@ -28,6 +28,7 @@ $aAssocMap->addOrm(
 	array(
 		'name' => 'user' ,
 		'table' => 'users' ,
+	
 		'hasOne' => array(
 			array(
 				'prop' => 'info' ,
@@ -36,6 +37,7 @@ $aAssocMap->addOrm(
 				'model' => 'userinfo'
 			),
 		) ,
+		
 		'hasAndBelongsToMany' => array(
 			array(
 				'prop' => 'friends' ,
@@ -149,10 +151,15 @@ $aFragment = $aAssocMap->fragment('epub',
 
 $aEBook = new Model($aFragment) ;		// 用“片段”创建模型
 
+$aEBook['epub_name'] ;
+$aEBook->data('epub_name') ;
+$aEBook->epub_name ;
+
 $aEBook->epub_name = '架构之美' ;
 $aEBook->epub_content = '本书围绕5个主题领域来组织本书的内容：概述、企业应用、系统、最终用户应用和编程语言。本书让最优秀的设计师和架构师来描述他们选择的软件架构，剥开架构的各层，展示他们如何让软件做到实现功能、可靠、易用、高效率、可维护、可移植和优雅。' ;
 $aEBook->update_time = date('Y-m-d G:i:s') ;
 
+//$aEBook->child('category')->setData('category_name','软件工程') ;
 $aEBook['category.category_name'] = '软件工程' ;
 $aEBook['category.update_time'] = date('Y-m-d G:i:s') ;
 
