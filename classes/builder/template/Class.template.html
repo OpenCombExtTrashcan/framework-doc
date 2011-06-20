@@ -42,7 +42,7 @@
 		<if "$aParentClass=$aClass->getParentClass()">
 		<div id="extend-trace-div">
 			继承路径：
-			<ul id="extend-trace-ul">
+			<ul id="extend-trace-ul" class="dotted">
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
 				<li>
 					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a>
@@ -180,7 +180,7 @@
 		<!-- 类属性 -->
 		<div class="normalfloat">	
 		<div>类属性：	</div>
-		<ul>
+		<ul class="dotted">
 		<foreach for="$aClass->getProperties()" item="aRefProp">
 			<li>
 						
