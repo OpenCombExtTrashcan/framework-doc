@@ -127,10 +127,12 @@ a:hover{color:#0055a9; text-decoration:underline}
 	margin-bottom: 20px;
 }
 
-.method-list-item{
+.method-list-item,.method-list li{
 	width: 290px ;
 	height:21px;
 	line-height:21px;
 	padding-left:10px;
 	float: left ;
 }
+
+.normalfloat{float:left;width:100%;margin-bottom:10px;}
