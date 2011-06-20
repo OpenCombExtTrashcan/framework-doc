@@ -29,7 +29,7 @@
 	
 	<div id="main-area">
 	
-		<!-- title -->
+		<!-- title --><div class="normalfloat">
 		<h3> 
 			<include file='namespacePath.template.html'
 					vars='false'
@@ -123,7 +123,7 @@
 		<div>
 			
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
-				从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：
+				<h5 class="ggff"><span class="title"></span>从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：</h5>
 				<div class="normalfloat">
 					<ul class="method-list">
 	
@@ -164,7 +164,7 @@
 		
 		<!-- 类常量 -->
 		<if "$arrConst=$aClass->getConstants()">
-			<div>类常量：	</div>
+			<div class="normalfloat"><div>类常量：</div>
 			<ul>
 			<foreach for="$arrConst" item="sConstName">
 				<li>
@@ -172,12 +172,13 @@
 				</li>
 			</foreach>
 			</ul>
+			</div>
 		</if>
 		
 		
 		
 		<!-- 类属性 -->
-				
+		<div class="normalfloat">	
 		<div>类属性：	</div>
 		<ul>
 		<foreach for="$aClass->getProperties()" item="aRefProp">
@@ -209,18 +210,19 @@
 			</li>
 		</foreach>
 		</ul>
+		</div>
 		
 		
 		<pre>{=$aClass->getCommentDescription()}</pre>
+		</div>
 		
-		
-		<div class="method-detail-list">
+		<div class="normalfloat">
 			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
 				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
 			</foreach>
 		</div>
 		
-		
+		<div class="clear"></div>
 	</div>
 
 </body>
