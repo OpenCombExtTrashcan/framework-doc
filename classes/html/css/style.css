@@ -119,7 +119,9 @@ a:hover{color:#0055a9; text-decoration:underline}
 
 
 /*cross*/
-.ggff{ font-size:15px; color:#000; height:16px; line-height:16px; float:left}
+.ggff{ font-size:15px; color:#444; height:16px; line-height:16px; float:left}
+.ggff a{color:#66AB16; font-weight:bold}
+.ggff a:hover{color:#4d8210; text-decoration:none}
 .title{ display:block; float:left; width:6px;  height: 15px; margin: 1px 5px 0 0;background:#108ac6}
 .method-list{ font-size:13px;background:url(../images/classbg.png) repeat-y 0 0; border:1px solid #d5d5d5; border-width:1px 1px 0; width:601px; float:left;margin:10px 0 0;}
 .method-detail-item{
@@ -143,3 +145,5 @@ a:hover{color:#0055a9; text-decoration:underline}
 
 .methodlist{border:1px solid #d5d5d5; border-width:1px 1px 0 1px;font-size:13px; line-height:20px;}
 .method-prototype strong{color:#083772; font-weight:bold}
+
+.fwbd{ font-weight:bold; background:url(../images/dotted.gif) no-repeat left center; padding-left:16px; color:#444}
