@@ -89,6 +89,7 @@ a:hover{color:#0055a9; text-decoration:underline}
     padding:10px 10px 10px 20px
 }
 
+.next{  background:url(../images/next.gif) no-repeat right center;padding-right:14px;}
 
 #extend-trace-div{
 	margin-top: 20px;	
