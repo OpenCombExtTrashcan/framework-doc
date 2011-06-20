@@ -81,7 +81,7 @@
 		<!-- methods list -->
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
 			<h5 class="ggff"><span class="title"></span>公共方法:</h5>
-			<div>
+			<div class="normalfloat">
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
@@ -94,7 +94,7 @@
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)">
 			<span style="float:clear">受保护方法:</span>
-			<div class="method-list">
+			<div class="normalfloat">
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
@@ -107,7 +107,7 @@
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)">
 			<span style="float:clear">私有方法:</span>
-			<div class="method-list">
+			<div class="normalfloat">
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
 					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
@@ -124,7 +124,7 @@
 			
 			<dowhile "$aParentClass=$aParentClass->getParentClass()">
 				从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：
-				<div class="method-list">
+				<div class="normalfloat">
 					<ul class="method-list">
 	
 						<foreach for="$aParentClass->getMethods(null,$aParentClass)" item='aMethodRef'>
