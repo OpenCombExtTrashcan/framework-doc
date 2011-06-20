@@ -103,13 +103,6 @@ a:hover{color:#0055a9; text-decoration:underline}
 	margin-top: 20px;	
 	margin-bottom: 30px;
 }
-
-.method-list{
-	margin-top: 20px;	
-	margin-bottom: 30px;
-}
-
-
 .index-list{
 	padding-left: 0px;
 }
@@ -124,16 +117,20 @@ a:hover{color:#0055a9; text-decoration:underline}
 	list-style-type: square;
 }*/
 
+
+/*cross*/
+.ggff{ font-size:15px; color:#000; height:16px; line-height:16px;}
+.title{ display:block; float:left; width:6px;  height: 15px; margin: 1px 5px 0 0;background:#108ac6}
+.method-list{ background:url(../images/classbg.png) repeat-y 0 0; border:1px solid #d5d5d5; border-width:1px 1px 0; width:601px; float:left;margin:10px 0 0;}
 .method-detail-item{
 	margin-top: 10px;	
 	margin-bottom: 20px;
 }
 
-
-.method-list{
-	width: 500px ;
-}
 .method-list-item{
-	width: 250px ;
+	width: 290px ;
+	height:21px;
+	line-height:21px;
+	padding-left:10px;
 	float: left ;
 }
