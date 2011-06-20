@@ -86,7 +86,9 @@ a:hover{color:#0055a9; text-decoration:underline}
 	-webkit-border-radius:5px;
 	border-radius:5px;
     margin:10px 10px 20px 255px;
-    padding:10px 20px 10px 20px
+    padding:10px 20px 10px 20px;
+	font:13px Arial, Helvetica, sans-serif;
+	color:#444;
 }
 
 .next{  background:url(../images/next.gif) no-repeat right center;padding-right:14px;}
@@ -147,3 +149,6 @@ a:hover{color:#0055a9; text-decoration:underline}
 .method-prototype strong{color:#083772; font-weight:bold}
 
 .fwbd{ font-weight:bold; background:url(../images/dotted.gif) no-repeat left center; padding-left:16px; color:#444}
+.dotted li{ background:url(../images/dotted.gif) no-repeat left 5px; padding-left:16px; color:#444;height: 20px;line-height: 20px;}
+
+.cssm{font-size:14px; font-weight:bold; color:#66AB16}
