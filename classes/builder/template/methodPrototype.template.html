@@ -1,7 +1,7 @@
 
-<a name="method-{=$aMethodRef->getName()}"></a>
+
 <div class="method-detail-item" style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}">
-		
+	<a name="method-{=$aMethodRef->getName()}"></a>	
 	<!-- 函数原型 -->
 	<div class="method-prototype">
 	
@@ -116,8 +116,7 @@
 	<!-- 函数说明 -->
 	<if "$sDescription=$aMethodRef->getCommentDescription()">
 	<div class="method-description">
-		函数说明：
-		<pre>{= $sDescription }</pre>
+		函数说明：{= $sDescription }
 	</div>
 	</if>
  	

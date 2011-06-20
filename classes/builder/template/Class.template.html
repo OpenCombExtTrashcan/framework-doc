@@ -93,7 +93,7 @@
 		</if>
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)">
-			<span style="float:clear">受保护方法:</span>
+			<h5 class="ggff"><span class="title"></span>受保护方法:</h5>
 			<div class="normalfloat">
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
@@ -106,7 +106,7 @@
 		</if>
 			
 		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)">
-			<span style="float:clear">私有方法:</span>
+			<h5 class="ggff"><span class="title"></span>私有方法:</h5>
 			<div class="normalfloat">
 				<ul class="method-list">
 				<foreach for="$arrRefMethods" item='aMethodRef'>
@@ -216,7 +216,7 @@
 		<pre>{=$aClass->getCommentDescription()}</pre>
 		</div>
 		
-		<div class="normalfloat">
+		<div class="normalfloat methodlist">
 			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
 				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
 			</foreach>
