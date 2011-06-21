@@ -148,7 +148,7 @@ a:hover{color:#1571e4;}
 .methodlist{border:1px solid #d5d5d5; border-width:1px 1px 0 1px;font-size:13px; line-height:20px;}
 .method-prototype strong{color:#083772; font-weight:bold}
 
-.fwbd{ font-weight:bold; background:url(../images/dotted.gif) no-repeat left center; padding-left:16px; color:#444}
+.parameter-prototype strong{ font-weight:bold; background:url(../images/dotted.gif) no-repeat left 3px; padding-left:16px; color:#444}
 .dotted li{ background:url(../images/dotted.gif) no-repeat left 5px; padding-left:16px; color:#444;height: 20px;line-height: 20px;}
-
+.fwbd{color:#003366; font-weight:bold}
 .cssm{font-size:14px; font-weight:bold; color:#66AB16}
