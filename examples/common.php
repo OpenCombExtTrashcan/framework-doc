@@ -1,7 +1,7 @@
 <?php 
 namespace jc\doc\examples ;
 
-use jc\ui\xhtml\Factory as UIFactory ;
+use jc\ui\xhtml\UIFactory ;
 use jc\system\Application ;
 use jc\db\DB ;
 use jc\db\PDODriver ;
