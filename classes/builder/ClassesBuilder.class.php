@@ -2,7 +2,6 @@
 namespace jc\doc\classes\builder ;
 
 use jc\lang\Exception;
-
 use jc\ui\xhtml;
 use jc\fs;
 
@@ -10,7 +9,7 @@ class ClassesBuilder
 {
 	public function __construct()
 	{
-		$this->aUI = xhtml\Factory::singleton()->create() ;
+		$this->aUI = xhtml\UIFactory::singleton()->create() ;
 		$this->aUI->variables()->set('aBuilder',$this) ;
 	}
 	
@@ -122,7 +121,7 @@ class ClassesBuilder
 				}
 				$this->aUI->variables()->set('arrPackagePath',$arrPackagePath) ;
 				$this->aUI->variables()->set('sThisUri',$sPath.'/index.html') ;
-				
+								
 				try{
 					$this->aUI->display('Package.template.html',null,$aStream) ;
 				}
@@ -133,7 +132,7 @@ class ClassesBuilder
 
 				$aStream->close () ;
 				
-				echo "build package: ", $sName, "\r\n" ;
+				echo "building package: ", $sName, "......................\r\n" ;
 					
 				// 递归
 				$this->build($sFolder,$sName,$child) ;
@@ -149,6 +148,8 @@ class ClassesBuilder
 
 	private function buildClass($sFolder,ClassInfo $aClass)
 	{
+		echo "building class: ", $aClass->getName(), "...................." ;
+		
 		$aFile = new fs\File( $sFolder.'/'.str_replace('\\', '/', $aClass->getName()).'.html' ) ;
 		$aStream = $aFile->openWriter() ;
 		
@@ -166,7 +167,7 @@ class ClassesBuilder
 		
 		$aStream->close () ;
 		
-		echo "build class: ", $aClass->getName(), "\r\n" ;
+		echo "done\r\n" ;
 	}
 	
 	public function classes()
