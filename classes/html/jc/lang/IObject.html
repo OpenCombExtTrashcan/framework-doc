@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -2839,6 +2827,7 @@ Ext.onReady(function(){
 							<a href="jc/fs/FSObject.html" title="jc\fs\FSObject">FSObject</a>;
 							<a href="jc/fs/File.html" title="jc\fs\File">File</a>;
 							<a href="jc/fs/Dir.html" title="jc\fs\Dir">Dir</a>;
+							<a href="jc/fs/imp/UploadFile.html" title="jc\fs\imp\UploadFile">UploadFile</a>;
 							<a href="jc/verifier/VerifyFailed.html" title="jc\verifier\VerifyFailed">VerifyFailed</a>;
 							<a href="jc/verifier/Length.html" title="jc\verifier\Length">Length</a>;
 							<a href="jc/verifier/Email.html" title="jc\verifier\Email">Email</a>;
@@ -2853,9 +2842,8 @@ Ext.onReady(function(){
 							<a href="jc/auth/Id.html" title="jc\auth\Id">Id</a>;
 							<a href="jc/auth/IdManager.html" title="jc\auth\IdManager">IdManager</a>;
 							<a href="jc/auth/AuthenticationException.html" title="jc\auth\AuthenticationException">AuthenticationException</a>;
-							<a href="jc/resrc/htmlresrc/HtmlResourcePoolFactory.html" title="jc\resrc\htmlresrc\HtmlResourcePoolFactory">HtmlResourcePoolFactory</a>;
-							<a href="jc/resrc/HtmlResourcePool.html" title="jc\resrc\HtmlResourcePool">HtmlResourcePool</a>;
 							<a href="jc/resrc/UrlResourceManager.html" title="jc\resrc\UrlResourceManager">UrlResourceManager</a>;
+							<a href="jc/resrc/HtmlResourcePool.html" title="jc\resrc\HtmlResourcePool">HtmlResourcePool</a>;
 							<a href="jc/aop/MethodCompiler.html" title="jc\aop\MethodCompiler">MethodCompiler</a>;
 							<a href="jc/aop/AOP.html" title="jc\aop\AOP">AOP</a>;
 							<a href="jc/aop/JointPoint.html" title="jc\aop\JointPoint">JointPoint</a>;

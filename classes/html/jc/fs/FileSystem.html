@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -2704,6 +2692,7 @@ Ext.onReady(function(){
 				<ul class="method-list">
 									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-findFile">findFile()</a></li>
 									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-findFolder">findFolder()</a></li>
+									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-setFSOFlyweight">setFSOFlyweight()</a></li>
 									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-mount">mount()</a></li>
 									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-umount">umount()</a></li>
 									<li class="method-list-item"><a href="jc/fs/FileSystem.html#method-exists">exists()</a></li>
@@ -3216,6 +3205,112 @@ Ext.onReady(function(){
 							
 
 <div class="method-detail-item" style="">
+	<a name="method-setFSOFlyweight"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+				
+		<!-- function name -->
+		<strong>setFSOFlyweight</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sPath			
+						
+					,			
+			<a href='jc/fs/IFSO.html' title='jc\fs\IFSO'>IFSO</a>			
+			<!-- 按引用传递 -->
+						
+			
+			$aFSO			
+			= null			
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sPath</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$aFSO</strong>
+				
+									= null								
+
+				
+				<div>
+					<span class="fwbd">类型：</span><a href='jc/fs/IFSO.html' title='jc\fs\IFSO'>jc\fs\IFSO</a>				</div>
+				
+				<div>
+											<span class="fwbd">默认值：</span>null										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					mixed
+			</div>
+	
+	<!-- 函数说明 -->
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
 	<a name="method-mount"></a>	
 	<!-- 函数原型 -->
 	<div class="method-prototype">
@@ -3648,11 +3743,11 @@ Ext.onReady(function(){
 		<!-- arg list -->
 		(
 								
-			string			
+			mixed			
 			<!-- 按引用传递 -->
 						
 			
-			$sFromPath			
+			$from			
 						
 					,			
 			string			
@@ -3674,13 +3769,13 @@ Ext.onReady(function(){
 			
 			<div class="parameter-prototype">
 							
-				<strong>$sFromPath</strong>
+				<strong>$from</strong>
 				
 								
 
 				
 				<div>
-					<span class="fwbd">类型：</span>string				</div>
+					<span class="fwbd">类型：</span>mixed				</div>
 				
 				<div>
 										(允许NULL)
@@ -3726,6 +3821,8 @@ Ext.onReady(function(){
 			</div>
 	
 	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>在文件系统内复制文件对象	</div>
 	 	
 </div>
 
@@ -3754,11 +3851,11 @@ Ext.onReady(function(){
 		<!-- arg list -->
 		(
 								
-			string			
+			mixed			
 			<!-- 按引用传递 -->
 						
 			
-			$sFromPath			
+			$from			
 						
 					,			
 			string			
@@ -3780,13 +3877,13 @@ Ext.onReady(function(){
 			
 			<div class="parameter-prototype">
 							
-				<strong>$sFromPath</strong>
+				<strong>$from</strong>
 				
 								
 
 				
 				<div>
-					<span class="fwbd">类型：</span>string				</div>
+					<span class="fwbd">类型：</span>mixed				</div>
 				
 				<div>
 										(允许NULL)
@@ -3832,6 +3929,8 @@ Ext.onReady(function(){
 			</div>
 	
 	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>在文件系统内移动文件对象	</div>
 	 	
 </div>
 

@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -2730,6 +2718,13 @@ Ext.onReady(function(){
 			</div>
 					
 					
+					<h5 class="ggff"><span class="title"></span>私有方法:</h5>
+			<div class="normalfloat">
+				<ul class="method-list">
+									<li class="method-list-item"><a href="jc/system/HttpRequest.html#method-buildUploadFiles">buildUploadFiles()</a></li>
+									<li class="method-list-item"><a href="jc/system/HttpRequest.html#method-mountUploadTmp">mountUploadTmp()</a></li>
+								</ul>
+			</div>
 				
 		<!-- 继承到的方法 -->
 				<div>
@@ -3525,6 +3520,20 @@ Ext.onReady(function(){
 					<li>
 						
 				<!-- 函数可见性 -->
+									<span title="私有方法(private)"> private </span>
+								
+				<!-- 静态方法 -->
+									static
+								
+				<!-- 类型 -->
+				string				
+				<!-- 属性名称 -->
+				$sUploadTmpPath				
+				<!-- 默认值 -->
+											</li>
+					<li>
+						
+				<!-- 函数可见性 -->
 									<span title="保护方法(protected)"> protected </span>
 								
 				<!-- 静态方法 -->
@@ -3580,12 +3589,47 @@ Ext.onReady(function(){
 		
 		<!-- arg list -->
 		(
+								
+			<a href='jc/system/Application.html' title='jc\system\Application'>Application</a>			
+			<!-- 按引用传递 -->
+						
+			
+			$aApp			
+						
 				 )
 		 
  	</div>
  	
  	
 	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$aApp</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span><a href='jc/system/Application.html' title='jc\system\Application'>jc\system\Application</a>				</div>
+				
+				<div>
+										(不允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
 		
 	<!-- 返回值类型 -->
 	<div class="method-return-type">
@@ -4213,6 +4257,158 @@ Ext.onReady(function(){
 				
 				<div>
 										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					mixed
+			</div>
+	
+	<!-- 函数说明 -->
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-buildUploadFiles"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="私有方法(private)"> private </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+				
+		<!-- function name -->
+		<strong>buildUploadFiles</strong>
+		
+		<!-- arg list -->
+		(
+								
+			<a href='jc/system/Application.html' title='jc\system\Application'>Application</a>			
+			<!-- 按引用传递 -->
+						
+			
+			$aApp			
+						
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$aApp</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span><a href='jc/system/Application.html' title='jc\system\Application'>jc\system\Application</a>				</div>
+				
+				<div>
+										(不允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					mixed
+			</div>
+	
+	<!-- 函数说明 -->
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-mountUploadTmp"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="私有方法(private)"> private </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+				
+		<!-- function name -->
+		<strong>mountUploadTmp</strong>
+		
+		<!-- arg list -->
+		(
+								
+			<a href='jc/fs/FileSystem.html' title='jc\fs\FileSystem'>FileSystem</a>			
+			<!-- 按引用传递 -->
+						
+			
+			$aFs			
+						
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$aFs</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span><a href='jc/fs/FileSystem.html' title='jc\fs\FileSystem'>jc\fs\FileSystem</a>				</div>
+				
+				<div>
+										(不允许NULL)
 				</div>
 			
 			</div>

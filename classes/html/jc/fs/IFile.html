@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -2687,6 +2675,7 @@ Ext.onReady(function(){
 						实现此接口的类：
 						
 							<a href="jc/fs/imp/LocalFile.html" title="jc\fs\imp\LocalFile">LocalFile</a>;
+							<a href="jc/fs/imp/UploadFile.html" title="jc\fs\imp\UploadFile">UploadFile</a>;
 					</div>
 				
 		
@@ -2697,6 +2686,7 @@ Ext.onReady(function(){
 									<li class="method-list-item"><a href="jc/fs/IFile.html#method-openWriter">openWriter()</a></li>
 									<li class="method-list-item"><a href="jc/fs/IFile.html#method-openReader">openReader()</a></li>
 									<li class="method-list-item"><a href="jc/fs/IFile.html#method-length">length()</a></li>
+									<li class="method-list-item"><a href="jc/fs/IFile.html#method-hash">hash()</a></li>
 									<li class="method-list-item"><a href="jc/fs/IFile.html#method-includeFile">includeFile()</a></li>
 								</ul>
 			</div>
@@ -2832,6 +2822,48 @@ Ext.onReady(function(){
 				
 		<!-- function name -->
 		<strong>length</strong>
+		
+		<!-- arg list -->
+		(
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					mixed
+			</div>
+	
+	<!-- 函数说明 -->
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="font-style:oblique;">
+	<a name="method-hash"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+					abstract
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+				
+		<!-- function name -->
+		<strong>hash</strong>
 		
 		<!-- arg list -->
 		(

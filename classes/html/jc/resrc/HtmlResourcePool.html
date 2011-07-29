@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -3483,6 +3471,13 @@ Ext.onReady(function(){
 			
 			$nType			
 						
+					,			
+			bool			
+			<!-- 按引用传递 -->
+						
+			
+			$bUrl			
+			= true			
 				 )
 		 
  	</div>
@@ -3506,6 +3501,29 @@ Ext.onReady(function(){
 				
 				<div>
 										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$bUrl</strong>
+				
+									= true								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>bool				</div>
+				
+				<div>
+											<span class="fwbd">默认值：</span>true										(允许NULL)
 				</div>
 			
 			</div>

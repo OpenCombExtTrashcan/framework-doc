@@ -289,6 +289,14 @@ Ext.onReady(function(){
 			href: 'jc/fs/imp/LocalFileSystem.html' ,
 			leaf: true
 		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
 					]
 }
 
@@ -1354,38 +1362,18 @@ Ext.onReady(function(){
 		}
 						
 		,		
-					
-{
-	id: 'jc::resrc::htmlresrc' ,
-	text: 'htmlresrc' ,
-	href: 'jc/resrc/htmlresrc/index.html' ,
-
-		children: [
-				
-				
 				{
-			id: 'jc::resrc::htmlresrc::HtmlResourcePoolFactory' ,
-			text: 'HtmlResourcePoolFactory' ,
-			href: 'jc/resrc/htmlresrc/HtmlResourcePoolFactory.html' ,
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
-					]
-}
-
 						
 		,		
 				{
 			id: 'jc::resrc::HtmlResourcePool' ,
 			text: 'HtmlResourcePool' ,
 			href: 'jc/resrc/HtmlResourcePool.html' ,
-			leaf: true
-		}
-						
-		,		
-				{
-			id: 'jc::resrc::UrlResourceManager' ,
-			text: 'UrlResourceManager' ,
-			href: 'jc/resrc/UrlResourceManager.html' ,
 			leaf: true
 		}
 						
@@ -2701,6 +2689,11 @@ Ext.onReady(function(){
 					</div>
 		
 		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+				<div id="derivative-subclasses">
+						派生子类:
+						
+							<a href="jc/fs/imp/UploadFile.html" title="jc\fs\imp\UploadFile">UploadFile</a>;
+					</div>
 				
 		
 		<!-- methods list -->
@@ -2711,6 +2704,7 @@ Ext.onReady(function(){
 									<li class="method-list-item"><a href="jc/fs/imp/LocalFile.html#method-openWriter">openWriter()</a></li>
 									<li class="method-list-item"><a href="jc/fs/imp/LocalFile.html#method-length">length()</a></li>
 									<li class="method-list-item"><a href="jc/fs/imp/LocalFile.html#method-delete">delete()</a></li>
+									<li class="method-list-item"><a href="jc/fs/imp/LocalFile.html#method-hash">hash()</a></li>
 									<li class="method-list-item"><a href="jc/fs/imp/LocalFile.html#method-includeFile">includeFile()</a></li>
 								</ul>
 			</div>
@@ -2909,7 +2903,31 @@ Ext.onReady(function(){
 																
 								<!-- 静态 -->
 																
+								<a href="jc/fs/FSO.html#method-setFileSystem">setFileSystem()</a>
+							</li>
+													<li style="">
+							
+								<!-- 函数可见性 -->
+																	<span title="公共方法(public)"> + </span>
+																
+							
+								<!-- 最终 -->
+																
+								<!-- 静态 -->
+																
 								<a href="jc/fs/FSO.html#method-path">path()</a>
+							</li>
+													<li style="">
+							
+								<!-- 函数可见性 -->
+																	<span title="公共方法(public)"> + </span>
+																
+							
+								<!-- 最终 -->
+																
+								<!-- 静态 -->
+																
+								<a href="jc/fs/FSO.html#method-setInnerPath">setInnerPath()</a>
 							</li>
 													<li style="">
 							
@@ -3342,6 +3360,47 @@ Ext.onReady(function(){
 				
 		<!-- function name -->
 		<strong>delete</strong>
+		
+		<!-- arg list -->
+		(
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					mixed
+			</div>
+	
+	<!-- 函数说明 -->
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-hash"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+				
+		<!-- function name -->
+		<strong>hash</strong>
 		
 		<!-- arg list -->
 		(
