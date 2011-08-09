@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" > 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+	<meta name="author" content="jc\doc\builder" /> 
+	<meta name="keywords" content="" /> 
+	<meta name="description" content="" /> 
+	<base href="{=$sBaseUri}" />
+	<title> package: {=$sFullPackageName}  -- JeCat PHP Framework Classes  </title> 
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head> 
+
+
+<body>
+
+<div id="classes_index">
+	<include file='index.template.html' />
+	<script type='text/javascript'>
+	Ext.onReady(function(){
+		var curNodeId = '{=str_replace('\\','::',$sFullPackageName)}' ;
+		var curNode = docTree.getNodeById(curNodeId);
+		var nodePath = curNode.getPath();
+		docTree.expandPath(nodePath);
+		curNode.select();
+	});
+	</script>
+</div>
+
+<div id="main-area">
+	<h4>
+		<foreach for="$arrPackagePath" key='sPackagePath' item='sPackageName'><!--
+		--><a class="next" href="{=$sPackagePath}/index.html">{=$sPackageName}</a><!--
+		--></foreach><!--
+		-->
+	</h4>
+
+	<!-- packages -->
+	<foreach for="$arrChildren" key='sChildName' item='packageChild' >
+	<div>
+		<if "is_array($packageChild)">
+			package:
+			<a href="{=str_replace('\\','/',$sFullPackageName)}/{=$sChildName}/index.html">{=$sChildName}</a>
+		<else "$packageChild instanceof \jc\doc\classes\builder\ClassInfo" />
+			class:
+			<a href="{=str_replace('\\','/',$sFullPackageName)}/{=$sChildName}.html">{=$sChildName}</a>
+		</if>
+		
+		
+		
+	</div>
+	</foreach>
+	
+	
+</div>
+
+</body>
+
+</html>

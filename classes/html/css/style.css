@@ -1,0 +1,154 @@
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table { border-collapse:collapse; border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal;}
+ol,ul,li { list-style:none;}
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+img {
+	color: transparent;
+	font-size: 0;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;/*Only fot IE7*/
+}
+b, strong {
+	/*
+  Makes browsers agree.
+  IE + Opera = font-weight: bold.
+  Gecko + WebKit = font-weight: bolder.
+*/
+  font-weight: bold;
+}
+*:focus {
+	/* 去掉获得焦点时出现的虚线框 */
+	outline: none;
+}  
+textarea{
+	/* chrome 不允许 textarea 可更改大小  */
+	resize:none;
+}
+
+/* 文字排版 */
+.f12{font-size:12px}
+.f13{font-size:13px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f18{font-size:18px}
+.f20{font-size:20px}
+.fb{ font-weight:bold}
+.fn{ font-weight:normal}
+.t2{ text-indent:2em}
+
+/*定位*/
+.tl{ text-align:left}
+.tr{ text-align:right}
+.tc{ text-align:center}
+.bc{ margin-left:auto; margin-right:auto;}
+.fl{ float:left;}
+.fr{ float:right;}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+pre {/*pre 断行*/
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+/* document css */
+body{ font:12px Arial, Helvetica, sans-serif; background:#108AC6}
+a{color:#083772; text-decoration:none; margin:0 1px;}
+a:hover{color:#1571e4;}
+#classes_index{ 
+	background:#FFF;
+    -moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+    float: left;
+    margin-left: 10px;
+    padding: 10px;
+    width: 220px;
+}
+#main-area{ 
+	background:#FFF;
+    -moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+    margin:10px 10px 20px 255px;
+    padding:10px 20px 10px 20px;
+	font:13px Arial, Helvetica, sans-serif;
+	color:#444;
+}
+
+.next{  background:url(../images/next.gif) no-repeat right center;padding-right:14px;}
+
+#extend-trace-div{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+#implements-interfaces{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+#derivative-subclasses{
+	margin-top: 20px;	
+	margin-bottom: 30px;
+}
+.index-list{
+	padding-left: 0px;
+}
+.index-item{
+	padding-left: 10px;
+}
+/*
+.index-item-package{
+	list-style-type: circle;
+}
+.index-item-class{
+	list-style-type: square;
+}*/
+
+
+/*cross*/
+.ggff{ font-size:15px; color:#444; height:16px; line-height:16px; float:left}
+.ggff a{color:#66AB16; font-weight:bold}
+.ggff a:hover{color:#4d8210; text-decoration:none}
+.title{ display:block; float:left; width:6px;  height: 15px; margin: 1px 5px 0 0;background:#108ac6}
+.method-list{ font-size:13px;background:url(../images/classbg.png) repeat-y 0 0; border:1px solid #d5d5d5; border-width:1px 1px 0; width:601px; float:left;margin:10px 0 0;}
+.method-detail-item{
+	border-bottom:1px solid #d5d5d5;
+	background: url(../images/methodbg.png) no-repeat 0 0;
+    border-bottom: 1px solid #D5D5D5;
+    padding:6px 6px 6px 16px;
+}
+.method-detail-item:hover{
+	background: url(../images/methodbg.png) no-repeat 0 -500px;
+}
+.method-list-item,.method-list li{
+	width: 290px ;
+	height:21px;
+	line-height:21px;
+	padding-left:10px;
+	float: left ;
+}
+
+.normalfloat{float:left;width:100%;margin-bottom:10px;}
+
+.methodlist{border:1px solid #d5d5d5; border-width:1px 1px 0 1px;font-size:13px; line-height:20px;}
+.method-prototype strong{color:#083772; font-weight:bold}
+
+.parameter-prototype strong{ font-weight:bold; background:url(../images/dotted.gif) no-repeat left 3px; padding-left:16px; color:#444}
+.dotted li{ background:url(../images/dotted.gif) no-repeat left 5px; padding-left:16px; color:#444;height: 20px;line-height: 20px;}
+.fwbd{color:#003366; font-weight:bold}
+.cssm{font-size:14px; font-weight:bold; color:#66AB16}

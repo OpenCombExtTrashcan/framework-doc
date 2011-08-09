@@ -1,0 +1,3196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+	<meta name="author" content="jc\doc\builder" /> 
+	<meta name="keywords" content="" /> 
+	<meta name="description" content="" /> 
+	<base href="../../" />
+	<title> class: jc\cache\DBCache  -- JeCat PHP Framework Classes  </title> 
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+</head> 
+
+<body>
+
+	<div id="classes_index">
+		<link rel="stylesheet" type="text/css" href="css/ext-all.css" />
+<script type="text/javascript" src="js/ext-base.js"></script>
+<script type="text/javascript" src="js/ext-all.js"></script>
+<script type="text/javascript" src="js/TreeFilter.js"></script>
+<script type="text/javascript" src="js/PinyinFilter.js"></script>
+
+
+
+<script type="text/javascript">
+var docTree ;
+Ext.onReady(function(){
+	Ext.BLANK_IMAGE_URL = 'images/default/tree/s.gif';
+	docTree = new Ext.tree.TreePanel({
+		renderTo:'docTree',
+		rootVisible:false,
+		border:false,
+		animate :false,
+		autoScroll:false,
+		tbar:new Ext.Toolbar(),
+		root:new Ext.tree.AsyncTreeNode(
+{
+
+		children: [
+				
+				
+					
+{
+	id: 'jc' ,
+	text: 'jc' ,
+	href: 'jc/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::lang' ,
+	text: 'lang' ,
+	href: 'jc/lang/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::lang::Object' ,
+			text: 'Object' ,
+			href: 'jc/lang/Object.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::Exception' ,
+			text: 'Exception' ,
+			href: 'jc/lang/Exception.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::Assert' ,
+			text: 'Assert' ,
+			href: 'jc/lang/Assert.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::Type' ,
+			text: 'Type' ,
+			href: 'jc/lang/Type.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::TypeException' ,
+			text: 'TypeException' ,
+			href: 'jc/lang/TypeException.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::SentencePackage' ,
+			text: 'SentencePackage' ,
+			href: 'jc/lang/SentencePackage.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::IObject' ,
+			text: 'IObject' ,
+			href: 'jc/lang/IObject.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::lang::IException' ,
+			text: 'IException' ,
+			href: 'jc/lang/IException.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::system' ,
+	text: 'system' ,
+	href: 'jc/system/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::system::ClassLoader' ,
+			text: 'ClassLoader' ,
+			href: 'jc/system/ClassLoader.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::CoreApplication' ,
+			text: 'CoreApplication' ,
+			href: 'jc/system/CoreApplication.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::Application' ,
+			text: 'Application' ,
+			href: 'jc/system/Application.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::AppFactory' ,
+			text: 'AppFactory' ,
+			href: 'jc/system/AppFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::CLAppFactory' ,
+			text: 'CLAppFactory' ,
+			href: 'jc/system/CLAppFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::AccessRouter' ,
+			text: 'AccessRouter' ,
+			href: 'jc/system/AccessRouter.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::Request' ,
+			text: 'Request' ,
+			href: 'jc/system/Request.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::CLRequest' ,
+			text: 'CLRequest' ,
+			href: 'jc/system/CLRequest.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::Response' ,
+			text: 'Response' ,
+			href: 'jc/system/Response.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::HttpRequest' ,
+			text: 'HttpRequest' ,
+			href: 'jc/system/HttpRequest.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::system::HttpAppFactory' ,
+			text: 'HttpAppFactory' ,
+			href: 'jc/system/HttpAppFactory.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::fs' ,
+	text: 'fs' ,
+	href: 'jc/fs/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::fs::FileSystem' ,
+			text: 'FileSystem' ,
+			href: 'jc/fs/FileSystem.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::FSO' ,
+			text: 'FSO' ,
+			href: 'jc/fs/FSO.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::fs::imp' ,
+	text: 'imp' ,
+	href: 'jc/fs/imp/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::fs::imp::LocalFSO' ,
+			text: 'LocalFSO' ,
+			href: 'jc/fs/imp/LocalFSO.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::LocalFile' ,
+			text: 'LocalFile' ,
+			href: 'jc/fs/imp/LocalFile.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::LocalFolder' ,
+			text: 'LocalFolder' ,
+			href: 'jc/fs/imp/LocalFolder.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::LocalFileSystem' ,
+			text: 'LocalFileSystem' ,
+			href: 'jc/fs/imp/LocalFileSystem.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::imp::UploadFile' ,
+			text: 'UploadFile' ,
+			href: 'jc/fs/imp/UploadFile.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::fs::FSObject' ,
+			text: 'FSObject' ,
+			href: 'jc/fs/FSObject.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::File' ,
+			text: 'File' ,
+			href: 'jc/fs/File.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::Dir' ,
+			text: 'Dir' ,
+			href: 'jc/fs/Dir.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::FSOIterator' ,
+			text: 'FSOIterator' ,
+			href: 'jc/fs/FSOIterator.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::IFSO' ,
+			text: 'IFSO' ,
+			href: 'jc/fs/IFSO.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::IFile' ,
+			text: 'IFile' ,
+			href: 'jc/fs/IFile.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::fs::IFolder' ,
+			text: 'IFolder' ,
+			href: 'jc/fs/IFolder.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::compile' ,
+	text: 'compile' ,
+	href: 'jc/compile/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::compile::Compiler' ,
+			text: 'Compiler' ,
+			href: 'jc/compile/Compiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::CompilerFactory' ,
+			text: 'CompilerFactory' ,
+			href: 'jc/compile/CompilerFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::compile::interpreters' ,
+	text: 'interpreters' ,
+	href: 'jc/compile/interpreters/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::compile::interpreters::ClosureObjectParser' ,
+			text: 'ClosureObjectParser' ,
+			href: 'jc/compile/interpreters/ClosureObjectParser.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::interpreters::SyntaxParser' ,
+			text: 'SyntaxParser' ,
+			href: 'jc/compile/interpreters/SyntaxParser.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::compile::object' ,
+	text: 'object' ,
+	href: 'jc/compile/object/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::compile::object::AbstractObject' ,
+			text: 'AbstractObject' ,
+			href: 'jc/compile/object/AbstractObject.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::Token' ,
+			text: 'Token' ,
+			href: 'jc/compile/object/Token.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::NamespaceDeclare' ,
+			text: 'NamespaceDeclare' ,
+			href: 'jc/compile/object/NamespaceDeclare.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::ClosureToken' ,
+			text: 'ClosureToken' ,
+			href: 'jc/compile/object/ClosureToken.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::Expression' ,
+			text: 'Expression' ,
+			href: 'jc/compile/object/Expression.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::ClassDefine' ,
+			text: 'ClassDefine' ,
+			href: 'jc/compile/object/ClassDefine.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::FunctionDefine' ,
+			text: 'FunctionDefine' ,
+			href: 'jc/compile/object/FunctionDefine.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::object::TokenPool' ,
+			text: 'TokenPool' ,
+			href: 'jc/compile/object/TokenPool.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::compile::generators' ,
+	text: 'generators' ,
+	href: 'jc/compile/generators/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::compile::generators::CompiledAlert' ,
+			text: 'CompiledAlert' ,
+			href: 'jc/compile/generators/CompiledAlert.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::compile::IInterpreter' ,
+			text: 'IInterpreter' ,
+			href: 'jc/compile/IInterpreter.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::IGenerator' ,
+			text: 'IGenerator' ,
+			href: 'jc/compile/IGenerator.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::compile::IStrategySummary' ,
+			text: 'IStrategySummary' ,
+			href: 'jc/compile/IStrategySummary.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::locale' ,
+	text: 'locale' ,
+	href: 'jc/locale/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::locale::LocaleManager' ,
+			text: 'LocaleManager' ,
+			href: 'jc/locale/LocaleManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::locale::Locale' ,
+			text: 'Locale' ,
+			href: 'jc/locale/Locale.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::locale::ILocale' ,
+			text: 'ILocale' ,
+			href: 'jc/locale/ILocale.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::locale::ITranslator' ,
+			text: 'ITranslator' ,
+			href: 'jc/locale/ITranslator.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::util' ,
+	text: 'util' ,
+	href: 'jc/util/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::util::HashTable' ,
+			text: 'HashTable' ,
+			href: 'jc/util/HashTable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::DataSrc' ,
+			text: 'DataSrc' ,
+			href: 'jc/util/DataSrc.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::FilterMangeger' ,
+			text: 'FilterMangeger' ,
+			href: 'jc/util/FilterMangeger.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::util::match' ,
+	text: 'match' ,
+	href: 'jc/util/match/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::util::match::RegExp' ,
+			text: 'RegExp' ,
+			href: 'jc/util/match/RegExp.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::match::Result' ,
+			text: 'Result' ,
+			href: 'jc/util/match/Result.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::match::ResultSet' ,
+			text: 'ResultSet' ,
+			href: 'jc/util/match/ResultSet.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::util::String' ,
+			text: 'String' ,
+			href: 'jc/util/String.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::StopFilterSignal' ,
+			text: 'StopFilterSignal' ,
+			href: 'jc/util/StopFilterSignal.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::CombinedIterator' ,
+			text: 'CombinedIterator' ,
+			href: 'jc/util/CombinedIterator.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::Stack' ,
+			text: 'Stack' ,
+			href: 'jc/util/Stack.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::IHashTable' ,
+			text: 'IHashTable' ,
+			href: 'jc/util/IHashTable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::IDataSrc' ,
+			text: 'IDataSrc' ,
+			href: 'jc/util/IDataSrc.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::util::IFilterMangeger' ,
+			text: 'IFilterMangeger' ,
+			href: 'jc/util/IFilterMangeger.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::io' ,
+	text: 'io' ,
+	href: 'jc/io/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::io::Stream' ,
+			text: 'Stream' ,
+			href: 'jc/io/Stream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::OutputStream' ,
+			text: 'OutputStream' ,
+			href: 'jc/io/OutputStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::PrintStream' ,
+			text: 'PrintStream' ,
+			href: 'jc/io/PrintStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::StdOutputFilterMgr' ,
+			text: 'StdOutputFilterMgr' ,
+			href: 'jc/io/StdOutputFilterMgr.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::InputStream' ,
+			text: 'InputStream' ,
+			href: 'jc/io/InputStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::HtmlPrintStream' ,
+			text: 'HtmlPrintStream' ,
+			href: 'jc/io/HtmlPrintStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::OutputStreamBuffer' ,
+			text: 'OutputStreamBuffer' ,
+			href: 'jc/io/OutputStreamBuffer.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::IStream' ,
+			text: 'IStream' ,
+			href: 'jc/io/IStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::IClosable' ,
+			text: 'IClosable' ,
+			href: 'jc/io/IClosable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::IOutputStream' ,
+			text: 'IOutputStream' ,
+			href: 'jc/io/IOutputStream.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::ILockable' ,
+			text: 'ILockable' ,
+			href: 'jc/io/ILockable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::io::IInputStream' ,
+			text: 'IInputStream' ,
+			href: 'jc/io/IInputStream.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::ui' ,
+	text: 'ui' ,
+	href: 'jc/ui/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::UIFactory' ,
+			text: 'UIFactory' ,
+			href: 'jc/ui/UIFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::ui::xhtml' ,
+	text: 'xhtml' ,
+	href: 'jc/ui/xhtml/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::xhtml::UIFactory' ,
+			text: 'UIFactory' ,
+			href: 'jc/ui/xhtml/UIFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::ui::xhtml::compiler' ,
+	text: 'compiler' ,
+	href: 'jc/ui/xhtml/compiler/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::xhtml::compiler::BaseCompiler' ,
+			text: 'BaseCompiler' ,
+			href: 'jc/ui/xhtml/compiler/BaseCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::NodeCompiler' ,
+			text: 'NodeCompiler' ,
+			href: 'jc/ui/xhtml/compiler/NodeCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::ui::xhtml::compiler::node' ,
+	text: 'node' ,
+	href: 'jc/ui/xhtml/compiler/node/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::xhtml::compiler::node::ScriptCompiler' ,
+			text: 'ScriptCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ScriptCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::IfCompiler' ,
+			text: 'IfCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/IfCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::LoopCompiler' ,
+			text: 'LoopCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/LoopCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::IncludeCompiler' ,
+			text: 'IncludeCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/IncludeCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ForeachCompiler' ,
+			text: 'ForeachCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ForeachCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ForeachelseCompiler' ,
+			text: 'ForeachelseCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ForeachelseCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ElseIfCompiler' ,
+			text: 'ElseIfCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ElseIfCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ElseCompiler' ,
+			text: 'ElseCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ElseCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::BreakCompiler' ,
+			text: 'BreakCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/BreakCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ContinueCompiler' ,
+			text: 'ContinueCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ContinueCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::WhileCompiler' ,
+			text: 'WhileCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/WhileCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::DoWhileCompiler' ,
+			text: 'DoWhileCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/DoWhileCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::SubTemplateDefineCompiler' ,
+			text: 'SubTemplateDefineCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/SubTemplateDefineCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::DoubleEndCompiler' ,
+			text: 'DoubleEndCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/DoubleEndCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::EndCompiler' ,
+			text: 'EndCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/EndCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::SingleEndCompiler' ,
+			text: 'SingleEndCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/SingleEndCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::SubTemplateCallCompiler' ,
+			text: 'SubTemplateCallCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/SubTemplateCallCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::ClearCompiler' ,
+			text: 'ClearCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/ClearCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::node::NlCompiler' ,
+			text: 'NlCompiler' ,
+			href: 'jc/ui/xhtml/compiler/node/NlCompiler.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::MacroCompiler' ,
+			text: 'MacroCompiler' ,
+			href: 'jc/ui/xhtml/compiler/MacroCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::ui::xhtml::compiler::macro' ,
+	text: 'macro' ,
+	href: 'jc/ui/xhtml/compiler/macro/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::xhtml::compiler::macro::PathMacroCompiler' ,
+			text: 'PathMacroCompiler' ,
+			href: 'jc/ui/xhtml/compiler/macro/PathMacroCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::macro::PrintMacroCompiler' ,
+			text: 'PrintMacroCompiler' ,
+			href: 'jc/ui/xhtml/compiler/macro/PrintMacroCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::macro::CommentMacroCompiler' ,
+			text: 'CommentMacroCompiler' ,
+			href: 'jc/ui/xhtml/compiler/macro/CommentMacroCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::macro::EvalMacroCompiler' ,
+			text: 'EvalMacroCompiler' ,
+			href: 'jc/ui/xhtml/compiler/macro/EvalMacroCompiler.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::compiler::ExpressionCompiler' ,
+			text: 'ExpressionCompiler' ,
+			href: 'jc/ui/xhtml/compiler/ExpressionCompiler.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::ObjectBase' ,
+			text: 'ObjectBase' ,
+			href: 'jc/ui/xhtml/ObjectBase.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Node' ,
+			text: 'Node' ,
+			href: 'jc/ui/xhtml/Node.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Attributes' ,
+			text: 'Attributes' ,
+			href: 'jc/ui/xhtml/Attributes.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::ui::xhtml::parsers' ,
+	text: 'parsers' ,
+	href: 'jc/ui/xhtml/parsers/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::ui::xhtml::parsers::Parser' ,
+			text: 'Parser' ,
+			href: 'jc/ui/xhtml/parsers/Parser.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserState' ,
+			text: 'ParserState' ,
+			href: 'jc/ui/xhtml/parsers/ParserState.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateTag' ,
+			text: 'ParserStateTag' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateTag.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateAttribute' ,
+			text: 'ParserStateAttribute' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateAttribute.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateNode' ,
+			text: 'ParserStateNode' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateNode.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateText' ,
+			text: 'ParserStateText' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateText.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateDefault' ,
+			text: 'ParserStateDefault' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateDefault.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::parsers::ParserStateMacro' ,
+			text: 'ParserStateMacro' ,
+			href: 'jc/ui/xhtml/parsers/ParserStateMacro.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Text' ,
+			text: 'Text' ,
+			href: 'jc/ui/xhtml/Text.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::AttributeValue' ,
+			text: 'AttributeValue' ,
+			href: 'jc/ui/xhtml/AttributeValue.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Macro' ,
+			text: 'Macro' ,
+			href: 'jc/ui/xhtml/Macro.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Tag' ,
+			text: 'Tag' ,
+			href: 'jc/ui/xhtml/Tag.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::Mark' ,
+			text: 'Mark' ,
+			href: 'jc/ui/xhtml/Mark.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::xhtml::IObject' ,
+			text: 'IObject' ,
+			href: 'jc/ui/xhtml/IObject.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::ui::SourceFileManager' ,
+			text: 'SourceFileManager' ,
+			href: 'jc/ui/SourceFileManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::UI' ,
+			text: 'UI' ,
+			href: 'jc/ui/UI.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::Object' ,
+			text: 'Object' ,
+			href: 'jc/ui/Object.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::CompilingStatus' ,
+			text: 'CompilingStatus' ,
+			href: 'jc/ui/CompilingStatus.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::FactoryBase' ,
+			text: 'FactoryBase' ,
+			href: 'jc/ui/FactoryBase.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::InterpreterManager' ,
+			text: 'InterpreterManager' ,
+			href: 'jc/ui/InterpreterManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::CompilerManager' ,
+			text: 'CompilerManager' ,
+			href: 'jc/ui/CompilerManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::IFactory' ,
+			text: 'IFactory' ,
+			href: 'jc/ui/IFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::ICompiler' ,
+			text: 'ICompiler' ,
+			href: 'jc/ui/ICompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::IObject' ,
+			text: 'IObject' ,
+			href: 'jc/ui/IObject.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::ui::IInterpreter' ,
+			text: 'IInterpreter' ,
+			href: 'jc/ui/IInterpreter.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::resrc' ,
+	text: 'resrc' ,
+	href: 'jc/resrc/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::resrc::ResourceManager' ,
+			text: 'ResourceManager' ,
+			href: 'jc/resrc/ResourceManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::resrc::UrlResourceManager' ,
+			text: 'UrlResourceManager' ,
+			href: 'jc/resrc/UrlResourceManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::resrc::HtmlResourcePool' ,
+			text: 'HtmlResourcePool' ,
+			href: 'jc/resrc/HtmlResourcePool.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::resrc::IResourceManager' ,
+			text: 'IResourceManager' ,
+			href: 'jc/resrc/IResourceManager.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::mvc' ,
+	text: 'mvc' ,
+	href: 'jc/mvc/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::mvc::view' ,
+	text: 'view' ,
+	href: 'jc/mvc/view/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::mvc::view::uicompiler' ,
+	text: 'uicompiler' ,
+	href: 'jc/mvc/view/uicompiler/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::mvc::view::uicompiler::ViewCompiler' ,
+			text: 'ViewCompiler' ,
+			href: 'jc/mvc/view/uicompiler/ViewCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::WidgetCompiler' ,
+			text: 'WidgetCompiler' ,
+			href: 'jc/mvc/view/uicompiler/WidgetCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::MsgQueueCompiler' ,
+			text: 'MsgQueueCompiler' ,
+			href: 'jc/mvc/view/uicompiler/MsgQueueCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::LoadResourceCompiler' ,
+			text: 'LoadResourceCompiler' ,
+			href: 'jc/mvc/view/uicompiler/LoadResourceCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::ViewMsgQueueCompiler' ,
+			text: 'ViewMsgQueueCompiler' ,
+			href: 'jc/mvc/view/uicompiler/ViewMsgQueueCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::WidgetMsgQueueCompiler' ,
+			text: 'WidgetMsgQueueCompiler' ,
+			href: 'jc/mvc/view/uicompiler/WidgetMsgQueueCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::ScriptCompiler' ,
+			text: 'ScriptCompiler' ,
+			href: 'jc/mvc/view/uicompiler/ScriptCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::CssCompiler' ,
+			text: 'CssCompiler' ,
+			href: 'jc/mvc/view/uicompiler/CssCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::FormCompiler' ,
+			text: 'FormCompiler' ,
+			href: 'jc/mvc/view/uicompiler/FormCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::ModelForeachCompiler' ,
+			text: 'ModelForeachCompiler' ,
+			href: 'jc/mvc/view/uicompiler/ModelForeachCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::uicompiler::ModelDataCompiler' ,
+			text: 'ModelDataCompiler' ,
+			href: 'jc/mvc/view/uicompiler/ModelDataCompiler.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::mvc::view::View' ,
+			text: 'View' ,
+			href: 'jc/mvc/view/View.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::ViewContainer' ,
+			text: 'ViewContainer' ,
+			href: 'jc/mvc/view/ViewContainer.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::UIFactory' ,
+			text: 'UIFactory' ,
+			href: 'jc/mvc/view/UIFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::VagrantViewSearcher' ,
+			text: 'VagrantViewSearcher' ,
+			href: 'jc/mvc/view/VagrantViewSearcher.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::mvc::view::widget' ,
+	text: 'widget' ,
+	href: 'jc/mvc/view/widget/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::mvc::view::widget::Widget' ,
+			text: 'Widget' ,
+			href: 'jc/mvc/view/widget/Widget.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::FormWidget' ,
+			text: 'FormWidget' ,
+			href: 'jc/mvc/view/widget/FormWidget.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::Text' ,
+			text: 'Text' ,
+			href: 'jc/mvc/view/widget/Text.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::Group' ,
+			text: 'Group' ,
+			href: 'jc/mvc/view/widget/Group.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::Select' ,
+			text: 'Select' ,
+			href: 'jc/mvc/view/widget/Select.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::CheckBtn' ,
+			text: 'CheckBtn' ,
+			href: 'jc/mvc/view/widget/CheckBtn.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::RadioGroup' ,
+			text: 'RadioGroup' ,
+			href: 'jc/mvc/view/widget/RadioGroup.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::SelectList' ,
+			text: 'SelectList' ,
+			href: 'jc/mvc/view/widget/SelectList.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::FileUpdate' ,
+			text: 'FileUpdate' ,
+			href: 'jc/mvc/view/widget/FileUpdate.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::IWidgetContainer' ,
+			text: 'IWidgetContainer' ,
+			href: 'jc/mvc/view/widget/IWidgetContainer.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::IViewWidget' ,
+			text: 'IViewWidget' ,
+			href: 'jc/mvc/view/widget/IViewWidget.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::widget::IViewFormWidget' ,
+			text: 'IViewFormWidget' ,
+			href: 'jc/mvc/view/widget/IViewFormWidget.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::mvc::view::DataExchanger' ,
+			text: 'DataExchanger' ,
+			href: 'jc/mvc/view/DataExchanger.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::Webpage' ,
+			text: 'Webpage' ,
+			href: 'jc/mvc/view/Webpage.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::FormView' ,
+			text: 'FormView' ,
+			href: 'jc/mvc/view/FormView.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::WebpageFactory' ,
+			text: 'WebpageFactory' ,
+			href: 'jc/mvc/view/WebpageFactory.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::IView' ,
+			text: 'IView' ,
+			href: 'jc/mvc/view/IView.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::view::IFormView' ,
+			text: 'IFormView' ,
+			href: 'jc/mvc/view/IFormView.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::mvc::model' ,
+	text: 'model' ,
+	href: 'jc/mvc/model/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::mvc::model::db' ,
+	text: 'db' ,
+	href: 'jc/mvc/model/db/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::mvc::model::db::orm' ,
+	text: 'orm' ,
+	href: 'jc/mvc/model/db/orm/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::mvc::model::db::orm::operators' ,
+	text: 'operators' ,
+	href: 'jc/mvc/model/db/orm/operators/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::mvc::model::db::orm::operators::OperationStrategy' ,
+			text: 'OperationStrategy' ,
+			href: 'jc/mvc/model/db/orm/operators/OperationStrategy.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::Selecter' ,
+			text: 'Selecter' ,
+			href: 'jc/mvc/model/db/orm/operators/Selecter.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::Deleter' ,
+			text: 'Deleter' ,
+			href: 'jc/mvc/model/db/orm/operators/Deleter.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::Inserter' ,
+			text: 'Inserter' ,
+			href: 'jc/mvc/model/db/orm/operators/Inserter.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::Updater' ,
+			text: 'Updater' ,
+			href: 'jc/mvc/model/db/orm/operators/Updater.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::StatementForAssocQuery' ,
+			text: 'StatementForAssocQuery' ,
+			href: 'jc/mvc/model/db/orm/operators/StatementForAssocQuery.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::SelectForAssocQuery' ,
+			text: 'SelectForAssocQuery' ,
+			href: 'jc/mvc/model/db/orm/operators/SelectForAssocQuery.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::operators::DeleteForAssocQuery' ,
+			text: 'DeleteForAssocQuery' ,
+			href: 'jc/mvc/model/db/orm/operators/DeleteForAssocQuery.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::Association' ,
+			text: 'Association' ,
+			href: 'jc/mvc/model/db/orm/Association.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::PrototypeAssociationMap' ,
+			text: 'PrototypeAssociationMap' ,
+			href: 'jc/mvc/model/db/orm/PrototypeAssociationMap.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::Prototype' ,
+			text: 'Prototype' ,
+			href: 'jc/mvc/model/db/orm/Prototype.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::orm::PrototypeInFragment' ,
+			text: 'PrototypeInFragment' ,
+			href: 'jc/mvc/model/db/orm/PrototypeInFragment.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::Model' ,
+			text: 'Model' ,
+			href: 'jc/mvc/model/db/Model.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::db::IModel' ,
+			text: 'IModel' ,
+			href: 'jc/mvc/model/db/IModel.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::mvc::model::Model' ,
+			text: 'Model' ,
+			href: 'jc/mvc/model/Model.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::model::IModel' ,
+			text: 'IModel' ,
+			href: 'jc/mvc/model/IModel.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::mvc::controller' ,
+	text: 'controller' ,
+	href: 'jc/mvc/controller/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::mvc::controller::Controller' ,
+			text: 'Controller' ,
+			href: 'jc/mvc/controller/Controller.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::controller::WebpageFrame' ,
+			text: 'WebpageFrame' ,
+			href: 'jc/mvc/controller/WebpageFrame.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::controller::Relocater' ,
+			text: 'Relocater' ,
+			href: 'jc/mvc/controller/Relocater.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::controller::IController' ,
+			text: 'IController' ,
+			href: 'jc/mvc/controller/IController.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::mvc::controller::IAccessableController' ,
+			text: 'IAccessableController' ,
+			href: 'jc/mvc/controller/IAccessableController.html' ,
+			leaf: true
+		}
+					]
+}
+
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::pattern' ,
+	text: 'pattern' ,
+	href: 'jc/pattern/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::pattern::composite' ,
+	text: 'composite' ,
+	href: 'jc/pattern/composite/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::pattern::composite::Container' ,
+			text: 'Container' ,
+			href: 'jc/pattern/composite/Container.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::Composite' ,
+			text: 'Composite' ,
+			href: 'jc/pattern/composite/Composite.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::NamableComposite' ,
+			text: 'NamableComposite' ,
+			href: 'jc/pattern/composite/NamableComposite.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::CompositeSearcher' ,
+			text: 'CompositeSearcher' ,
+			href: 'jc/pattern/composite/CompositeSearcher.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::IContainer' ,
+			text: 'IContainer' ,
+			href: 'jc/pattern/composite/IContainer.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::IContainedable' ,
+			text: 'IContainedable' ,
+			href: 'jc/pattern/composite/IContainedable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::composite::INamable' ,
+			text: 'INamable' ,
+			href: 'jc/pattern/composite/INamable.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::pattern::iterate' ,
+	text: 'iterate' ,
+	href: 'jc/pattern/iterate/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::pattern::iterate::ArrayIterator' ,
+			text: 'ArrayIterator' ,
+			href: 'jc/pattern/iterate/ArrayIterator.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::iterate::INonlinearIterator' ,
+			text: 'INonlinearIterator' ,
+			href: 'jc/pattern/iterate/INonlinearIterator.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::pattern::iterate::IReversableIterator' ,
+			text: 'IReversableIterator' ,
+			href: 'jc/pattern/iterate/IReversableIterator.html' ,
+			leaf: true
+		}
+					]
+}
+
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::message' ,
+	text: 'message' ,
+	href: 'jc/message/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::message::Message' ,
+			text: 'Message' ,
+			href: 'jc/message/Message.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::message::MessageQueue' ,
+			text: 'MessageQueue' ,
+			href: 'jc/message/MessageQueue.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::message::IMessageQueueHolder' ,
+			text: 'IMessageQueueHolder' ,
+			href: 'jc/message/IMessageQueueHolder.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::message::IMessageQueue' ,
+			text: 'IMessageQueue' ,
+			href: 'jc/message/IMessageQueue.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::cache' ,
+	text: 'cache' ,
+	href: 'jc/cache/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::cache::FSCache' ,
+			text: 'FSCache' ,
+			href: 'jc/cache/FSCache.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::cache::DBCache' ,
+			text: 'DBCache' ,
+			href: 'jc/cache/DBCache.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::cache::Memcache' ,
+			text: 'Memcache' ,
+			href: 'jc/cache/Memcache.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::cache::ICache' ,
+			text: 'ICache' ,
+			href: 'jc/cache/ICache.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::db' ,
+	text: 'db' ,
+	href: 'jc/db/index.html' ,
+
+		children: [
+				
+				
+					
+{
+	id: 'jc::db::sql' ,
+	text: 'sql' ,
+	href: 'jc/db/sql/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::db::sql::Statement' ,
+			text: 'Statement' ,
+			href: 'jc/db/sql/Statement.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::SubStatement' ,
+			text: 'SubStatement' ,
+			href: 'jc/db/sql/SubStatement.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Tables' ,
+			text: 'Tables' ,
+			href: 'jc/db/sql/Tables.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::MultiTableStatement' ,
+			text: 'MultiTableStatement' ,
+			href: 'jc/db/sql/MultiTableStatement.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Select' ,
+			text: 'Select' ,
+			href: 'jc/db/sql/Select.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Criteria' ,
+			text: 'Criteria' ,
+			href: 'jc/db/sql/Criteria.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::TablesJoin' ,
+			text: 'TablesJoin' ,
+			href: 'jc/db/sql/TablesJoin.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Delete' ,
+			text: 'Delete' ,
+			href: 'jc/db/sql/Delete.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Update' ,
+			text: 'Update' ,
+			href: 'jc/db/sql/Update.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Union' ,
+			text: 'Union' ,
+			href: 'jc/db/sql/Union.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::TableList' ,
+			text: 'TableList' ,
+			href: 'jc/db/sql/TableList.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Insert' ,
+			text: 'Insert' ,
+			href: 'jc/db/sql/Insert.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::Table' ,
+			text: 'Table' ,
+			href: 'jc/db/sql/Table.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::IStatement' ,
+			text: 'IStatement' ,
+			href: 'jc/db/sql/IStatement.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::IDataSettableStatement' ,
+			text: 'IDataSettableStatement' ,
+			href: 'jc/db/sql/IDataSettableStatement.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::sql::ITableNameFactory' ,
+			text: 'ITableNameFactory' ,
+			href: 'jc/db/sql/ITableNameFactory.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::db::recordset' ,
+	text: 'recordset' ,
+	href: 'jc/db/recordset/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::db::recordset::PDORecordSet' ,
+			text: 'PDORecordSet' ,
+			href: 'jc/db/recordset/PDORecordSet.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::recordset::IRecordSet' ,
+			text: 'IRecordSet' ,
+			href: 'jc/db/recordset/IRecordSet.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::db::DB' ,
+			text: 'DB' ,
+			href: 'jc/db/DB.html' ,
+			leaf: true
+		}
+						
+		,		
+					
+{
+	id: 'jc::db::driver' ,
+	text: 'driver' ,
+	href: 'jc/db/driver/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::db::driver::PDODriver' ,
+			text: 'PDODriver' ,
+			href: 'jc/db/driver/PDODriver.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::db::driver::IDriver' ,
+			text: 'IDriver' ,
+			href: 'jc/db/driver/IDriver.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+				{
+			id: 'jc::db::ExecuteException' ,
+			text: 'ExecuteException' ,
+			href: 'jc/db/ExecuteException.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::verifier' ,
+	text: 'verifier' ,
+	href: 'jc/verifier/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::verifier::VerifyFailed' ,
+			text: 'VerifyFailed' ,
+			href: 'jc/verifier/VerifyFailed.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::Length' ,
+			text: 'Length' ,
+			href: 'jc/verifier/Length.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::Email' ,
+			text: 'Email' ,
+			href: 'jc/verifier/Email.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::Same' ,
+			text: 'Same' ,
+			href: 'jc/verifier/Same.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::VerifierManager' ,
+			text: 'VerifierManager' ,
+			href: 'jc/verifier/VerifierManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::NotEmpty' ,
+			text: 'NotEmpty' ,
+			href: 'jc/verifier/NotEmpty.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::Number' ,
+			text: 'Number' ,
+			href: 'jc/verifier/Number.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::verifier::IVerifier' ,
+			text: 'IVerifier' ,
+			href: 'jc/verifier/IVerifier.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::session' ,
+	text: 'session' ,
+	href: 'jc/session/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::session::Session' ,
+			text: 'Session' ,
+			href: 'jc/session/Session.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::session::OriginalSession' ,
+			text: 'OriginalSession' ,
+			href: 'jc/session/OriginalSession.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::session::DBSession' ,
+			text: 'DBSession' ,
+			href: 'jc/session/DBSession.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::session::MemcachedSession' ,
+			text: 'MemcachedSession' ,
+			href: 'jc/session/MemcachedSession.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::session::ISession' ,
+			text: 'ISession' ,
+			href: 'jc/session/ISession.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::auth' ,
+	text: 'auth' ,
+	href: 'jc/auth/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::auth::Id' ,
+			text: 'Id' ,
+			href: 'jc/auth/Id.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::auth::IdManager' ,
+			text: 'IdManager' ,
+			href: 'jc/auth/IdManager.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::auth::AuthenticationException' ,
+			text: 'AuthenticationException' ,
+			href: 'jc/auth/AuthenticationException.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::auth::IIdentity' ,
+			text: 'IIdentity' ,
+			href: 'jc/auth/IIdentity.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::aop' ,
+	text: 'aop' ,
+	href: 'jc/aop/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::aop::MethodCompiler' ,
+			text: 'MethodCompiler' ,
+			href: 'jc/aop/MethodCompiler.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::aop::AOP' ,
+			text: 'AOP' ,
+			href: 'jc/aop/AOP.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::aop::JointPoint' ,
+			text: 'JointPoint' ,
+			href: 'jc/aop/JointPoint.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::aop::Pointcut' ,
+			text: 'Pointcut' ,
+			href: 'jc/aop/Pointcut.html' ,
+			leaf: true
+		}
+					]
+}
+
+						
+		,		
+					
+{
+	id: 'jc::niy' ,
+	text: 'niy' ,
+	href: 'jc/niy/index.html' ,
+
+		children: [
+				
+				
+				{
+			id: 'jc::niy::IIteratable' ,
+			text: 'IIteratable' ,
+			href: 'jc/niy/IIteratable.html' ,
+			leaf: true
+		}
+						
+		,		
+				{
+			id: 'jc::niy::INotImplementsYet' ,
+			text: 'INotImplementsYet' ,
+			href: 'jc/niy/INotImplementsYet.html' ,
+			leaf: true
+		}
+					]
+}
+
+					]
+}
+
+					]
+}
+)
+	});
+	
+	var filterFiled = new Ext.form.TextField({
+		emptyText:'Search index',
+		enableKeyEvents: true,
+		listeners:{
+			render: function(f){
+				this.filter = new QM.ux.TreeFilter(docTree,{
+					clearAction : 'expand'
+				});//初始化TreeFilter 
+			},
+			keyup: {//添加键盘点击监听
+				fn:function(t,e){
+				  t.filter.filter(t.getValue());
+				},
+				buffer: 350
+			}
+		}
+	});
+	
+	//加载搜索条
+	var tbar = docTree.getTopToolbar();
+	tbar.add(filterFiled);
+	tbar.doLayout();
+	
+	//选中当前网页内容对应的树结构
+	var rootNode = docTree.getRootNode();
+	rootNode.expandChildNodes(true);
+	rootNode.collapseChildNodes(true);
+	//!!! 未完,剩余代码在 class.template.html 和 package.template.html中
+});
+</script>
+
+<div id='docTree'></div>
+
+		<script type='text/javascript'>
+		Ext.onReady(function(){
+			var curNodeId = 'jc::cache::DBCache' ;
+			var curNode = docTree.getNodeById(curNodeId);
+			var nodePath = curNode.getPath();
+			docTree.expandPath(nodePath);
+			curNode.select();
+		});
+		</script>
+	</div>
+	
+	<div id="main-area">
+	
+		<!-- title --><div class="normalfloat">
+		<h3> 
+			<!-- 
+	 --><a class="next" href="jc/index.html">jc</a><!-- 
+ --><!-- 
+	 --><a class="next" href="jc/cache/index.html">cache</a><!-- 
+ --><!--
+			-->DBCache		</h3>
+		
+		<!-- 回溯继承关系 -->
+				
+		<!-- 实现接口 -->
+				<div id="implements-interfaces">
+			实现接口: 
+							<a href="jc/cache/ICache.html" title="jc\cache\ICache">ICache</a>;
+					</div>
+		
+		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+				
+		
+		<!-- methods list -->
+					<h5 class="ggff"><span class="title"></span>公共方法:</h5>
+			<div class="normalfloat">
+				<ul class="method-list">
+									<li class="method-list-item"><a href="jc/cache/DBCache.html#method-get">get()</a></li>
+									<li class="method-list-item"><a href="jc/cache/DBCache.html#method-set">set()</a></li>
+									<li class="method-list-item"><a href="jc/cache/DBCache.html#method-delete">delete()</a></li>
+									<li class="method-list-item"><a href="jc/cache/DBCache.html#method-isExpire">isExpire()</a></li>
+									<li class="method-list-item"><a href="jc/cache/DBCache.html#method-createTime">createTime()</a></li>
+								</ul>
+			</div>
+					
+					
+				
+		<!-- 继承到的方法 -->
+				
+		
+		<!-- 类常量 -->
+				
+		
+		
+		<!-- 类属性 -->
+		<div class="normalfloat">	
+		<div>类属性：	</div>
+		<ul class="dotted">
+				</ul>
+		</div>
+		
+		
+		<pre></pre>
+		</div>
+		
+		<div class="normalfloat methodlist">
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-get"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+		string		
+		<!-- function name -->
+		<strong>get</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sDataName			
+						
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sDataName</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					string			</div>
+	
+	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>Enter description here ...
+	</div>
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-set"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+		void		
+		<!-- function name -->
+		<strong>set</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sName			
+						
+					,			
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sData			
+						
+					,			
+						
+			<!-- 按引用传递 -->
+						
+			
+			$nCreateTimeMicroSec			
+			= -1			
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sName</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sData</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$nCreateTimeMicroSec</strong>
+				
+									= -1								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>				</div>
+				
+				<div>
+											<span class="fwbd">默认值：</span>-1										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					void			</div>
+	
+	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>Enter description here ...
+	</div>
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-delete"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+		bool		
+		<!-- function name -->
+		<strong>delete</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sDataName			
+						
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sDataName</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					bool			</div>
+	
+	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>Enter description here ...
+	</div>
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-isExpire"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+		bool		
+		<!-- function name -->
+		<strong>isExpire</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sDataName			
+						
+					,			
+						
+			<!-- 按引用传递 -->
+						
+			
+			$nCreateTimeMicroSec			
+			= -1			
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sDataName</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$nCreateTimeMicroSec</strong>
+				
+									= -1								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>				</div>
+				
+				<div>
+											<span class="fwbd">默认值：</span>-1										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					bool			</div>
+	
+	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>Enter description here ...
+	</div>
+	 	
+</div>
+
+							
+
+<div class="method-detail-item" style="">
+	<a name="method-createTime"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+				
+		<!-- 函数可见性 -->
+					<span title="公共方法(public)"> public </span>
+				
+		<!-- 静态 -->
+			
+		<!-- 最终 -->
+				
+		<!-- 按引用返回 -->
+				
+		<!-- 函数返回值 -->
+		int		
+		<!-- function name -->
+		<strong>createTime</strong>
+		
+		<!-- arg list -->
+		(
+								
+			string			
+			<!-- 按引用传递 -->
+						
+			
+			$sDataName			
+						
+				 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+		<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+				<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>$sDataName</strong>
+				
+								
+
+				
+				<div>
+					<span class="fwbd">类型：</span>string				</div>
+				
+				<div>
+										(允许NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span></pre>
+			</div>
+			
+		</li>
+				
+	</ul>
+		
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+					int			</div>
+	
+	<!-- 函数说明 -->
+		<div class="method-description">
+		<span class="fwbd">函数说明：</span>Enter description here ...
+	</div>
+	 	
+</div>
+
+					</div>
+		
+		<div class="clear"></div>
+	</div>
+
+</body>
+
+</html>

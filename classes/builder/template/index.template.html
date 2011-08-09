@@ -1,0 +1,83 @@
+<link rel="stylesheet" type="text/css" href="css/ext-all.css" />
+<script type="text/javascript" src="js/ext-base.js"></script>
+<script type="text/javascript" src="js/ext-all.js"></script>
+<script type="text/javascript" src="js/TreeFilter.js"></script>
+<script type="text/javascript" src="js/PinyinFilter.js"></script>
+
+
+<subtemplate name='renderPackageItem'>
+{
+<if "$sPackageName">
+	id: '{=str_replace('\\','::',$sPackageFullName)}' ,
+	text: '{=$sPackageName}' ,
+	href: '{=str_replace('\\','/',$sPackageFullName)}/index.html' ,
+</if>
+
+	{? $sChildNamespace = $sPackageFullName? ($sPackageFullName.'\\'): '' ; }
+	children: [
+		<foreach for=$arrChildren key='sChildName' item=child idx="nIdx">
+		
+		<if "$nIdx>0">,</if>
+		
+		<if "is_array($child)">
+			<subtemplate:call name='renderPackageItem' var.arrChildren='$child' var.sPackageName="$sChildName" var.sPackageFullName="$sChildNamespace.$sChildName" />
+		<else "$child instanceof \jc\doc\classes\builder\ClassInfo"/>
+		{
+			id: '{=str_replace('\\','::',$child->getName())}' ,
+			text: '{=$child->getShortName()}' ,
+			href: '{=str_replace('\\','/',$child->getName())}.html' ,
+			leaf: true
+		}
+		</if>
+		</foreach>
+	]
+}
+</subtemplate>
+
+<script type="text/javascript" >
+var docTree ;
+Ext.onReady(function(){
+	Ext.BLANK_IMAGE_URL = 'images/default/tree/s.gif';
+	docTree = new Ext.tree.TreePanel({
+		renderTo:'docTree',
+		rootVisible:false,
+		border:false,
+		animate :false,
+		autoScroll:false,
+		tbar:new Ext.Toolbar(),
+		root:new Ext.tree.AsyncTreeNode(<subtemplate:call name='renderPackageItem' var.arrChildren="$aBuilder->classes()" />)
+	});
+	
+	var filterFiled = new Ext.form.TextField({
+		emptyText:'Search index',
+		enableKeyEvents: true,
+		listeners:{
+			render: function(f){
+				this.filter = new QM.ux.TreeFilter(docTree,{
+					clearAction : 'expand'
+				});//初始化TreeFilter 
+			},
+			keyup: {//添加键盘点击监听
+				fn:function(t,e){
+				  t.filter.filter(t.getValue());
+				},
+				buffer: 350
+			}
+		}
+	});
+	
+	//加载搜索条
+	var tbar = docTree.getTopToolbar();
+	tbar.add(filterFiled);
+	tbar.doLayout();
+	
+	//选中当前网页内容对应的树结构
+	var rootNode = docTree.getRootNode();
+	rootNode.expandChildNodes(true);
+	rootNode.collapseChildNodes(true);
+	//!!! 未完,剩余代码在 class.template.html 和 package.template.html中
+});
+</script>
+
+<div id='docTree'></div>
+

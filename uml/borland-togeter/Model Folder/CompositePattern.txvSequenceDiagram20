@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="Vam8ynkghajd0jn-y8uuny">
+		<property name="$metaclass" value="SequenceDiagram20"/>
+		<property name="$referencedInteractionUin" value="design:node:::-yrgd8eghajd0ka-ln34hr"/>
+		<property name="$name" value="CompositePattern"/>
+		<link uin="ieje0rghajd0klvoprkh">
+			<property name="$metaclass" value="SequenceDiagram20_LinkToInteraction"/>
+			<participant referencedUin="design:view:::Vam8ynkghajd0jn-y8uuny" role="Client"></participant>
+			<participant referencedUin="design:node:::-yrgd8eghajd0ka-ln34hr" role="Supplier"></participant>
+		</link>
+		<reference referencedUin="design:node:::-yrgd8eghajd0ka-ln34hr">
+			<property name="$shortcutReference" value="true"/>
+			<property name="bounds" value="5,5,991,551"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="design:node:::-y8nsowghajdpzlvu72mp:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="405,5,60,331"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="design:node:::-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="65,5,72,331"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="design:node:::c87hzvghajeanpsgxmso:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+					<property name="bounds" value="26,17,20,24"/>
+					<property name="location_set_by_user" value="true"/>
+					<reference referencedUin="design:node:::l2gqtvghajewdc-jz3bx0:c87hzvghajeanpsgxmso:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+						<property name="background_color" value="240,240,240"/>
+						<property name="bounds" value="0,26,30,49"/>
+						<reference referencedUin="sd20_message_container:design:node:::l2gqtvghajewdc-jz3bx0:c87hzvghajeanpsgxmso:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+							<reference referencedUin="sd20_message|1|call|104(design:node:::l2gqtvghajewdc-jz3bx0:c87hzvghajeanpsgxmso:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr)">
+								<property name="sourceAnchor" value="119,129"/>
+								<property name="targetAnchor" value="119,129"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::c87hzvghajewdd989gid:l2gqtvghajewdc-jz3bx0:c87hzvghajeanpsgxmso:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+							<property name="bounds" value="10,11,20,24"/>
+						</reference>
+					</reference>
+				</reference>
+				<reference referencedUin="design:node:::c87hzvghajfknv-t55lwr:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+					<property name="bounds" value="26,130,20,115"/>
+					<property name="location_set_by_user" value="true"/>
+					<property name="bounds_setted_by_user" value="true"/>
+					<reference referencedUin="design:node:::l2gqtvghajg9za-cqgkpp:c87hzvghajfknv-t55lwr:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+						<property name="background_color" value="240,240,240"/>
+						<property name="bounds" value="0,27,30,49"/>
+						<reference referencedUin="sd20_message_container:design:node:::l2gqtvghajg9za-cqgkpp:c87hzvghajfknv-t55lwr:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+							<reference referencedUin="sd20_message|1|call|105(design:node:::l2gqtvghajg9za-cqgkpp:c87hzvghajfknv-t55lwr:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr)">
+								<property name="sourceAnchor" value="118,256"/>
+								<property name="targetAnchor" value="118,256"/>
+								<property name="location_set_by_user" value="true"/>
+							</reference>
+						</reference>
+						<reference referencedUin="design:node:::c87hzvghajg9zc-6mg6g4:l2gqtvghajg9za-cqgkpp:c87hzvghajfknv-t55lwr:-y8nsowghajdinz-5706ww:-yrgd8eghajd0ka-ln34hr">
+							<property name="bounds" value="10,11,20,24"/>
+						</reference>
+					</reference>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::l2gqtvghajeansy5sw2m:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="23,74,16,16"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="sd20_message_container:design:node:::l2gqtvghajeansy5sw2m:-yrgd8eghajd0ka-ln34hr">
+					<property name="bounds" value="-158,-108,0,0"/>
+					<reference referencedUin="sd20_message|1|call|59(design:node:::l2gqtvghajeansy5sw2m:-yrgd8eghajd0ka-ln34hr)">
+						<property name="sourceAnchor" value="46,116"/>
+						<property name="targetAnchor" value="106,116"/>
+					</reference>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::ttifwdghajde4lfsk85f:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="-15,-34,60,25"/>
+				<reference referencedUin="design:node:::ul14qaghajde4m-iqocaf:ttifwdghajde4lfsk85f:-yrgd8eghajd0ka-ln34hr">
+					<property name="bounds" value="0,0,32,17"/>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::-y8nsowghajdxqu3287nf:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="625,5,88,331"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="design:node:::ttifwdghajde4r-6kf7db:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="-15,-34,60,25"/>
+				<reference referencedUin="design:node:::ul14qaghajde4r-kr2tdm:ttifwdghajde4r-6kf7db:-yrgd8eghajd0ka-ln34hr">
+					<property name="bounds" value="0,0,32,17"/>
+				</reference>
+			</reference>
+			<reference referencedUin="design:node:::l2gqtvghajfknx-8j5m28:-yrgd8eghajd0ka-ln34hr">
+				<property name="bounds" value="23,187,16,16"/>
+				<reference referencedUin="sd20_message_container:design:node:::l2gqtvghajfknx-8j5m28:-yrgd8eghajd0ka-ln34hr">
+					<reference referencedUin="sd20_message|1|call|60(design:node:::l2gqtvghajfknx-8j5m28:-yrgd8eghajd0ka-ln34hr)">
+						<property name="sourceAnchor" value="46,229"/>
+						<property name="targetAnchor" value="106,229"/>
+					</reference>
+				</reference>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

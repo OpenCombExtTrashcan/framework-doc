@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" > 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+	<meta name="author" content="jc\doc\builder" /> 
+	<meta name="keywords" content="" /> 
+	<meta name="description" content="" /> 
+	<base href="{=$sBaseUri}" />
+	<title> class: {=$aClass->getName()}  -- JeCat PHP Framework Classes  </title> 
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+</head> 
+
+<body>
+
+	<div id="classes_index">
+		<include file='index.template.html' vars='true' />
+		<script type='text/javascript'>
+		Ext.onReady(function(){
+			var curNodeId = '{=str_replace('\\','::',$aClass->getName())}' ;
+			var curNode = docTree.getNodeById(curNodeId);
+			var nodePath = curNode.getPath();
+			docTree.expandPath(nodePath);
+			curNode.select();
+		});
+		</script>
+	</div>
+	
+	<div id="main-area">
+	
+		<!-- title --><div class="normalfloat">
+		<h3> 
+			<include file='namespacePath.template.html'
+					vars='false'
+					var.sPath="$aClass->getNamespaceName()"
+					var.aBuilder="$aBuilder" /><!--
+			-->{=$aClass->getShortName()}
+		</h3>
+		
+		<!-- 回溯继承关系 -->
+		<if "$aParentClass=$aClass->getParentClass()">
+		<div id="extend-trace-div">
+			继承路径：
+			<ul id="extend-trace-ul" class="dotted">
+			<dowhile "$aParentClass=$aParentClass->getParentClass()">
+				<li>
+					<a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a>
+				</li>
+			</dowhile>
+			</ul>
+		</div>
+		</if>
+		
+		<!-- 实现接口 -->
+		<if "$arrInterfaceRefs=$aClass->getInterfaces()">
+		<div id="implements-interfaces">
+			实现接口: 
+			<foreach for=$arrInterfaceRefs item='aInterfaceRef'>
+				<a href="{=str_replace('\\','/',$aInterfaceRef->getName())}.html" title="{=$aInterfaceRef->getName()}">{=$aInterfaceRef->getShortName()}</a>;
+			</foreach>
+		</div>
+		</if>
+
+		<!-- 派生子类，或实现类（当前类为一个接口时） -->
+		<if "$aClass->subClassCount()">
+		<div id="derivative-subclasses">
+			<if "$aClass->isInterface()">
+			实现此接口的类：
+			<else />
+			派生子类:
+			</if>
+			
+			<foreach for="$aClass->subClassIterator()" item='aSubClass'>
+				<a href="{=str_replace('\\','/',$aSubClass->getName())}.html" title="{=$aSubClass->getName()}">{=$aSubClass->getShortName()}</a>;
+			</foreach>
+		</div>
+		</if>
+		
+		
+		<!-- methods list -->
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PUBLIC,$aClass)">
+			<h5 class="ggff"><span class="title"></span>公共方法:</h5>
+			<div class="normalfloat">
+				<ul class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ul>
+			</div>
+		</if>
+			
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PROTECTED,$aClass)">
+			<h5 class="ggff"><span class="title"></span>受保护方法:</h5>
+			<div class="normalfloat">
+				<ul class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ul>
+			</div>
+		</if>
+			
+		<if "$arrRefMethods=$aClass->getMethods(\ReflectionMethod::IS_PRIVATE,$aClass)">
+			<h5 class="ggff"><span class="title"></span>私有方法:</h5>
+			<div class="normalfloat">
+				<ul class="method-list">
+				<foreach for="$arrRefMethods" item='aMethodRef'>
+					<li class="method-list-item"><a href="{=$sThisUri}#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a></li>
+				<foreach:else />
+					无
+				</foreach>
+				</ul>
+			</div>
+		</if>
+		
+		<!-- 继承到的方法 -->
+		<if "$aParentClass=$aClass->getParentClass()">
+		<div>
+			
+			<dowhile "$aParentClass=$aParentClass->getParentClass()">
+				<h5 class="ggff"><span class="title"></span>从 <a href="{=str_replace('\\','/',$aParentClass->getName())}.html" title="{=$aParentClass->getName()}">{=$aParentClass->getName()}</a> 继承的方法：</h5>
+				<div class="normalfloat">
+					<ul class="method-list">
+	
+						<foreach for="$aParentClass->getMethods(null,$aParentClass)" item='aMethodRef'>
+							<li style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}" >
+							
+								<!-- 函数可见性 -->
+								<if "$aMethodRef->isPublic()">
+									<span title="公共方法(public)"> + </span>
+								<else "$aMethodRef->isProtected()"/>
+									<span title="保护方法(protected)"> # </span>
+								<else "$aMethodRef->isPrivate()"/>
+									<span title="私有方法(private)"> - </span>
+								</if>
+								
+							
+								<!-- 最终 -->
+								<if "$aMethodRef->isFinal()">
+									final
+								</if>
+								
+								<!-- 静态 -->
+								<if "$aMethodRef->isStatic()">
+									static
+								</if>
+								
+								<a href="{=str_replace('\\','/',$aParentClass->getName())}.html#method-{=$aMethodRef->getName()}">{=$aMethodRef->getName()}()</a>
+							</li>
+						</foreach>
+						
+					</ul>
+				</div>
+			</dowhile>
+			
+		</div>
+		</if>
+		
+		
+		<!-- 类常量 -->
+		<if "$arrConst=$aClass->getConstants()">
+			<div class="normalfloat"><div>类常量：</div>
+			<ul>
+			<foreach for="$arrConst" item="sConstName">
+				<li>
+					const {=$sConstName}
+				</li>
+			</foreach>
+			</ul>
+			</div>
+		</if>
+		
+		
+		
+		<!-- 类属性 -->
+		<div class="normalfloat">	
+		<div>类属性：	</div>
+		<ul class="dotted">
+		<foreach for="$aClass->getProperties()" item="aRefProp">
+			<li>
+						
+				<!-- 函数可见性 -->
+				<if "$aRefProp->isPublic()">
+					<span title="公共方法(public)"> public </span>
+				<else "$aRefProp->isProtected()"/>
+					<span title="保护方法(protected)"> protected </span>
+				<else "$aRefProp->isPrivate()"/>
+					<span title="私有方法(private)"> private </span>
+				</if>
+				
+				<!-- 静态方法 -->
+				<if "$aRefProp->isStatic()">
+					static
+				</if>
+				
+				<!-- 类型 -->
+				{=$aClass->getPropertyType($aRefProp->getName())}
+				
+				<!-- 属性名称 -->
+				${=$aRefProp->getName()}
+				
+				<!-- 默认值 -->
+				<if "$aRefProp->isDefault()">
+				</if>
+			</li>
+		</foreach>
+		</ul>
+		</div>
+		
+		
+		<pre>{=$aClass->getCommentDescription()}</pre>
+		</div>
+		
+		<div class="normalfloat methodlist">
+			<foreach for="$aClass->getMethods(null,$aClass)" item='aMethodRef'>
+				<include file="methodPrototype.template.html" vars=false var.aMethodRef=$aMethodRef />
+			</foreach>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+
+
+<div class="method-detail-item" style="{#? if($aMethodRef->isAbstract()){ #}font-style:oblique;{#?}#}">
+	<a name="method-{=$aMethodRef->getName()}"></a>	
+	<!-- 函数原型 -->
+	<div class="method-prototype">
+	
+		<if "$aMethodRef->isAbstract()">
+			abstract
+		</if>
+		
+		<!-- 函数可见性 -->
+		<if "$aMethodRef->isPublic()">
+			<span title="公共方法(public)"> public </span>
+		<else "$aMethodRef->isProtected()"/>
+			<span title="保护方法(protected)"> protected </span>
+		<else "$aMethodRef->isPrivate()"/>
+			<span title="私有方法(private)"> private </span>
+		</if>
+		
+		<!-- 静态 -->
+		<if "$aMethodRef->isStatic()">
+			static
+		</if>
+	
+		<!-- 最终 -->
+		<if "$aMethodRef->isFinal()">
+			final
+		</if>
+		
+		<!-- 按引用返回 -->
+		<if "$aMethodRef->returnsReference()">
+			<span title="按引用返回"> & </span>
+		</if>
+		
+		<!-- 函数返回值 -->
+		{= $sReturnType=$aMethodRef->getReturnType() }
+		
+		<!-- function name -->
+		<strong>{=$aMethodRef->getName()}</strong>
+		
+		<!-- arg list -->
+		(
+		<foreach for='$arrParamsList=$aMethodRef->getParameters()' idx='nParamIdx' item='aRefMetdParam' >
+			<if "$nParamIdx>0">,</if>
+			
+			{=$aRefMetdParam->type(false)}
+			
+			<!-- 按引用传递 -->
+			<if "$aRefMetdParam->isPassedByReference()">
+				<span title="按引用传递"> & </span>
+			</if>
+			
+			
+			${=$aRefMetdParam->getName()}
+			
+			{=$aRefMetdParam->getDefaultValue(true)}
+			
+		</foreach>
+		 )
+		 
+ 	</div>
+ 	
+ 	
+	<!-- 参数说明 -->
+	<if "count($arrParamsList)">
+	<span class="cssm">参数说明：</span>
+	<ul class="method-parameter-description-list">
+	
+		<foreach for='$arrParamsList' item='aRefMetdParam' >
+		<li class="method-parameter-description-item">
+			
+			<div class="parameter-prototype">
+							
+				<strong>${=$aRefMetdParam->getName()}</strong>
+				
+				<if "$sDefaultValue=$aRefMetdParam->getDefaultValue(false)">
+					= {= $sDefaultValue }
+				</if>
+				
+
+				
+				<div>
+					<span class="fwbd">类型：</span>{=$aRefMetdParam->type(true)}
+				</div>
+				
+				<div>
+					<if "$sDefaultValue">
+						<span class="fwbd">默认值：</span>{=$sDefaultValue}
+					</if>
+					({= $aRefMetdParam->allowsNull()?"允许":"不允许" }NULL)
+				</div>
+			
+			</div>
+			
+			<div class="parameter-description">
+				<pre><span class="fwbd">说明：</span>{= $aRefMetdParam->getCommentDescription() }</pre>
+			</div>
+			
+		</li>
+		</foreach>
+		
+	</ul>
+	</if>
+	
+	<!-- 返回值类型 -->
+	<div class="method-return-type">
+		<span class="fwbd">返回值类型：</span>
+		<if "$sReturnType">
+			{=$sReturnType}
+		<else />
+			mixed
+		</if>
+	</div>
+	
+	<!-- 函数说明 -->
+	<if "$sDescription=$aMethodRef->getCommentDescription()">
+	<div class="method-description">
+		<span class="fwbd">函数说明：</span>{= $sDescription }
+	</div>
+	</if>
+ 	
+</div>
+

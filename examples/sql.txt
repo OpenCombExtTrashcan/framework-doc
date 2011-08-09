@@ -1,0 +1,143 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.10deb1
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2011 年 06 月 17 日 15:26
+-- 服务器版本: 5.1.54
+-- PHP 版本: 5.3.5-1ubuntu7.2
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `jc-example`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `epub`
+--
+
+CREATE TABLE IF NOT EXISTS `epub` (
+  `eid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `epub_name` varchar(100) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `epub_content` text NOT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`eid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `epub`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `epubauthor`
+--
+
+CREATE TABLE IF NOT EXISTS `epubauthor` (
+  `aid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `eid` int(11) NOT NULL,
+  `author_memo` text,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`aid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `epubauthor`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `epubcategories`
+--
+
+CREATE TABLE IF NOT EXISTS `epubcategories` (
+  `cid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) DEFAULT NULL,
+  `category_parent` int(11) DEFAULT NULL,
+  `cate_is_parent` int(1) DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `epubcategories`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `userfriends`
+--
+
+CREATE TABLE IF NOT EXISTS `userfriends` (
+  `ufid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  `fuid` int(11) DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`ufid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `userfriends`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `userinfos`
+--
+
+CREATE TABLE IF NOT EXISTS `userinfos` (
+  `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(100) DEFAULT NULL,
+  `user_name` varchar(20) DEFAULT NULL,
+  `user_sex` int(1) DEFAULT NULL,
+  `user_birthday` date DEFAULT NULL,
+  `user_city` varchar(50) DEFAULT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `userinfos`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_loginId` varchar(50) NOT NULL,
+  `user_passwd` varchar(16) NOT NULL,
+  `user_group_id` int(4) NOT NULL,
+  `user_last_login_time` int(10) DEFAULT NULL,
+  `user_register_time` int(10) NOT NULL,
+  `update_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 转存表中的数据 `users`
+--
+
