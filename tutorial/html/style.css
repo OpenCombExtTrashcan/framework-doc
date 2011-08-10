@@ -1,0 +1,23 @@
+body {
+	font-size: 14px ;
+	line-height: 18px ;
+	background-color: #E9F1F4;
+}
+
+p {
+	display: block;
+	margin: 15px 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	margin-left: 0px;
+}
+
+.wrapper {
+	background-color: #fff ;
+}
+
+.index {
+	-webkit-gradient(linear, 0% 0, 0% 100%, from(#FFFFF6), to(#FFFDE3));
+	background-color: #FFFDE3; 
+}

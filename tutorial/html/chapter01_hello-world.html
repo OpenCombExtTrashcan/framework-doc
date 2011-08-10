@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="index">
+<ol>
+<li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
+<li><a href="chapter02_file-operation.html"> 文件操作</a></li>
+<li><a href="chapter02_use-ui-engine.html"> 使用HTML模板</a></li>
+<li> MVC模式：使用模型（model）</li>
+<li> MVC模式：使用视图（view）</li>
+<li> MVC模式：控件 和 数据交换</li>
+<li> MVC模式：使用控制器（controller）</li>
+<li> MVC模式：控制器和视图的组合/重用</li>
+<li> 数据校验</li>
+<li> 消息队列</li>
+</ol> 
+</div>
+
+<div class="bodyText">
+﻿<p>
+	准备： 
+	<ul>
+		<li>JeCat 托管在 github.com 上，所以你需要在你的电脑上安装 git 来取得 jecat php framework 的源代码。</li>
+		<li>安装 PHP >= 5.3 (PHP从5.3开始支持命名空间和闭包，而 JeCat 使用了PHP的命名空间和闭包，所以要求PHP版本不低于5.3)</li>
+	</ul>
+</p>
+
+<p>
+	step 1. 首先在你的电脑上找个地方，新建一个目录"MyProject" 作为项目的根目录；然后在 MyProject 目录内新建文件 index.php 和目录 framework 。
+</p>
+
+<p>
+	目录结构如下： <br />
+	MyProject/<br />
+	　　framework/<br />
+	　　index.php
+</p>
+
+<p>
+step 2. 从 github.com 取得 jecat php framework 的代码放入 MyProject/framework 目录内。
+</p>
+
+<p>在Ubuntu 以及他linux操作系统或 MacOS下，可以进入到 MyProject 目录然后执行命令：</p>
+<div>git clone git://github.com/JeCat/jecat-php-framework-framework.git framework  </div>
+<p>在windows下可以使用 TorterseGit 工具下载 JeCat 框架的代码。</p>
+
+
+step 3. 打开 MyProject/index.php ，输入以下代码然后保存：
+<code lang="php"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">jc</span><span style="color: #007700">\</span><span style="color: #0000BB">system</span><span style="color: #007700">\</span><span style="color: #0000BB">ApplicationFactory&nbsp;</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;加载&nbsp;jecat&nbsp;php&nbsp;framework<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #0000BB">__DIR__</span><span style="color: #007700">.</span><span style="color: #DD0000">'/framework/inc.entrance.php'&nbsp;</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;用&nbsp;Application工厂类的单件实例创建一个&nbsp;Application&nbsp;对象<br /></span><span style="color: #0000BB">$aApp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ApplicationFactory</span><span style="color: #007700">::</span><span style="color: #0000BB">singleton</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">create</span><span style="color: #007700">(</span><span style="color: #0000BB">__DIR__</span><span style="color: #007700">)&nbsp;;&nbsp;<br /><br /></span><span style="color: #FF8000">//&nbsp;向&nbsp;Application&nbsp;对象的输出流输出"hello&nbsp;world"&nbsp;<br /></span><span style="color: #0000BB">$aApp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">response</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">output</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello&nbsp;world~'</span><span style="color: #007700">)&nbsp;;&nbsp;&nbsp;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></code></div>
+
+</div>
+</body>
+</html>
