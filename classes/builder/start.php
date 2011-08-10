@@ -2,14 +2,14 @@
 namespace jc\doc\classes\builder ;
 
 use jc\fs\FileSystem;
-use jc\system\AppFactory;
+use jc\system\ApplicationFactory;
 use jc\fs\imp\LocalFileSystem;
 use jc\system\Application;
 use jc\ui\xhtml\UIFactory;
 use jc\fs\FSO ;
 
 include_once __DIR__.'/../../../framework/inc.entrance.php' ;
-$aApp = AppFactory::createFactory()->create(__DIR__) ;
+$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 
 $aApp->classLoader()->addPackage(__NAMESPACE__,null,'/') ;
