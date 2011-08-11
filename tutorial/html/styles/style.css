@@ -21,3 +21,16 @@ p {
 	-webkit-gradient(linear, 0% 0, 0% 100%, from(#FFFFF6), to(#FFFDE3));
 	background-color: #FFFDE3; 
 }
+
+/**
+ * 代码标签<code>的样式
+ */
+
+blockquote{
+	display:block;
+	width:80%;
+	height:auto;
+	padding: 0 20px;
+	border:1px #aaa solid;
+	background:#EEE;
+}

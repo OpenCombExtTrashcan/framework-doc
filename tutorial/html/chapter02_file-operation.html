@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
 
 <body>
@@ -29,5 +29,18 @@
 2sssssss</div>
 
 </div>
+<script src='scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script type="text/javascript">
+$(function(){
+	$.beautyOfCode.init({
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php'],
+		baseUrl: 'http://'+location.hostname+'/doc/tutorial/html/',
+		ready: function() {
+			$.beautyOfCode.beautifyAll();
+		}
+	});
+});
+</script>
 </body>
 </html>
