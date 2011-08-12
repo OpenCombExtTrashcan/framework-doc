@@ -15,7 +15,7 @@
 				<li>建立Register.php文件</li>
 				<li>新建template文件夹</li>
 				<li>进入template文件夹</li>
-				<li>新建register.html文件</li>
+				<li>新建Register.html文件</li>
 			</ul>
 		<p>都建立好后工程文件夹的结构看起来就像这样:</p>
 		<pre class='code'>
@@ -24,7 +24,7 @@
 					framework/
 					user/
 						templates/
-							register.html
+							Register.html
 						inc.common.php
 						Register.php
 			</code>
@@ -80,7 +80,7 @@ $aApp = require_once dirname ( __DIR__ ) . '/user/inc.common.php';
 
 class RegisterController extends Controller {
 	protected function init() {
-		$this->createFormView ( "register" );
+		$this->createFormView ( "Register" );
 		
 	}
 	
@@ -97,7 +97,7 @@ $aController->mainRun ( );
 			</pre>
 		</li>
 		<li>
-			进入template文件夹,打开register.html文件,添加如下代码:
+			进入template文件夹,打开Register.html文件,添加如下代码:
 			<pre class='code'>
 				<code class='html'>
 &lt;msgqueue for="$theView" />
