@@ -1,12 +1,11 @@
 ﻿<div id="wikipage">
-<blockquote class="citation">
-<p>准备： <br />
-* JeCat 托管在 github.com 上，所以你需要在你的电脑上安装 git 来取得 jecat php framework 的源代码。
-<br />
-* 安装 PHP &gt;= 5.3 (PHP从5.3开始支持命名空间和闭包，而 JeCat
-使用了PHP的命名空间和闭包，所以要求PHP版本不低于5.3)</p>
+<h1>"hello world"（创建JeCat项目）</h1>
+<blockquote>
+	准备:<br />
+	* JeCat 托管在 github.com 上，所以你需要在你的电脑上安装 git 来取得 jecat php framework 的源代码。<br />
+	* 安装 PHP >= 5.3 (PHP从5.3开始支持命名空间和闭包，而 JeCat 使用了PHP的命名空间和闭包，所以要求PHP版本不低于5.3)<br />
 </blockquote>
-<p><br />
+<p>
 <br />
 <strong>step 1.</strong> 首先在你的电脑上找个地方，新建一个目录"MyProject" 作为项目的根目录；然后在
 MyProject 目录内新建文件 index.php 和目录 framework 。</p>
@@ -17,9 +16,9 @@ MyProject/
 	framework/
 	index.php
 </code>
-</pre>
-<strong>step 2.</strong> 从 github.com 取得 jecat php framework
-的代码放入 MyProject/framework 目录内。</p>
+</pre> <strong>step 2.</strong> 从 github.com 取得 jecat php framework 的代码放入
+MyProject/framework 目录内。
+</p>
 <p>在Ubuntu 以及他linux操作系统或 MacOS下，可以进入到 MyProject 目录然后执行命令：</p>
 <pre class="wiki">git clone git://github.com/JeCat/jecat-php-framework-framework.git framework
 </pre>
@@ -64,13 +63,11 @@ hello world~
 <ol>
 	<li>我们首先在在 index.php 中加载了 MyProject/framework/inc.entrance.php
 	文件，这是 JeCat PHP Framework 的入口，当 inc.entrance.php 文件执行返回后，JeCat
-	框架完成了初始化。 
-	<pre class='code'>
+	框架完成了初始化。 <pre class='code'>
 	<code class='php'>
 	include __DIR__.'/framework/inc.entrance.php';
 	</code>
-	</pre>
-	</li>
+	</pre></li>
 	<li>通过 ApplicationFactory::singleton() 返回了 ApplicationFactory
 	类的单件实例， ApplicationFactory 是 Application类的工厂类。然后 通过
 	ApplicationFactory::create() 方法创建了一个 Application 对象 。</li>
@@ -80,7 +77,7 @@ hello world~
 	对象，可以通过它响应浏览器的请求，或向命令行终端输出数据。<br />
 	Response:: output() 方法负责输出一些内容，当系统在命令行模式下执行时，它将内容输出到进程的标准输出管道；当系统在http
 	server中运行，负责响应来自浏览器的一次请求时，该方法将内容输出给远程浏览器。 <br />
-	在日后的教程中，你会发现用一个流对象来代替echo运算符，会有非常强大的好处 ^_^ </li>
+	在日后的教程中，你会发现用一个流对象来代替echo运算符，会有非常强大的好处 ^_^</li>
 </ol>
 <pre class="wiki">tip:单件模式
 几乎所有的JeCat框架中的类，都继承自 jc\lang\Object。所有的jc\lang\Object派生类，都可以通过各自的 singleton() 方法取得一个单件实例：任何时候该方法都返回同一个对象。

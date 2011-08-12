@@ -19,7 +19,12 @@ UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/template/') ;
 
 $arrChapters = array(
 	'chapter01_hello-world.html' ,
+	'chapter04.html',
+	'chapter04part00_pre.html',
 	'chapter02_file-operation.html' ,
+	'chapter04part01_use-Text.html',
+	'chapter04part02_process.html',
+	'chapter04part03_use-Group.html',
 ) ;
 
 $aUI = UIFactory::singleton()->create() ;

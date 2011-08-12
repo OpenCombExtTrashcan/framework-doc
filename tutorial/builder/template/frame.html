@@ -17,7 +17,19 @@
 <li><a href="chapter02_use-ui-engine.html"> 使用HTML模板</a></li>
 <li> MVC模式：使用模型（model）</li>
 <li> MVC模式：使用视图（view）</li>
-<li> MVC模式：控件 和 数据交换</li>
+<li><a href='chapter04.html'>MVC模式：控件类</a> 
+	<ul>
+		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
+		<li><a href='chapter04part02_process.html'>获取表单提交数据</a></li>
+		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
+		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
+		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
+		<li><a href='chapter04part06_use-RadioGroup.html'>使用RadioGroup类</a></li>
+		<li><a href='chapter04part07_use-File.html'>使用File类</a></li>
+	</ul>
+</li>
+<li> MVC模式：数据交换</li>
 <li> MVC模式：使用控制器（controller）</li>
 <li> MVC模式：控制器和视图的组合/重用</li>
 <li> 数据校验</li>
