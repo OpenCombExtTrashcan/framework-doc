@@ -25,6 +25,7 @@ $arrChapters = array(
 	'chapter04part01_use-Text.html',
 	'chapter04part02_process.html',
 	'chapter04part03_use-Group.html',
+	'chapter04part04_use-CheckBtn.html',
 ) ;
 
 $aUI = UIFactory::singleton()->create() ;
