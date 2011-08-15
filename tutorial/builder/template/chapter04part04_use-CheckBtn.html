@@ -3,7 +3,7 @@
 	<blockquote>
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_c04p04.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p03.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
 	</blockquote>
 	
 	<h3 id='s1'>step 1.</h3>
@@ -30,7 +30,7 @@ $this->viewRegister->addWidget ( $ademail );</code>
 		<ul class='todo'>
 			<li>添加控件的标签,然后模板看起来应该是这样:
 				<pre class='code'>
-					<code class='php'>
+					<code class='html'>
 &lt;msgqueue for="$theView" />
 &lt;form id="theform" method='post'>
 	&lt;label for="username">用户名:&lt;/label>&lt;widget id='username'/>
@@ -57,13 +57,13 @@ public function process() {
 	if ($this->viewRegister->isSubmit ( $this->aParams )) {
 		$this->viewRegister->loadWidgets ( $this->aParams );
 		$this->response()->output($this->aParams->get('username')) ;
-		$this->response()->output(var_export($this->aParams->get('passwordGroup'), TRUE)) ;
+		$this->response()->output(var_export($this->viewRegister->widget ( 'passwordGroup')->value(),true )) ;
 		$this->response()->output($this->aParams->get('email')) ;
 		$this->response()->output($this->aParams->get('ademail')) ;
 	}
 }</code>
 			</pre>
-			<p>因为</p>
+			<p>如果checkbox被选中,那么ademail的值会通过表单传过来并且通过上面的第7行打印出来,如果没有选中,那么ademail控件的值就是null</p>
 			</li>
 		</ul>
 	</div>
@@ -73,7 +73,7 @@ public function process() {
 		<p class='purpose'>现在来检验你的代码</p>
 		<ul class='todo'>
 			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/user/Register.php 然后回车来访问你的页面</li>
-			<li>在username文本框和2个password文本框中随意输入一些文字,注意password类型是不是隐藏了密码,点击"提交表单"的按钮,看看输出的值是否和你输入的一样.</li>
+			<li>在username等控件中填入一些内容,点击"提交表单"的按钮,看看输出的值是否和你输入的一样.反复实验CheckBtn控件选中和为选中的情况下提交是什么样的效果</li>
 		</ul>
 	</div>
 </div>

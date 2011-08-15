@@ -25,8 +25,8 @@
 		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
 		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
 		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
-		<li><a href='chapter04part06_use-RadioGroup.html'>使用RadioGroup类</a></li>
-		<li><a href='chapter04part07_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part07_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li> MVC模式：数据交换</li>

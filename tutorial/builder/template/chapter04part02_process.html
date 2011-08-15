@@ -3,7 +3,7 @@
 	<blockquote>
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_c04p02.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p01.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
 	</blockquote>
 	
 	<h3 id='s1'>step 1.</h3>
