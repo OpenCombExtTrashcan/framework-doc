@@ -33,7 +33,6 @@
 		<li><a href='chapter05part01_method1.html'>直接了当的方式</a></li>
 		<li><a href='chapter05part02_method2.html'>聪明的方式</a></li>
 		<li><a href='chapter05part03_method3.html'>完整的定义orm</a></li>
-		<li><a href='chapter05part04_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li> MVC模式：数据交换</li>
@@ -137,10 +136,10 @@ $aBook = Model::fromFragment('book',array('authors','press')) ;
 // 使用 category原型，及其 books关联，并且递归使用book中的 authors 和 press 关联
 $aBook = Model::fromFragment('category',array( 'books' => array('authors','press') ) ) ;</code>
 </pre>
-		<p>向 PrototypeAssociationMap 类的单件实例中一次性添加整个系统所需要的数据表原型定义，然后就可以通过上面演示的方式，从中取出片段，并根据这些关系片段来创建Model对象。</p>
+		<p>向PrototypeAssociationMap 类的单件实例中一次性添加整个系统所需要的数据表原型定义，然后就可以通过上面演示的方式，从中取出片段，并根据这些关系片段来创建Model对象。</p>
 	</div>
 	<blockquote>
-		PrototypeAssociationMap 对象 add orm配置时，关联的 'prototype' 元素不再需要提供另一个数据表原型的完整定义，只要提供数据表原型的名称即可。
+		向PrototypeAssociationMap 对象 add orm配置时，关联的 'prototype' 元素不再需要提供另一个数据表原型的完整定义，只要提供数据表原型的名称即可。
 	</blockquote>
 	
 </div></div>

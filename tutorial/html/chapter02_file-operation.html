@@ -33,7 +33,6 @@
 		<li><a href='chapter05part01_method1.html'>直接了当的方式</a></li>
 		<li><a href='chapter05part02_method2.html'>聪明的方式</a></li>
 		<li><a href='chapter05part03_method3.html'>完整的定义orm</a></li>
-		<li><a href='chapter05part04_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li> MVC模式：数据交换</li>
