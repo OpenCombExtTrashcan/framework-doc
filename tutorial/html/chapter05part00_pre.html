@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="index">
+<ol>
+<li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
+<li><a href="chapter02_file-operation.html">文件操作</a></li>
+<li><a href="chapter03_use-ui-engine.html">HTML模板</a></li>
+<li><a href='chapter04.html'>MVC模式：控件类</a> 
+	<ul>
+		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
+		<li><a href='chapter04part02_process.html'>获取表单提交数据</a></li>
+		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
+		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
+		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
+		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part07_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter05.html'>MVC模式：模型（model）</a>
+	<ul>
+		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter05part01_method1.html'>直接了当的方式</a></li>
+		<li><a href='chapter05part02_method2.html'>聪明的方式</a></li>
+		<li><a href='chapter05part03_method3.html'>完整的定义orm</a></li>
+		<li><a href='chapter05part04_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li> MVC模式：数据交换</li>
+<li> MVC模式：使用控制器（controller）</li>
+<li> MVC模式：控制器和视图的组合/重用</li>
+<li> 数据校验</li>
+<li> 消息队列</li>
+</ol> 
+</div>
+
+<div class="bodyText">
+<div>
+	<h1>准备工作</h1>
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<p class='purpose'>在mySQL中创建一个数据库 jc-example ，然后往 jc-example库 导入下列SQL。</p>
+		<pre class='code'>
+			<code class='sql'>
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- 数据库: `jc-example`
+--
+-- --------------------------------------------------------
+--
+-- 表的结构 `authors`
+--
+
+CREATE TABLE IF NOT EXISTS `authors` (
+  `uid` int(10) NOT NULL,
+  `bid` int(8) NOT NULL,
+  UNIQUE KEY `uid` (`uid`,`bid`),
+  UNIQUE KEY `bid` (`bid`,`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+--
+-- 表的结构 `books`
+--
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `bid` int(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) NOT NULL,
+  `category` int(6) NOT NULL,
+  `price` float NOT NULL,
+  `isbn` varchar(40) NOT NULL,
+  PRIMARY KEY (`bid`),
+  KEY `category` (`category`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+--
+-- 表的结构 `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `cid` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `presses`
+--
+CREATE TABLE IF NOT EXISTS `presses` (
+  `pid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(90) NOT NULL,
+  `home` varchar(120) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+--
+-- 表的结构 `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `passwd` varchar(16) NOT NULL,
+  `group` int(4) NOT NULL,
+  `lastLoginTime` int(10) DEFAULT NULL,
+  `createTime` int(10) DEFAULT NULL,
+  `updateTime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`uid`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;</code>
+				</pre>
+				<p>现在你的 jc-example 数据库里一共有5个数据表：
+books 存放图书数据
+users 存放用户数据
+authors 这是一个中间表，连接 books 表和 users表：一个作者可能有多本著作，一本书也可以有多个作者。
+categories 图书的分类表
+friendships 用户和用户之间的好友关系表</p>
+	</div>
+	
+	<h3 id='s2'>step 2.</h3>
+	<div class='step'>
+		<p class='purpose'>在 MyProject/inc.common.php 文件中加入代码：</p>
+		<pre class='code'>
+				<code class='php'>
+use jc\db\DB;
+use jc\db\driver\PDODriver;
+
+// 连接到数据库
+DB::singleton()->setDriver( new PDODriver("mysql:host=&lt;your database server>;dbname=&lt;your database name>",'&lt;your db user>','&lt;you db password>',array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")) ) ;
+</code>
+</pre>
+		<p>记得代码中的 &lt;you database ...> 改成你真实运行环境中的配置 :)</p>
+	</div>
+	
+	<h3 id='s3'>step 3.</h3>
+	<div class='step'>
+		<p class='purpose'>新建文件 MyProject/model_example.php ,在文件中输入代码：</p>
+			<pre class='code'>
+					<code class='php'>
+&lt;?php
+use jc\mvc\model\db\Model ;
+
+require 'inc.common.php' ;
+?></code>
+</pre>
+	</div>
+	<p>
+	完成这3个步骤以后，准备工作就已经结束了。接下来的教程中我会用 JeCat 的模型来完成以下的数据库操作
+	</p>
+	
+</div></div>
+
+</div>
+<script src='scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script type="text/javascript">
+$(function(){
+	$.beautyOfCode.init({
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
+		baseUrl: 'http://'+location.hostname+'/doc/tutorial/html/',
+		ready: function() {
+			$.beautyOfCode.beautifyAll();
+		}
+	});
+});
+</script>
+</body>
+</html>
