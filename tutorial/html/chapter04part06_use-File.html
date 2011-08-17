@@ -45,8 +45,8 @@
 
 <div class="bodyText">
 <div class='page'>
-	<h1>使用File类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用File类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p05.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -66,7 +66,7 @@ $this->viewRegister->addWidget ( $fileupload );</code>
 				<p>第1行代码找到user目录下的一个名为widget的文件夹对象,它的路径是: user/data/widget ,这个文件夹就是我们要用来存储文件用的文件夹.
 				当然,你可以自己建立自己的文件夹,建立好文件夹以后改一下第1行代码末尾的findFolder函数的参数就可以了.</p>
 				<p>第2行把建立好的forder对象作为第3个参数传递给FIle类的构造函数这样File控件对象就知道应该把文件放在哪里了</p>
-				<blockquote>
+				<blockquote class="prepare">
 					如果你想更准确的定位存储文件的路径,你可以查阅Jecat文档文件系统相关章节
 				</blockquote>
 			</li>

@@ -1,5 +1,5 @@
 <div>
-	<h1>完整的定义orm</h1>
+	<h1><span class="title"></span>完整的定义orm</h1>
 	<p>上一节的代码从软件工程的质量标准来看，有一处很不理想的瑕疵：每次创建Model对象时，都需要临时定义一个ORM配置，可是涉及到相同的数据表时，那些ORM信息就会被反复定义。这违背了“Dont repeat your self”原则。</p>
 	<p>JeCat框架推荐一种更理想的方式来维护ORM配置：将所有的数据表及其关联都集中定义在一个地方，这些定义就形成了一张表与表之间的关系图。创建Model对象时，就只需要从完整的“关系图”中截取一个所需的“片段”即可。
 	</p>
@@ -92,7 +92,7 @@ $aBook = Model::fromFragment('category',array( 'books' => array('authors','press
 </pre>
 		<p>向PrototypeAssociationMap 类的单件实例中一次性添加整个系统所需要的数据表原型定义，然后就可以通过上面演示的方式，从中取出片段，并根据这些关系片段来创建Model对象。</p>
 	</div>
-	<blockquote>
+	<blockquote class="prepare">
 		向PrototypeAssociationMap 对象 add orm配置时，关联的 'prototype' 元素不再需要提供另一个数据表原型的完整定义，只要提供数据表原型的名称即可。
 	</blockquote>
 	

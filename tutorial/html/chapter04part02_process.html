@@ -45,8 +45,8 @@
 
 <div class="bodyText">
 <div class='page'>
-	<h1>获取表单提交数据</h1>
-	<blockquote>
+	<h1><span class="title"></span>获取表单提交数据</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p01.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -78,7 +78,7 @@ if ($this->viewRegister->isSubmit ( $this->aParams )) {
 					<p>第2行让init中已经建立的widget载入表单提交过来的值,它的参数"$this->aParams"就是表单提交来的数据.这一步就是在后台</p>
 					<p>第3行使用get函数从$this->aParams这个资源对象中找到username控件传来的值,然后输出到页面上让我们看到.
 					第3行的方法可能无法用到实际网站建设中,不过你可以在这个教程的实验过程中使用这个方式检验你的代码是否正确.如果你想知道怎样和数据库交互,那么请参见数据交换部分的教程</p>
-					<blockquote>
+					<blockquote class="prepare">
 						上面说到$this->aParams得到的是一个资源对象,大部分情况下它集合了get和post方式传来的所有数据,你可以用get函数加上id作为参数来获取里面的数据,随着你做出更多的页面,你会越来越喜欢这个方式.
 					</blockquote>
 				</li>
@@ -92,7 +92,7 @@ if ($this->viewRegister->isSubmit ( $this->aParams )) {
 			<li>在username文本框中随意输入一些文字,点击"提交表单"的按钮,看看页面显示什么,如果页面输出了你输入的那些文字,那就是我们要的效果了.你将在下一节更多的尝试Text控件.</li>
 		</ul>
 	</div>
-	<blockquote>
+	<blockquote class="prepare">
 		如果你对控制器如果处理表单的原理不太清楚,没有关系,先放一放,Jecat已经把他们隐藏的尽量深了,你可以先学习用法,之后再去了解细节.<br />
 		当然如果你依然想立即知道细节,可以去看Jecat的API手册MVC部分,我敢保证那里的图示会让你恍然大悟
 	</blockquote>

@@ -45,7 +45,7 @@
 
 <div class="bodyText">
 <div>
-	<h1>聪明的方式</h1>
+	<h1><span class="title"></span>聪明的方式</h1>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>在前面的例子当中，我们为每个表各自建立Model对象，$aCategory 和 $aBook 之间没有联系，它们是各自操作各自的。
@@ -179,7 +179,7 @@ $aCategory->save() ;
 			<p>在上面的例子里面，categories 和 books 就是一个多属关系（hasMany），因此，$aCategory->child('books') 返回的并不是“一本书”，而是许多本书的集合。例子中，我们是在这个“集合”里创建了一个 book 对象：
 $aBook1 = $aCategory->child('books')->createChild() ;
 			</p>
-			<blockquote>
+			<blockquote class="prepare">
 				Model::child()方法调用可以用一个属性访问来替代：'model' + $sProperty
 				Model::data() 和 Model::setData() 方法调用也可以用一个属性访问来替代。
 				下面这行代码和下面的代码是完全等效的：
@@ -252,7 +252,8 @@ foreach( $aBookList->childIterator() as $aBook )
 前面两章的例子里，我们显示了一种用纯粹OOP的方式来管理数据库中的数据的方法，不但所有对数据表的操作都被转换成了对对象的操作，连数据表之间的关联也被“映射”成了对象之间的 has a关系。
 这种隐藏数据库操作的系统架构，被业界称为Object/Relation Mapping(对象关系映射)——将关系型数据库中的“关系”，映射成OOP中的对象，直接与开发人员接触的是对象，而不是封装在ORM背后的数据库操作逻辑。</p>
 	
-</div></div>
+</div>
+</div>
 
 </div>
 <script src='scripts/jquery-1.6.2.min.js' type='text/javascript'></script>

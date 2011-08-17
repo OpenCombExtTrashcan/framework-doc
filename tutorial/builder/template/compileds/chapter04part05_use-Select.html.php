@@ -1,6 +1,6 @@
 <div class='page'>
-	<h1>使用Select和SelectList类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用Select和SelectList类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p04.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -31,7 +31,7 @@ $this->viewRegister->addWidget ( $selectcity );</code>
 				<p>第7行开始是SelectList类,它和Select的区别是"看起来象个列表",是的,在html中他们的标签都是&lt;select>,后者只是比前者多了size属性和multiple属性,但是他们看起来几乎是完全不同的控件,所以我们把他们分成2个类来处理.
 				Select类的参数很简单,SelectList类多了2个参数,第3个参数"5"是指select有多少个option是可见的,默认是4个,后面的"true"代表这个SelectList是多选的.
 				第8行开始是给这个SelectList添加option,这里用的是addOptionByAarry方法,其实Select类也可以用这种方式添加option,你可以根据喜好来决定使用哪种.注意我们给SelectList对象设定第3个option是默认选中的</p>
-				<blockquote>
+				<blockquote class="prepare">
 					你可以在上面2个对象中添加更多的option来体验他们的写法.你甚至可以试试把其中多个option的默认选中参数都设成true,看看结果如何
 				</blockquote>
 			</li>

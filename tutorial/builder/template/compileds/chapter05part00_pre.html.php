@@ -1,5 +1,5 @@
 <div>
-	<h1>准备工作</h1>
+	<h1><span class="title"></span>准备工作</h1>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>在mySQL中创建一个数据库 jc-example ，然后往 jc-example库 导入下列SQL。</p>
@@ -92,12 +92,21 @@ friendships 用户和用户之间的好友关系表</p>
 		<p class='purpose'>在 MyProject/inc.common.php 文件中加入代码：</p>
 		<pre class='code'>
 				<code class='php'>
+&lt;?php
 use jc\db\DB;
 use jc\db\driver\PDODriver;
 
+use jc\system\ApplicationFactory ;
+
+// 加载 jecat php framework
+include __DIR__.'/framework/inc.entrance.php' ;
+
+// 用 Application工厂类的单件实例创建一个 Application 对象
+$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
+
 // 连接到数据库
-DB::singleton()->setDriver( new PDODriver("mysql:host=&lt;your database server>;dbname=&lt;your database name>",'&lt;your db user>','&lt;you db password>',array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")) ) ;
-</code>
+DB::singleton()->setDriver( new PDODriver("mysql:host=192.168.1.28;dbname=jc-example",'root','123456',array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")) ) ;
+<? ob_flush(); echo '?','>' ; ?></code>
 </pre>
 		<p>记得代码中的 &lt;you database ...> 改成你真实运行环境中的配置 :)</p>
 	</div>
@@ -109,6 +118,7 @@ DB::singleton()->setDriver( new PDODriver("mysql:host=&lt;your database server>;
 					<code class='php'>
 &lt;?php
 use jc\mvc\model\db\Model ;
+use jc\system\Application;
 
 require 'inc.common.php' ;
 <? ob_flush(); echo '?','>' ; ?></code>

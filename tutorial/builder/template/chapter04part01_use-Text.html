@@ -1,6 +1,6 @@
 <div class='page'>
-	<h1>使用Text类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用Text类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_start.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -43,7 +43,7 @@ $this->viewRegister->addWidget ( $username );</code>
 					第3个参数是控件的初始值.第4个参数是Text控件的类型,Text默认提供single,textarea,password,hidden类型,分别代表单行文本框,多行文本框,密码,隐藏文本框.
 					还有一些不常用的参数,你可以通过查阅文档得知</p>
 					<p>第2行,把Text对象添加到视图中,相当于把这个控件对象交给指定的view来管理</p>
-					<blockquote>
+					<blockquote class="prepare">
 						你可能已经发现了,在Jecat框架中,设计者试图把事物以他们的功能进行归类,这样类的功能更抽象.就像我们把多种具有文本输入功能的html标签归纳为一个Text对象这样的做法在Jecat框架中很普遍,我们的目的是让你在使用Jecat的时候不被那些他们的细节打扰
 					</blockquote>
 				</li>
@@ -62,7 +62,7 @@ use jc\mvc\view\View;</code>
 use jc\mvc\view\widget\Text;</code>
 					</pre>
 					<p>把这行代码放到那几行use一起就可以了</p>
-					<blockquote>
+					<blockquote class="prepare">
 						如果你是第一次看到关于命名空间的知识,你应该看一看他们的介绍来了解他们的作用,请查阅php文档关于namesapce的部分.一开始不用深究,只要了解他们的作用就好.
 					</blockquote>
 				</li>

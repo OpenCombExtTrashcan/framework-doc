@@ -1,6 +1,6 @@
 <div class='page'>
-	<h1>构建注册页面前的准备工作</h1>
-	<blockquote>
+	<h1><span class="title"></span>构建注册页面前的准备工作</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/MVC_start.zip'>代码包</a>,这样你可以直接从<a href='#s3'>step 3</a> 开始<br />

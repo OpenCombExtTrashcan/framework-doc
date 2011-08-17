@@ -1,5 +1,5 @@
 <div>
-	<h1>聪明的方式</h1>
+	<h1><span class="title"></span>聪明的方式</h1>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>在前面的例子当中，我们为每个表各自建立Model对象，$aCategory 和 $aBook 之间没有联系，它们是各自操作各自的。
@@ -133,7 +133,7 @@ $aCategory->save() ;
 			<p>在上面的例子里面，categories 和 books 就是一个多属关系（hasMany），因此，$aCategory->child('books') 返回的并不是“一本书”，而是许多本书的集合。例子中，我们是在这个“集合”里创建了一个 book 对象：
 $aBook1 = $aCategory->child('books')->createChild() ;
 			</p>
-			<blockquote>
+			<blockquote class="prepare">
 				Model::child()方法调用可以用一个属性访问来替代：'model' + $sProperty
 				Model::data() 和 Model::setData() 方法调用也可以用一个属性访问来替代。
 				下面这行代码和下面的代码是完全等效的：
