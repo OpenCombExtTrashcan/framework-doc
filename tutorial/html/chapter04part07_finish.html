@@ -38,9 +38,13 @@
 <li> MVC模式：数据交换</li>
 <li> MVC模式：使用控制器（controller）</li>
 <li> MVC模式：控制器和视图的组合/重用</li>
-<li> 数据校验</li>
+<li><a href='chapter09.html'>数据校验</a>
+	<ul>
+		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+	</ul>
+</li>
 <li> 消息队列</li>
-</ol> 
+</ol>
 </div>
 
 <div class="bodyText">
