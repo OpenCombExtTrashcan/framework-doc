@@ -41,6 +41,10 @@
 <li><a href='chapter09.html'>数据校验</a>
 	<ul>
 		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter09part01_NotEmpty-verifier.html'>使用非空校验器(NotEmpty)</a></li>
+		<li><a href='chapter09part02_Length-verifier.html'>字符长度校验器(Length)</a></li>
+		<li><a href='chapter09part03_Number-Email-Same-verifier.html'>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</a></li>
+		<li><a href='chapter09part04_FileExt-FileSize-verifier.html'>文件类型校验器(FileExt),文件大小校验器(FileSize)</a></li>
 	</ul>
 </li>
 <li> 消息队列</li>
@@ -61,13 +65,13 @@
 </div></div>
 
 </div>
-<script src='scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
-<script src='scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
 <script type="text/javascript">
 $(function(){
 	$.beautyOfCode.init({
 		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
-		baseUrl: 'http://'+location.hostname+'/doc/tutorial/html/',
+		baseUrl: './',
 		ready: function() {
 			$.beautyOfCode.beautifyAll();
 		}

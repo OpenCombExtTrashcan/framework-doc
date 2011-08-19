@@ -128,7 +128,11 @@ blockquote{
 	background:#eee url(../styles/prepare.png) no-repeat 10px 10px ;
 	padding-left:80px;
 }
-
+.warning{
+	min-height:60px;
+	background:#eee url(../styles/warning.png) no-repeat 10px 10px ;
+	padding-left:80px;
+}
 
 .title {
     background: none repeat scroll 0 0 #108AC6;

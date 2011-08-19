@@ -15,7 +15,7 @@ include_once __DIR__.'/../../../framework/inc.entrance.php' ;
 $aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 $aApp->classLoader()->addPackage(__NAMESPACE__,null,'/') ;
-UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/template/') ;
+UIFactory::singleton()->sourceFileManager()->addFolder( $aApp->fileSystem ()->findFolder('/template/') ) ;
 
 $arrChapters = array(
 	'chapter01_hello-world.html' ,
@@ -36,6 +36,10 @@ $arrChapters = array(
 	'chapter05part03_method3.html',
 	'chapter09.html',
 	'chapter09part00_pre.html',
+	'chapter09part01_NotEmpty-verifier.html',
+	'chapter09part02_Length-verifier.html',
+	'chapter09part03_Number-Email-Same-verifier.html',
+	'chapter09part04_FileExt-FileSize-verifier.html',
 ) ;
 
 $aUI = UIFactory::singleton()->create() ;

@@ -13,13 +13,15 @@
 			<li>在init函数的末尾处添加下面的代码
 				<pre class='code'>
 				<code class='php'>
-$uploadForlder = $this->application ()->fileSystem ()->findFolder ( '/data/widget' );
+if(!$uploadForlder = $this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
+	$uploadForlder = $this->application ()->fileSystem ()->createFolder ( '/data/widget');
+}
 $fileupload = new File ( 'fileupload', '文件上传', $uploadForlder );
 $this->viewRegister->addWidget ( $fileupload );</code>
 				</pre>
-				<p>第1行代码找到user目录下的一个名为widget的文件夹对象,它的路径是: user/data/widget ,这个文件夹就是我们要用来存储文件用的文件夹.
-				当然,你可以自己建立自己的文件夹,建立好文件夹以后改一下第1行代码末尾的findFolder函数的参数就可以了.</p>
-				<p>第2行把建立好的forder对象作为第3个参数传递给FIle类的构造函数这样File控件对象就知道应该把文件放在哪里了</p>
+				<p>第1行代码找到user目录下的一个名为widget的文件夹对象,它的路径是: user/data/widget ,这个文件夹就是我们要用来存储文件用的文件夹.不过如果这个目录不存在,它会返回null.
+				如果返回null,就创建那个文件夹(第2行).当然,你可以按照自己的想法定位这个文件夹,改一下第1行代码末尾的findFolder函数的参数就可以了.</p>
+				<p>第3行把建立好的forder对象作为第3个参数传递给FIle类的构造函数这样File控件对象就知道应该把文件放在哪里了</p>
 				<blockquote class="prepare">
 					如果你想更准确的定位存储文件的路径,你可以查阅Jecat文档文件系统相关章节
 				</blockquote>
