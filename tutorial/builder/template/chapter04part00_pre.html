@@ -10,12 +10,12 @@
 	<div class='step'>
 		<p class='purpose'>首先构建用户注册的目录结构.</p>
 			<ul class='todo'>
-				<li>进入framework同级的文件夹下,新建user文件夹</li>
-				<li>进入user文件夹,建立inc.common.php文件</li>
-				<li>建立Register.php文件</li>
-				<li>新建template文件夹</li>
-				<li>进入template文件夹</li>
-				<li>新建Register.html文件</li>
+				<li>进入framework同级的文件夹下,新建user文件夹,这是我们的工作目录</li>
+				<li>进入user文件夹,建立inc.common.php文件,这个文件用于初始化Jecat框架</li>
+				<li>建立Register.php文件,这是我们的控制器(controller)</li>
+				<li>新建templates文件夹,这个文件夹用来存储模板文件</li>
+				<li>进入templates文件夹</li>
+				<li>新建Register.html文件,这个是Register控制器将要用到的模板</li>
 			</ul>
 		<p>都建立好后工程文件夹的结构看起来就像这样:</p>
 		<pre class='code'>
@@ -54,7 +54,7 @@ include __DIR__."/../framework/inc.entrance.php" ;
 $aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 加载模板
-UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/templates') ;
+UIFactory::singleton()->sourceFileManager()->addFolder($aApp->fileSystem ()->findFolder('/templates/') ) ;
 
 $aSession = new OriginalSession() ;
 $aSession->start() ;
@@ -64,6 +64,10 @@ return $aApp ;
 ?>
 				</code>
 			</pre>
+			<p>第12行是在调用Jecat框架下的初始化文件,这样就完成了Jecat的加载,在这之后的代码就是在Jecat框架下运行了.</p>
+			<p>第14行是在创建一个Applacation对象,这个对象是系统执行的"线索",整个系统按照它的调遣来完成页面请求的处理.</p>
+			<p>第17行是在告诉系统我们设置的模板文件夹在哪里.</p>
+			<p>剩下的代码打开session,最后返回Applacation对象.</p>
 		</li>
 		<li>
 			打开Register.php文件,添加如下代码:
@@ -95,6 +99,9 @@ $aController->mainRun ( );
 ?>
 				</code>
 			</pre>
+			<p>这个页面是我们的注册页面的入口,为了让Jecat执行,我们在第8行的语句调用Jecat初始化脚本,这样Jecat就运行起来了.</p>
+			<p>第10行我们定义了一个控制器类.它里面的init和process方法就是我们显示页面和处理页面的地方,下一节就来说明他们的用途.</p>
+			<p>代码的最后让刚刚定义的控制器类运行起来.</p>
 		</li>
 		<li>
 			进入template文件夹,打开Register.html文件,添加如下代码:

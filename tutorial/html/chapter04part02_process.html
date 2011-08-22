@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Jecat 使用教程</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
-
 <body>
-
 <div class="wrapper">
-
 <div class="index">
 <ol>
 <li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
 <li><a href="chapter02_file-operation.html">文件操作</a></li>
-<li><a href="chapter03_use-ui-engine.html">HTML模板</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+	</ul>
+</li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
 	<ul>
 		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
@@ -52,59 +53,8 @@
 </div>
 
 <div class="bodyText">
-<div class='page'>
-	<h1><span class="title"></span>获取表单提交数据</h1>
-	<blockquote class="prepare">
-		准备:<br />
-		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p01.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
-	</blockquote>
-	
-	<h3 id='s1'>step 1.</h3>
-	<div class='step'>
-		<p class='purpose'>先介绍以下process函数</p>
-			<ul class='todo'>
-				<li>进入user文件夹,打开Register.php文件,找到process函数部分,它就在init函数的下面,代码应该是这样的:
-					<pre class='code'>
-						<code class='php'>
-...
-public function process() {
 
-	}
-...</code>
-					</pre>
-					<p>上节说过,init函数是控制器构造函数的一部分,它完成初始化工作.而process函数是用来处理业务逻辑的.表单提交来的内容会在这里进行处理.上节我们实例化了一个Text对象,
-					我们在process函数里面添加如下代码来处理这个对象提交来的数据</p>
-					<pre class='code'>
-						<code class='php'>
-if ($this->viewRegister->isSubmit ( $this->aParams )) {
-	$this->viewRegister->loadWidgets ( $this->aParams );
-	$this->response()->output($this->aParams->get('username')) ;
-}</code>
-					</pre>
-					<p>第1行判断请求是否来自表单提交,只有在表单提交的时候才运行if其中的代码.</p>
-					<p>第2行让init中已经建立的widget载入表单提交过来的值,它的参数"$this->aParams"就是表单提交来的数据.这一步就是在后台</p>
-					<p>第3行使用get函数从$this->aParams这个资源对象中找到username控件传来的值,然后输出到页面上让我们看到.
-					第3行的方法可能无法用到实际网站建设中,不过你可以在这个教程的实验过程中使用这个方式检验你的代码是否正确.如果你想知道怎样和数据库交互,那么请参见数据交换部分的教程</p>
-					<blockquote class="prepare">
-						上面说到$this->aParams得到的是一个资源对象,大部分情况下它集合了get和post方式传来的所有数据,你可以用get函数加上id作为参数来获取里面的数据,随着你做出更多的页面,你会越来越喜欢这个方式.
-					</blockquote>
-				</li>
-			</ul>
-	</div>
-	<h3 id='s2'>step 2.</h3>
-	<div class='step'>
-		<p class='purpose'>现在来检验你的代码</p>
-		<ul class='todo'>
-			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/user/Register.php 然后回车来访问你的页面</li>
-			<li>在username文本框中随意输入一些文字,点击"提交表单"的按钮,看看页面显示什么,如果页面输出了你输入的那些文字,那就是我们要的效果了.你将在下一节更多的尝试Text控件.</li>
-		</ul>
-	</div>
-	<blockquote class="prepare">
-		如果你对控制器如果处理表单的原理不太清楚,没有关系,先放一放,Jecat已经把他们隐藏的尽量深了,你可以先学习用法,之后再去了解细节.<br />
-		当然如果你依然想立即知道细节,可以去看Jecat的API手册MVC部分,我敢保证那里的图示会让你恍然大悟
-	</blockquote>
-</div></div>
+</div>
 
 </div>
 <script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>

@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Jecat 使用教程</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
-
 <body>
-
 <div class="wrapper">
-
 <div class="index">
 <ol>
 <li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
 <li><a href="chapter02_file-operation.html">文件操作</a></li>
-<li><a href="chapter03_use-ui-engine.html">HTML模板</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+	</ul>
+</li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
 	<ul>
 		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
@@ -52,48 +53,7 @@
 </div>
 
 <div class="bodyText">
-<div>
-	<h1><span class="title"></span>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</h1>
-	<blockquote class="prepare">
-		准备:<br />
-		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你没有本章之前的代码,可以直接下载<a href='../code/Verifier_p02.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
-	</blockquote>
-	<p>下面让我们体验数字校验器和邮箱地址校验器</p>
-	<h3 id='s1'>step 1.</h3>
-	<div class='step'>
-		<p class='purpose'>咱们再给注册页面的几个控件添加一些校验器.代码如下</p>
-<pre class='code'>
-<code class='php'>
-$username = new Text ( 'username', '用户名', '', TEXT::single );
-$username->addVerifier(NotEmpty::singleton() , '用户名不能为空')->add(Length::flyweight(array(4,10)));
-$this->viewRegister->addWidget ( $username );
 
-$password1 = new Text ( 'password1', '确认密码1', '', Text::password );
-$this->viewRegister->addWidget ( $password1 )->dataVerifiers ()->add ( Number::flyweight (array( true ) ) );
-
-$password2 = new Text ( 'password2', '确认密码2', '', Text::password );
-$this->viewRegister->addWidget ( $password2 )->dataVerifiers ()->add ( Number::flyweight (array( true ) ) );
-
-$group = new Group ( 'passwordGroup', '密码核对' );
-$group->addWidget ( $password1 );
-$group->addWidget ( $password2 );
-$this->viewRegister->addWidget ( $group )->dataVerifiers ()->add ( Same::singleton() );
-
-$email = new Text ( 'email', '邮件' );
-$this->viewRegister->addWidget ( $email )->dataVerifiers ()->add ( Email::singleton() );</code>
-</pre>
-	<p>第4行开始我们使用另外一种方式添加校验器,效果与前面的username的添加校验器的方式是一样的.</p>
-	<p>第6行我们使用Number校验器,它限定控件只能输入数值类型,参数是bool型,如果是true就只允许整数型,如果是false就只允许小数</p>
-	<p>第14行我们给Group对象添加一个Same校验器,Group把2个password控件组合起来,而Same校验器的功能是正是校验多个控件的值是否一致.Same校验器没有参数,所以使用单件模式.</p>
-	<p>最后一行的邮箱地址自然而然的使用了Email校验器.</p>
-	</div>
-	
-	<h3 id='s2'>step 2.</h3>
-	<div class='step'>
-		<p class='purpose'>打开你的浏览器,访问user目录下的Register.php.你可以使用各种乱七八糟的输入来折腾这个注册表单,然后让它是怎么用各种理由拒绝你的 ^_^</p>
-	</div>
-</div>
 </div>
 
 </div>

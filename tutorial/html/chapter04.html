@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Jecat 使用教程</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
-
 <body>
-
 <div class="wrapper">
-
 <div class="index">
 <ol>
 <li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
 <li><a href="chapter02_file-operation.html">文件操作</a></li>
-<li><a href="chapter03_use-ui-engine.html">HTML模板</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+	</ul>
+</li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
 	<ul>
 		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
@@ -52,20 +53,8 @@
 </div>
 
 <div class="bodyText">
-<div>
-	<h1><span class="title"></span>MVC模式：控件类</h1>
-	<p>本章介绍jecat系统的控件类的使用方法.</p>
-	<p>jecat默认提供的控件主要有:</p>
-		<ul>
-			<li><strong>Text类</strong>,实现html中的&lt;input type='text'/> , &lt;input type='password'/> , &lt;input type='textarea'/> ,&lt;input type='hidden'/></li>
-			<li><strong>CheckBtn类</strong>,实现html中的&lt;input type='radio'/> , &lt;input type='checkbox'/></li>
-			<li><strong>Select类</strong>,实现html中的&lt;select></li>
-			<li><strong>File类</strong>,实现html中的&lt;input type='file'/></li>
-			<li><strong>Group类</strong>,在html页面中没有显示,用来把多个控件类组合成一个控件,方便完成类似用户注册时密码校验这样的功能</li>
-			<li>除此之外jecat还提供RadioGroup等控件,随着jecat的完善,会提供越来越多的控件来提高程序员的编码效率.详情请查阅jecat手册</li>
-		</ul>
-	<p>本章将引导读者从零开始构建一个注册系统的页面,让读者以最快的速度体验jecat的MVC系统.</p>
-</div></div>
+
+</div>
 
 </div>
 <script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>

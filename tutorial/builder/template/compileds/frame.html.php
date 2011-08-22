@@ -1,20 +1,24 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Jecat 使用教程</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
-
 <body>
-
 <div class="wrapper">
-
 <div class="index">
 <ol>
 <li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
 <li><a href="chapter02_file-operation.html">文件操作</a></li>
-<li><a href="chapter03_use-ui-engine.html">HTML模板</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+	</ul>
+</li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
 	<ul>
 		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
@@ -52,10 +56,17 @@
 </div>
 
 <div class="bodyText">
-<?php 
+
+OUTPUT
+) ;
+
+
 $__include_aVariables = $aVariables ; 
+
 $this->display(eval("if(!isset(\$__uivar_sBodyFile)){ \$__uivar_sBodyFile=&\$aVariables->getRef('sBodyFile') ;};
-return \$__uivar_sBodyFile;"),$__include_aVariables,$aDevice) ; ?>
+return \$__uivar_sBodyFile;"),$__include_aVariables,$aDevice) ; 
+$aDevice->write(<<<OUTPUT
+
 </div>
 
 </div>
@@ -74,3 +85,6 @@ $(function(){
 </script>
 </body>
 </html>
+OUTPUT
+) ;
+?>

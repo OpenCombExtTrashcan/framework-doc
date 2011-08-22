@@ -13,7 +13,7 @@
 <li><a href="chapter02_file-operation.html">文件操作</a></li>
 <li><a href="chapter03.html">HTML模板</a>
 	<ul>
-		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part00_pre.html'>准备工作</a></li>
 	</ul>
 </li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
@@ -54,23 +54,23 @@
 
 <div class="bodyText">
 <div class='page'>
-	<h1><span class="title"></span>构建注册页面前的准备工作</h1>
+	<h1><span class="title"></span>准备工作</h1>
 	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/MVC_start.zip'>代码包</a>,这样你可以直接从<a href='#s3'>step 3</a> 开始<br />
+		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/MVC_start.zip'>代码包</a><br />
 	</blockquote>
 	
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>首先构建用户注册的目录结构.</p>
 			<ul class='todo'>
-				<li>进入framework同级的文件夹下,新建user文件夹,这是我们的工作目录</li>
-				<li>进入user文件夹,建立inc.common.php文件,这个文件用于初始化Jecat框架</li>
-				<li>建立Register.php文件,这是我们的控制器(controller)</li>
-				<li>新建templates文件夹,这个文件夹用来存储模板文件</li>
-				<li>进入templates文件夹</li>
-				<li>新建Register.html文件,这个是Register控制器将要用到的模板</li>
+				<li>进入framework同级的文件夹下,新建user文件夹</li>
+				<li>进入user文件夹,建立inc.common.php文件</li>
+				<li>建立Register.php文件</li>
+				<li>新建template文件夹</li>
+				<li>进入template文件夹</li>
+				<li>新建Register.html文件</li>
 			</ul>
 		<p>都建立好后工程文件夹的结构看起来就像这样:</p>
 		<pre class='code'>
@@ -106,23 +106,18 @@ use jc\system\ApplicationFactory;
 
 include __DIR__."/../framework/inc.entrance.php" ;
 
- = ApplicationFactory::singleton()->create(__DIR__) ;
+$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 加载模板
-UIFactory::singleton()->sourceFileManager()->addFolder( ()->findFolder('/templates/') ) ;
+UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/templates') ;
 
- = new OriginalSession() ;
-() ;
-Session::setSingleton() ;
+$aSession = new OriginalSession() ;
+$aSession->start() ;
+Session::setSingleton($aSession) ;
 
-return  ;
-<? ob_flush(); echo '?','>' ; ?>
-				</code>
+return $aApp ;
+?>				</code>
 			</pre>
-			<p>第12行是在调用Jecat框架下的初始化文件,这样就完成了Jecat的加载,在这之后的代码就是在Jecat框架下运行了.</p>
-			<p>第14行是在创建一个Applacation对象,这个对象是系统执行的"线索",整个系统按照它的调遣来完成页面请求的处理.</p>
-			<p>第17行是在告诉系统我们设置的模板文件夹在哪里.</p>
-			<p>剩下的代码打开session,最后返回Applacation对象.</p>
 		</li>
 		<li>
 			打开Register.php文件,添加如下代码:
@@ -133,13 +128,13 @@ namespace jc\user\RegisterController;
 
 use jc\mvc\model\db\Model;
 use jc\mvc\controller\Controller;
-use jc\mvciew\View;
+use jc\mvc\view\View;
 
- = require_once dirname ( __DIR__ ) . '/user/inc.common.php';
+$aApp = require_once dirname ( __DIR__ ) . '/user/inc.common.php';
 
 class RegisterController extends Controller {
 	protected function init() {
-		 ( "Register" );
+		$this->createFormView ( "Register" );
 		
 	}
 	
@@ -148,21 +143,17 @@ class RegisterController extends Controller {
 	}
 }
 
- = new RegisterController( () );
- ( );
+$aController = new RegisterController($aApp->request () );
+$aController->mainRun ( );
 
-<? ob_flush(); echo '?','>' ; ?>
-				</code>
+?>				</code>
 			</pre>
-			<p>这个页面是我们的注册页面的入口,为了让Jecat执行,我们在第8行的语句调用Jecat初始化脚本,这样Jecat就运行起来了.</p>
-			<p>第10行我们定义了一个控制器类.它里面的init和process方法就是我们显示页面和处理页面的地方,下一节就来说明他们的用途.</p>
-			<p>代码的最后让刚刚定义的控制器类运行起来.</p>
 		</li>
 		<li>
 			进入template文件夹,打开Register.html文件,添加如下代码:
 			<pre class='code'>
 				<code class='html'>
-&lt;msgqueue for="" />
+&lt;msgqueue for="$theView" />
 &lt;form id="theform" method='post'>
 	&lt;input type='submit' value='提交表单'/>
 &lt;/form>
@@ -180,8 +171,7 @@ class RegisterController extends Controller {
 			<li>看看Register.php的输出内容,如果你一个名为"提交表单"的按钮,你就可以开始下一节了.如果报错,你很可能看到了Jecat的异常提示,不要灰心,看看Jecat提供的强大异常处理功能是如何帮你解决问题的.仔细读一下错误提示,找到问题并解决它!</li>
 		</ul>
 	</div>
-</div>
-</div>
+</div></div>
 
 </div>
 <script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>

@@ -29,7 +29,20 @@ $this->viewRegister->addWidget ( $group )->dataVerifiers ()->add ( Same::singlet
 $email = new Text ( 'email', '邮件' );
 $this->viewRegister->addWidget ( $email )->dataVerifiers ()->add ( Email::singleton() );</code>
 </pre>
-	<p>第4行开始我们使用另外一种方式添加校验器,效果与前面的username的添加校验器的方式是一样的.</p>
+	<p>第4行开始我们使用另外一种方式添加校验器,效果与前面的username的添加校验器的方式是一样的,之所以使用了不同的方式只是为了让你能够选择符合你习惯的方式来编程.
+	比如我们可以把下面的代码:</p>
+	<pre class='code'>
+	<code class='php'>
+$password1 = new Text ( 'password1', '确认密码1', '', Text::password );
+$password1->addVerifier(NotEmpty::singleton() , '密码不能为空');
+$this->viewRegister->addWidget ( $password1 );</code>
+	</pre>
+	<p>改成下面这样:</p>
+	<pre class='code'>
+	<code class='php'>
+$this->viewRegister->addWidget ( new Text ( 'password1', '确认密码1', '', Text::password ) )->dataVerifiers ()->add ( NotEmpty::singleton() , '密码不能为空' );</code>
+	</pre>
+	<p>上面2种方式效果是一样的,选择自己喜欢的就可以了.</p>
 	<p>第6行我们使用Number校验器,它限定控件只能输入数值类型,参数是bool型,如果是true就只允许整数型,如果是false就只允许小数</p>
 	<p>第14行我们给Group对象添加一个Same校验器,Group把2个password控件组合起来,而Same校验器的功能是正是校验多个控件的值是否一致.Same校验器没有参数,所以使用单件模式.</p>
 	<p>最后一行的邮箱地址自然而然的使用了Email校验器.</p>
