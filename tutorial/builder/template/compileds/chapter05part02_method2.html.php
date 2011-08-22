@@ -1,8 +1,11 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>聪明的方式</h1>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
-		<p class='purpose'>在前面的例子当中，我们为每个表各自建立Model对象，$aCategory 和 $aBook 之间没有联系，它们是各自操作各自的。
+		<p class='purpose'>在前面的例子当中，我们为每个表各自建立Model对象，\$aCategory 和 \$aBook 之间没有联系，它们是各自操作各自的。
 		但实际上，categories 和 books这两个表是有某种关联的：categories 中的一行记录，在 books 表中可以拥有多行相关的记录; 
 		反过来，在books中的每行记录，都属于categories中的某一行记录：</p>
 	    <p>categories表 hasMany books表</p>
@@ -12,7 +15,7 @@
 				<pre class='code'>
 			<code class='php'>
 // 用一个ORM数组来配置数据表和数据表之间的关系
-$arrOrmConfig = array(
+\$arrOrmConfig = array(
 
 	'table' => 'categories' ,
 	'keys' => 'cid' ,				// 主键值（可省略）
@@ -73,72 +76,72 @@ $arrOrmConfig = array(
 ) ;
 
 // 将ORM配置做为 Model类构造函数的参数
-$aCategory = new Model($arrOrmConfig) ;
-$aCategory->name = 'Soft Engine' ;
+\$aCategory = new Model(\$arrOrmConfig) ;
+\$aCategory->name = 'Soft Engine' ;
 
 // 在"Soft Engine"类别中创建一本图书 ----------------
-$aBook1 = $aCategory->child('books')->createChild() ;
-$aBook1->setData('name','Beautiful Architecture') ;
-$aBook1->setData('isbn','978-111-21126-6') ;
-$aBook1->setData('price',69.00) ;
+\$aBook1 = \$aCategory->child('books')->createChild() ;
+\$aBook1->setData('name','Beautiful Architecture') ;
+\$aBook1->setData('isbn','978-111-21126-6') ;
+\$aBook1->setData('price',69.00) ;
 
 // 设置这本书的出版社的信息
-$aBook1->child('press')->name = '机械工业出版社' ;
-$aBook1->child('press')->home = 'www.cmpbook.com' ;
-$aBook1->child('press')->email = 'cmpbook@vip.163.com' ;
-$aBook1->child('press')->country = '机械工业出版社' ;
+\$aBook1->child('press')->name = '机械工业出版社' ;
+\$aBook1->child('press')->home = 'www.cmpbook.com' ;
+\$aBook1->child('press')->email = 'cmpbook@vip.163.com' ;
+\$aBook1->child('press')->country = '机械工业出版社' ;
 
 // 创建这本书的两名作者
-$aAuthor1 = $aBook1->child('authors')->create() ;
-$aAuthor1->name = 'Diomidis Spinellis' ;
+\$aAuthor1 = \$aBook1->child('authors')->create() ;
+\$aAuthor1->name = 'Diomidis Spinellis' ;
 
-$aAuthor2 = $aBook1->child('authors')->create() ;
-$aAuthor2->name = 'Georgios Gousios' ;
+\$aAuthor2 = \$aBook1->child('authors')->create() ;
+\$aAuthor2->name = 'Georgios Gousios' ;
 // 在"Soft Engine"类别中创建第二本图书 ----------------
-$aBook2 = $aCategory->child('books')->createChild() ;
-$aBook2->setData('name','Design Patterns: Elements of Reusable Object-Oriented Software') ;
-$aBook2->setData('isbn','978-111-28350') ;
-$aBook2->setData('price',69.00) ;
+\$aBook2 = \$aCategory->child('books')->createChild() ;
+\$aBook2->setData('name','Design Patterns: Elements of Reusable Object-Oriented Software') ;
+\$aBook2->setData('isbn','978-111-28350') ;
+\$aBook2->setData('price',69.00) ;
 
 // 刚好它和前一本书属于同一个出版社
-$aBook2->addChild( $aBook1->child('press'), 'press' ) ;
+\$aBook2->addChild( \$aBook1->child('press'), 'press' ) ;
 
 // 创建这本书的四名作者
-$aAuthor3 = $aBook2->child('authors')->create() ;
-$aAuthor3->name = 'Erich Gamma' ;
+\$aAuthor3 = \$aBook2->child('authors')->create() ;
+\$aAuthor3->name = 'Erich Gamma' ;
 
-$aAuthor4 = $aBook2->child('authors')->create() ;
-$aAuthor4->name = 'Richard Helm' ;
+\$aAuthor4 = \$aBook2->child('authors')->create() ;
+\$aAuthor4->name = 'Richard Helm' ;
 
-$aAuthor5 = $aBook2->child('authors')->create() ;
-$aAuthor5->name = 'Ralph Johnson' ;
+\$aAuthor5 = \$aBook2->child('authors')->create() ;
+\$aAuthor5->name = 'Ralph Johnson' ;
 
-$aAuthor6 = $aBook2->child('authors')->create() ;
-$aAuthor6->name = 'John Vlissides' ;
+\$aAuthor6 = \$aBook2->child('authors')->create() ;
+\$aAuthor6->name = 'John Vlissides' ;
 
 
 // 将类别、图书、出版社、作者，连同互相之间的关系，全部保存到数据库里 ... ...
-$aCategory->save() ;
+\$aCategory->save() ;
 // done :)</code>
 				</pre>
 			<p>Model 类构造的函数可以接收一个数组做为参数，这个数组有特定的格式，它定义了一个数据表原型。然后可以在数组中为这个数据表定义相关联的数据表，
 			并用同样的格式进一步定义被关联的数据表原型。这个结构可以无穷递归下去。</p>
 			<p>我们把这个结构称为 ORM配置数组。</p>
-			<p>Model类会给 在这个数组结构中定义的每一个数据表原型都创建一个Model对象，然后根据数据表之间的关联关系，建立Model对象之间的所属关系。一个Model对象，可以通过自己的 child() 方法，取得相关联的另一个Model对象。Model::child($sProperty) 方法的参数 $sProperty 就是 ORM配置数组中 'prop' 这个数组元素定义的内容。 例如，$aBook->child('press') 就返回了presses 表所对应的那个Model 对象。</p>
+			<p>Model类会给 在这个数组结构中定义的每一个数据表原型都创建一个Model对象，然后根据数据表之间的关联关系，建立Model对象之间的所属关系。一个Model对象，可以通过自己的 child() 方法，取得相关联的另一个Model对象。Model::child(\$sProperty) 方法的参数 \$sProperty 就是 ORM配置数组中 'prop' 这个数组元素定义的内容。 例如，\$aBook->child('press') 就返回了presses 表所对应的那个Model 对象。</p>
 			<p>ORM 中表之间的关联有4种：hasOne, belongsTo, hasMany, hasAndBelongsToMany 。其中前三中的配置方式相同，用 'fromk' 元素定义关联一端的数据表中的外键名称，用 'tok' 元素定义另一个表中的外键名称。在两个表中，这两个字段值相同的行会被关联起来，分别用来创建和加载两个Model对象。用第一个Model对象的 child() 方法可以访问到第二个Model对象。</p>
 			<p>对于 hasAndBelongsToMany 这种类型的关联，需要额外定义3个元素：bridge, btok, bfromk。 HasAndBelongsToMany 表示一个多对多的关联，意思是两个表中，每行记录和另一个表中的多行记录相关联。这种情况下，就需要引入第三个表（桥接表 bridge）来记录它们之间的关联。 bridge元素定义了桥接表的表名称，btok 是桥接表上连接第一个数据表的外键字段，bfromk 是桥接表上连接另一个数据表的外键字段：fromk 和 btok 相连，bfromk 和 tok 相连。</p>
 			<p>在这4中类型的关联中，hasOne 和 belongsTo 都是一对一关系，我们称之为“单属关系”，hasMany 和 hasAndBelongsToMany 分别是 一对多 和 多对多关系，我们称之为“多属关系”。</p>
 			<p>当遇到单属关联时，Model对象的child()方法会直接返回被关联的Model对象。</p>
 			<p>当遇到多属关联时，Model对象的child()方法返回的是另一个Model对象的集合（我们称做聚合对象 Aggregation Model），这个“集合”里面存放了所有和自己相关联的Model对象。这个情况有点微妙，从class类型上讲，这个“集合”仍然是一个Model类的对象，但是你真正感兴趣的Model对象并不是它，而是它内部存放的哪些Model对象。</p>
-			<p>在上面的例子里面，categories 和 books 就是一个多属关系（hasMany），因此，$aCategory->child('books') 返回的并不是“一本书”，而是许多本书的集合。例子中，我们是在这个“集合”里创建了一个 book 对象：
-$aBook1 = $aCategory->child('books')->createChild() ;
+			<p>在上面的例子里面，categories 和 books 就是一个多属关系（hasMany），因此，\$aCategory->child('books') 返回的并不是“一本书”，而是许多本书的集合。例子中，我们是在这个“集合”里创建了一个 book 对象：
+\$aBook1 = \$aCategory->child('books')->createChild() ;
 			</p>
 			<blockquote class="prepare">
-				Model::child()方法调用可以用一个属性访问来替代：'model' + $sProperty
+				Model::child()方法调用可以用一个属性访问来替代：'model' + \$sProperty
 				Model::data() 和 Model::setData() 方法调用也可以用一个属性访问来替代。
 				下面这行代码和下面的代码是完全等效的：
-				$aBook->child('press')->setData('name','机械工业出版社') ;
-				$aBook->modelPress->name = '机械工业出版社' ;
+				\$aBook->child('press')->setData('name','机械工业出版社') ;
+				\$aBook->modelPress->name = '机械工业出版社' ;
 			</blockquote>
 	</div>
 	
@@ -147,10 +150,10 @@ $aBook1 = $aCategory->child('books')->createChild() ;
 		<p class='purpose'>接着，我们再看看如何查询并打印Soft Engine 分类下所有的图书，以及图书的作者和出版社信息。</p>
 		<pre class='code'>
 				<code class='php'>
-$nCategoryId = $aCategory->cid ;
+\$nCategoryId = \$aCategory->cid ;
 
 // 重新定义一个ORM配置数组，从图书开始不包括分类信息
-$arrOrmConfig = array(
+\$arrOrmConfig = array(
 
 	'table' => 'books' ,
 
@@ -182,24 +185,24 @@ $arrOrmConfig = array(
 ) ;
 
 // Model构造函数的第二个参数为true，表示该Model 是一个聚合模型——它是多个book模型的集合
-$aBookList = Model($arrOrmConfig,true) ;
+\$aBookList = Model(\$arrOrmConfig,true) ;
 
-if( !$aBookList->load($nCategoryId,'category') )
+if( !\$aBookList->load(\$nCategoryId,'category') )
 {	
 	Application::singleton()->response()->output(“图书列表信息查询失败！”) ;
 }
 
 // 遍历“集合”中的 book模型对象
-foreach( $aBookList->childIterator() as $aBook )
+foreach( \$aBookList->childIterator() as \$aBook )
 {
 	
-	Application::singleton()->response()->output(“Book Name: 《”. $aBook->name . “》”) ;
+	Application::singleton()->response()->output(“Book Name: 《”. \$aBook->name . “》”) ;
 
-	Application::singleton()->response()->output(“Price: ”. $aBook->price) ;
+	Application::singleton()->response()->output(“Price: ”. \$aBook->price) ;
 
 }</code>
 </pre>
-		<p>请注意观察：这段代码重新定义了一遍 $arrOrmConfig 变量，它去掉了关于 categories 数据表的部分，因为我们不需要到数据库里查询 categories 表中的信息。
+		<p>请注意观察：这段代码重新定义了一遍 \$arrOrmConfig 变量，它去掉了关于 categories 数据表的部分，因为我们不需要到数据库里查询 categories 表中的信息。
 		并且，还省略了一些可以省略的配置，这些配置系统可以根据上下文自行搜集或补全。请参考 ORM配置的详细文档，了解都有哪些配置，以及在何种情况下可以省略哪些配置。</p>
 	</div>
 	<p>小结
@@ -207,3 +210,7 @@ foreach( $aBookList->childIterator() as $aBook )
 这种隐藏数据库操作的系统架构，被业界称为Object/Relation Mapping(对象关系映射)——将关系型数据库中的“关系”，映射成OOP中的对象，直接与开发人员接触的是对象，而不是封装在ORM背后的数据库操作逻辑。</p>
 	
 </div>
+
+OUTPUT
+) ;
+?>

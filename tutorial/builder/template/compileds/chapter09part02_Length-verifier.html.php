@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>字符长度校验器(Length)</h1>
 	<blockquote class="prepare">
@@ -11,9 +14,9 @@
 		<p class='purpose'>咱们再给username控件加一个长度限制校验器,长度校验器类的名字是Length,别忘记在本页代码的顶部加上相应的use语句</p>
 <pre class='code'>
 <code class='php'>
-$username = new Text ( 'username', '用户名', '', TEXT::single );
-$username->addVerifier(NotEmpty::singleton() , '用户名不能为空')->add(Length::flyweight(array(4,10)));
-$this->viewRegister->addWidget ( $username );</code>
+\$username = new Text ( 'username', '用户名', '', TEXT::single );
+\$username->addVerifier(NotEmpty::singleton() , '用户名不能为空')->add(Length::flyweight(array(4,10)));
+\$this->viewRegister->addWidget ( \$username );</code>
 </pre>
 	<p>第2行是在以前的代码基础上又追加了一个长度校验器,在语句的后面你可以加入更多的add方法追加更多的校验器</p>
 	<p>Length的参数比较特殊,它需要一个整数区间来表示限制的范围,我们用一个数组来表示这个区间,把这个数组作为第一个参数传递给Length的flyweight方法...
@@ -33,3 +36,7 @@ $this->viewRegister->addWidget ( $username );</code>
 		如果我们要用Length限制下限却不限制上限应该怎么作呢?这样写: Length::flyweight(array(4,-1)) , -1 就代表不限制,其他的验证器对于"忽略"或者"无限"也是这么赋值的.
 	</blockquote>
 </div>
+
+OUTPUT
+) ;
+?>

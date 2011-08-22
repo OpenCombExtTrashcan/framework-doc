@@ -21,6 +21,8 @@ $arrChapters = array(
 	'chapter01_hello-world.html' ,
 	'chapter03.html',
 	'chapter03part01_if.html',
+	'chapter03part02_loop.html',
+	'chapter03part03_foreach.html',
 	'chapter04.html',
 	'chapter04part00_pre.html',
 	'chapter02_file-operation.html' ,

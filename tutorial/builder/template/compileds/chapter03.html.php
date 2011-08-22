@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>HTML模板</h1>
 	<p>本章介绍jecat系统模板的使用方法.</p>
@@ -5,3 +8,6 @@
 	这样网站美工和程序员的工作就尽可能的分开了.</p>
 	<p>为了方便美工页面排版和处理后台提供的数据,Jecat提供了很定制的html标签,比如&lt;if>,&lt;loop>,&lt;foreach>等标签.本章教程就是引导读者体验Jecat模板使用流程和标签的功能.</p>
 </div>
+OUTPUT
+) ;
+?>

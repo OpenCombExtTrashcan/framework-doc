@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
 	<h1><span class="title"></span>使用File类</h1>
 	<blockquote class="prepare">
@@ -13,11 +16,11 @@
 			<li>在init函数的末尾处添加下面的代码
 				<pre class='code'>
 				<code class='php'>
-if(!$uploadForlder = $this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
-	$uploadForlder = $this->application ()->fileSystem ()->createFolder ( '/data/widget');
+if(!\$uploadForlder = \$this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
+	\$uploadForlder = \$this->application ()->fileSystem ()->createFolder ( '/data/widget');
 }
-$fileupload = new File ( 'fileupload', '文件上传', $uploadForlder );
-$this->viewRegister->addWidget ( $fileupload );</code>
+\$fileupload = new File ( 'fileupload', '文件上传', \$uploadForlder );
+\$this->viewRegister->addWidget ( \$fileupload );</code>
 				</pre>
 				<p>第1行代码找到user目录下的一个名为widget的文件夹对象,它的路径是: user/data/widget ,这个文件夹就是我们要用来存储文件用的文件夹.不过如果这个目录不存在,它会返回null.
 				如果返回null,就创建那个文件夹(第2行).当然,你可以按照自己的想法定位这个文件夹,改一下第1行代码末尾的findFolder函数的参数就可以了.</p>
@@ -53,14 +56,14 @@ $this->viewRegister->addWidget ( $fileupload );</code>
 UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/templates') ;
 
 // 文件访问路径
-$aApp->fileSystem()->findFolder('/')->setHttpUrl(
-	dirname($aApp->request()->url())
+\$aApp->fileSystem()->findFolder('/')->setHttpUrl(
+	dirname(\$aApp->request()->url())
 ) ;
 
 // 会话
-$aSession = new OriginalSession() ;
-$aSession->start() ;
-Session::setSingleton($aSession) ;</code>
+\$aSession = new OriginalSession() ;
+\$aSession->start() ;
+Session::setSingleton(\$aSession) ;</code>
 				</pre>
 				<p>第4行到8行就是你要加入的代码,它的作用是帮助后台了解计算文件url的方法.如果你不是很清楚它是什么作用,尽管添加上就可以了.</p>
 			</li>
@@ -76,3 +79,6 @@ Session::setSingleton($aSession) ;</code>
 		</ul>
 	</div>
 </div>
+OUTPUT
+) ;
+?>

@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
 	<h1><span class="title"></span>获取表单提交数据</h1>
 	<blockquote class="prepare">
@@ -23,17 +26,17 @@ public function process() {
 					我们在process函数里面添加如下代码来处理这个对象提交来的数据</p>
 					<pre class='code'>
 						<code class='php'>
-if ($this->viewRegister->isSubmit ( $this->aParams )) {
-	$this->viewRegister->loadWidgets ( $this->aParams );
-	$this->response()->output($this->aParams->get('username')) ;
+if (\$this->viewRegister->isSubmit ( \$this->aParams )) {
+	\$this->viewRegister->loadWidgets ( \$this->aParams );
+	\$this->response()->output(\$this->aParams->get('username')) ;
 }</code>
 					</pre>
 					<p>第1行判断请求是否来自表单提交,只有在表单提交的时候才运行if其中的代码.</p>
-					<p>第2行让init中已经建立的widget载入表单提交过来的值,它的参数"$this->aParams"就是表单提交来的数据.这一步就是在后台</p>
-					<p>第3行使用get函数从$this->aParams这个资源对象中找到username控件传来的值,然后输出到页面上让我们看到.
+					<p>第2行让init中已经建立的widget载入表单提交过来的值,它的参数"\$this->aParams"就是表单提交来的数据.这一步就是在后台</p>
+					<p>第3行使用get函数从\$this->aParams这个资源对象中找到username控件传来的值,然后输出到页面上让我们看到.
 					第3行的方法可能无法用到实际网站建设中,不过你可以在这个教程的实验过程中使用这个方式检验你的代码是否正确.如果你想知道怎样和数据库交互,那么请参见数据交换部分的教程</p>
 					<blockquote class="prepare">
-						上面说到$this->aParams得到的是一个资源对象,大部分情况下它集合了get和post方式传来的所有数据,你可以用get函数加上id作为参数来获取里面的数据,随着你做出更多的页面,你会越来越喜欢这个方式.
+						上面说到\$this->aParams得到的是一个资源对象,大部分情况下它集合了get和post方式传来的所有数据,你可以用get函数加上id作为参数来获取里面的数据,随着你做出更多的页面,你会越来越喜欢这个方式.
 					</blockquote>
 				</li>
 			</ul>
@@ -51,3 +54,6 @@ if ($this->viewRegister->isSubmit ( $this->aParams )) {
 		当然如果你依然想立即知道细节,可以去看Jecat的API手册MVC部分,我敢保证那里的图示会让你恍然大悟
 	</blockquote>
 </div>
+OUTPUT
+) ;
+?>

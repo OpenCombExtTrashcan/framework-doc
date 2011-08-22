@@ -6,7 +6,7 @@ $aDevice->write(<<<OUTPUT
 	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/template_start.zip'>代码包</a><br />
+		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/template_p01.zip'>代码包</a><br />
 	</blockquote>
 	
 	<h3 id='s1'>step 1.</h3>
@@ -45,20 +45,20 @@ use jc\system\ApplicationFactory;
 // 初始化 jcat 框架
 include __DIR__."/../framework/inc.entrance.php" ;
 
-$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
+\$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 加载模板
-UIFactory::singleton()->sourceFileManager()->addFolder( $aApp->fileSystem ()->findFolder('/template/')) ;
+UIFactory::singleton()->sourceFileManager()->addFolder( \$aApp->fileSystem ()->findFolder('/template/')) ;
 
 // 创建一个 UI 对象
-$aUI = UIFactory::singleton()->create() ;
+\$aUI = UIFactory::singleton()->create() ;
 
 // 设置可以在模板文件里使用的变量
-$aUI->variables()->set('bTrue' , true) ;
+\$aUI->variables()->set('bTrue' , true) ;
 
 // 渲染并向浏览器显示一个模板文件
-$aUI->display('template.html') ;
-<? ob_flush(); echo '?','>' ; ?></code>
+\$aUI->display('template.html') ;
+?></code>
 			</pre>
 			<p>第6行是在调用Jecat框架下的初始化文件,这样就完成了Jecat的加载,在这之后的代码就是在Jecat框架下运行了.</p>
 			<p>第8行是在创建一个Applacation对象,这个对象是系统执行的"线索",整个系统按照它的调遣来完成页面请求的处理.</p>
@@ -71,7 +71,7 @@ $aUI->display('template.html') ;
 			进入template文件夹,打开template.html文件,添加如下代码:
 			<pre class='code'>
 				<code class='html'>
-&lt;if &#36bTrue >
+&lt;if \$bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
 &lt;/if></code>
 			</pre>
@@ -97,14 +97,14 @@ $aUI->display('template.html') ;
 			<li>修改template.html文件
 				<pre class='code'>
 				<code class='html'>
-&lt;if &#36;bTrue >
+&lt;if \$bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
 	&lt;else />
 	&lt;p>if条件为false的情况&lt;/p>
 &lt;/if></code>
 				</pre>
 				<p>注意else标签是单行标签,它必须在if的内部出现.</p>
-				<p>把te.php文件中的把bTure改成false,然后刷新一下页面看看是不是只显示后面的那一行文本.</p>
+				<p>把te.php文件中的把bTure的值改成false,然后刷新一下页面看看是不是只显示后面的那一行文本.</p>
 			</li>
 		</ul>
 	</div>
@@ -116,9 +116,9 @@ $aUI->display('template.html') ;
 			<li>修改template.html文件
 				<pre class='code'>
 				<code class='html'>
-&lt;if &#36bTrue >
+&lt;if \$bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
-	&lt;else "&#36bTrue == false"/>
+	&lt;else "\$bTrue == false"/>
 	&lt;p>if条件为false的情况&lt;/p>
 &lt;/if></code>
 				</pre>

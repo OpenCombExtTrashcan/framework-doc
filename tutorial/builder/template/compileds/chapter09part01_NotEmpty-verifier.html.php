@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>使用非空校验器(NotEmpty)</h1>
 	<blockquote class="prepare">
@@ -11,8 +14,8 @@
 		<p class='purpose'>先是给控制器加入验证步骤</p>
 <pre class='code'>
 <code class='php'>
-if (! $this->viewRegister->verifyWidgets ()) {
-	$aMsgQueue = $this->messageQueue ();
+if (! \$this->viewRegister->verifyWidgets ()) {
+	\$aMsgQueue = \$this->messageQueue ();
 	return;
 }
 </code>
@@ -21,18 +24,18 @@ if (! $this->viewRegister->verifyWidgets ()) {
 <pre class='code'>
 <code class='php'>
 public function process() {
-	if ($this->viewRegister->isSubmit ( $this->aParams )) {
-		$this->viewRegister->loadWidgets ( $this->aParams );
-		if (! $this->viewRegister->verifyWidgets ()) {  //让视图对控件进行验证
-			$aMsgQueue = $this->messageQueue ();  //如果验证失败,发布失败消息,这里默认发送给控制器的消息队列
+	if (\$this->viewRegister->isSubmit ( \$this->aParams )) {
+		\$this->viewRegister->loadWidgets ( \$this->aParams );
+		if (! \$this->viewRegister->verifyWidgets ()) {  //让视图对控件进行验证
+			\$aMsgQueue = \$this->messageQueue ();  //如果验证失败,发布失败消息,这里默认发送给控制器的消息队列
 			return;       //如果验证失败,停止业务处理
 		}
-		$this->response()->output ( $this->aParams->get ( 'username' ) );
-		$this->response()->output ( var_export ( $this->viewRegister->widget ( 'passwordGroup' )->value () ,true) );
-		$this->response()->output($this->aParams->get('email')) ;
-		$this->response()->output($this->aParams->get('ademail')) ;
-		$this->response()->output($this->aParams->get('selectprovince')) ;
-		$this->response()->output(var_export($this->aParams->get('selectcity'),true)) ;
+		\$this->response()->output ( \$this->aParams->get ( 'username' ) );
+		\$this->response()->output ( var_export ( \$this->viewRegister->widget ( 'passwordGroup' )->value () ,true) );
+		\$this->response()->output(\$this->aParams->get('email')) ;
+		\$this->response()->output(\$this->aParams->get('ademail')) ;
+		\$this->response()->output(\$this->aParams->get('selectprovince')) ;
+		\$this->response()->output(var_export(\$this->aParams->get('selectcity'),true)) ;
 	}
 }
 </code>
@@ -47,17 +50,17 @@ public function process() {
 			<li>在init函数的顶部找到下面的代码
 <pre class='code'>
 <code class='php'>
-$username = new Text ( 'username', '用户名', '', TEXT::single );
-$this->viewRegister->addWidget ( $username );</code>
+\$username = new Text ( 'username', '用户名', '', TEXT::single );
+\$this->viewRegister->addWidget ( \$username );</code>
 </pre>
 				<p>这段代码实例化了一个Text对象,我们用来接受用户名输入</p>
 			</li>
 			<li>
 <pre class='code'>
 <code class='php'>
-$username = new Text ( 'username', '用户名', '', TEXT::single );
-$username->addVerifier(NotEmpty::singleton() , '用户名不能为空');
-$this->viewRegister->addWidget ( $username );</code>
+\$username = new Text ( 'username', '用户名', '', TEXT::single );
+\$username->addVerifier(NotEmpty::singleton() , '用户名不能为空');
+\$this->viewRegister->addWidget ( \$username );</code>
 </pre>
 			<p>第2行的addVerifier就是给控件添加校验器的方法,它的第1个参数是校验器对象,这里我们使用了单件模式,就是说全系统中这个类只有一个对象.
 			对于NotEmpty这样单纯的作用的类来说,这样作再适合不过了.Jecat中单件模式的使用方法是 类名::singleton() </p>
@@ -80,3 +83,7 @@ use jc\verifier\NotEmpty;</code>
 		如果你想更细致的修改提示信息的位置和内容,可以参考教程或者手册的"消息队列"相关章节
 	</blockquote>
 </div>
+
+OUTPUT
+) ;
+?>

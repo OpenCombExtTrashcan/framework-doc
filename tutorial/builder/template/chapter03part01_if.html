@@ -3,7 +3,7 @@
 	<blockquote  class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
-		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/template_start.zip'>代码包</a><br />
+		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/template_p01.zip'>代码包</a><br />
 	</blockquote>
 	
 	<h3 id='s1'>step 1.</h3>
@@ -68,7 +68,7 @@ $aUI->display('template.html') ;
 			进入template文件夹,打开template.html文件,添加如下代码:
 			<pre class='code'>
 				<code class='html'>
-&lt;if &#36bTrue >
+&lt;if $bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
 &lt;/if></code>
 			</pre>
@@ -94,14 +94,14 @@ $aUI->display('template.html') ;
 			<li>修改template.html文件
 				<pre class='code'>
 				<code class='html'>
-&lt;if &#36;bTrue >
+&lt;if $bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
 	&lt;else />
 	&lt;p>if条件为false的情况&lt;/p>
 &lt;/if></code>
 				</pre>
 				<p>注意else标签是单行标签,它必须在if的内部出现.</p>
-				<p>把te.php文件中的把bTure改成false,然后刷新一下页面看看是不是只显示后面的那一行文本.</p>
+				<p>把te.php文件中的把bTure的值改成false,然后刷新一下页面看看是不是只显示后面的那一行文本.</p>
 			</li>
 		</ul>
 	</div>
@@ -113,9 +113,9 @@ $aUI->display('template.html') ;
 			<li>修改template.html文件
 				<pre class='code'>
 				<code class='html'>
-&lt;if &#36bTrue >
+&lt;if $bTrue >
 	&lt;p>if条件为true的情况&lt;/p>
-	&lt;else "&#36bTrue == false"/>
+	&lt;else "$bTrue == false"/>
 	&lt;p>if条件为false的情况&lt;/p>
 &lt;/if></code>
 				</pre>

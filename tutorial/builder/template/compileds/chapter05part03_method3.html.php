@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>完整的定义orm</h1>
 	<p>上一节的代码从软件工程的质量标准来看，有一处很不理想的瑕疵：每次创建Model对象时，都需要临时定义一个ORM配置，可是涉及到相同的数据表时，那些ORM信息就会被反复定义。这违背了“Dont repeat your self”原则。</p>
@@ -13,10 +16,10 @@ use jc\mvc\model\db\orm\PrototypeAssociationMap ;</code>
 		<p>我们需要向项目引入 PrototypeAssociationMap 类，这个类负责统一维护一个完整的数据表关系网。然后在 MyProject/model_common.php 中继续添加以下代码：</p>
 			<pre class='code'>
 			<code class='php'>
-$aPam = PrototypeAssociationMap::singleton() ;
+\$aPam = PrototypeAssociationMap::singleton() ;
 
 // 定义 categories 数据表原型
-$aPam->add(
+\$aPam->add(
 	array(
 		'name' => 'category' ,			// 数据表原型名称
 		'table' => 'categories' ,		// 数据表名称
@@ -36,7 +39,7 @@ $aPam->add(
 ) ;
 
 // 定义 books 数据表原型
-$aPam->add(
+\$aPam->add(
 	array(
 		'name' => 'book' ,				// 数据表原型名称
 		'table' => 'books' ,			// 数据表名称
@@ -62,7 +65,7 @@ $aPam->add(
 ) ;
 
 // 定义 presses 数据表原型
-$aPam->add(
+\$aPam->add(
 	array(
 		'name' => 'press' ,			// 数据表原型名称
 		'table' => 'presses' ,		// 数据表名称
@@ -70,7 +73,7 @@ $aPam->add(
 ) ;
 
 // 定义 categories 数据表原型
-$aPam->add(
+\$aPam->add(
 	array(
 		'name' => 'user' ,			// 数据表原型名称
 		'table' => 'users' ,		// 数据表名称
@@ -84,11 +87,11 @@ $aPam->add(
 		<pre class='code'>
 				<code class='php'>
 // 使用 book原型，及其 authors 和 press 关联
-$aBook = Model::fromFragment('book',array('authors','press')) ;
+\$aBook = Model::fromFragment('book',array('authors','press')) ;
 
 
 // 使用 category原型，及其 books关联，并且递归使用book中的 authors 和 press 关联
-$aBook = Model::fromFragment('category',array( 'books' => array('authors','press') ) ) ;</code>
+\$aBook = Model::fromFragment('category',array( 'books' => array('authors','press') ) ) ;</code>
 </pre>
 		<p>向PrototypeAssociationMap 类的单件实例中一次性添加整个系统所需要的数据表原型定义，然后就可以通过上面演示的方式，从中取出片段，并根据这些关系片段来创建Model对象。</p>
 	</div>
@@ -97,3 +100,7 @@ $aBook = Model::fromFragment('category',array( 'books' => array('authors','press
 	</blockquote>
 	
 </div>
+
+OUTPUT
+) ;
+?>

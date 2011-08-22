@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>MVC模式:模型(model)</h1>
 	<p>本章介绍Jecat系统的模型的使用方法.</p>
@@ -6,3 +9,7 @@
 在 mvc模式下，对数据的操作都封装在 model 中。就web应用开来来说，大部分数据都来自关系型数据库，所以，本文关于model的介绍，都是围绕数据库模型的。</p>
 	<br />
 </div>
+
+OUTPUT
+) ;
+?>

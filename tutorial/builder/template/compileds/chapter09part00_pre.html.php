@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>准备工作</h1>
 	<h3 id='s1'>step 1.</h3>
@@ -22,3 +25,7 @@
 		<p class='purpose'>打开你的浏览器,访问user目录下的Register.php,如果部署成功,你应该会看到一个简单的注册页面.Register.php文件就是我们的舞台.</p>
 	</div>
 </div>
+
+OUTPUT
+) ;
+?>

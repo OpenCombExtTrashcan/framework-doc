@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 ﻿<div id="wikipage">
 <h1><span class="title"></span>"hello world"（创建JeCat项目）</h1>
 <blockquote class="prepare">
@@ -42,11 +45,11 @@ use jc\system\ApplicationFactory ;
 include __DIR__.'/framework/inc.entrance.php' ;
 
 // 用 Application工厂类的单件实例创建一个 Application 对象
-$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
+\$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 向 Application 对象的输出流输出"hello world"
-$aApp->response()->output('hello world~') ;
-<? ob_flush(); echo '?','>' ; ?>
+\$aApp->response()->output('hello world~') ;
+?>
 </code>
 </pre>
 </div>
@@ -99,3 +102,7 @@ include __DIR__.'/framework/inc.entrance.php';</code>
 </div>
 
 </div>
+
+OUTPUT
+) ;
+?>

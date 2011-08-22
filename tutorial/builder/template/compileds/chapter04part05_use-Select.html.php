@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
 	<h1><span class="title"></span>使用Select和SelectList类</h1>
 	<blockquote class="prepare">
@@ -13,19 +16,19 @@
 			<li>在init函数的末尾处添加下面的代码
 				<pre class='code'>
 				<code class='php'>
-$selectprovince = new Select ( 'selectprovince', '选择省' );
-$selectprovince->addOption ( '请选择...', null , true );
-$selectprovince->addOption ( '辽宁', 'liaoning', false );
-$selectprovince->addOption ( '北京', 'beijing', false );
-$this->viewRegister->addWidget ( $selectprovince );
+\$selectprovince = new Select ( 'selectprovince', '选择省' );
+\$selectprovince->addOption ( '请选择...', null , true );
+\$selectprovince->addOption ( '辽宁', 'liaoning', false );
+\$selectprovince->addOption ( '北京', 'beijing', false );
+\$this->viewRegister->addWidget ( \$selectprovince );
 
-$selectcity = new SelectList ( 'selectcity', '选择城市', 5, true );
-$selectcity->addOptionByArray ( array (
+\$selectcity = new SelectList ( 'selectcity', '选择城市', 5, true );
+\$selectcity->addOptionByArray ( array (
 										array ('沈阳', 'shenyang', false ),
 										array ('大连', 'dalian', false ), 
 										array ('锦州', 'jinzhou', true ) 
 										));
-$this->viewRegister->addWidget ( $selectcity );</code>
+\$this->viewRegister->addWidget ( \$selectcity );</code>
 				</pre>
 				<p>前5行是Select类,第2行到第4行是添加option选项,addOption函数的参数是:option显示的文本,option的值,是否默认选中.显然,第2行添加的option就是默认选中的.</p>
 				<p>第7行开始是SelectList类,它和Select的区别是"看起来象个列表",是的,在html中他们的标签都是&lt;select>,后者只是比前者多了size属性和multiple属性,但是他们看起来几乎是完全不同的控件,所以我们把他们分成2个类来处理.
@@ -61,14 +64,14 @@ $this->viewRegister->addWidget ( $selectcity );</code>
 			<pre class='code'>
 					<code class='php'>
 public function process() {
-	if ($this->viewRegister->isSubmit ( $this->aParams )) {
-		$this->viewRegister->loadWidgets ( $this->aParams );
-		$this->response()->output($this->aParams->get('username')) ;
-		$this->response()->output(var_export($this->aParams->get('passwordGroup'), TRUE)) ;
-		$this->response()->output($this->aParams->get('email')) ;
-		$this->response()->output($this->aParams->get('ademail')) ;
-		$this->response()->output($this->aParams->get('selectprovince')) ;
-		$this->response()->output(var_export($this->aParams->get('selectcity'),true)) ;
+	if (\$this->viewRegister->isSubmit ( \$this->aParams )) {
+		\$this->viewRegister->loadWidgets ( \$this->aParams );
+		\$this->response()->output(\$this->aParams->get('username')) ;
+		\$this->response()->output(var_export(\$this->aParams->get('passwordGroup'), TRUE)) ;
+		\$this->response()->output(\$this->aParams->get('email')) ;
+		\$this->response()->output(\$this->aParams->get('ademail')) ;
+		\$this->response()->output(\$this->aParams->get('selectprovince')) ;
+		\$this->response()->output(var_export(\$this->aParams->get('selectcity'),true)) ;
 	}
 }</code>
 			</pre>
@@ -85,3 +88,6 @@ public function process() {
 		</ul>
 	</div>
 </div>
+OUTPUT
+) ;
+?>

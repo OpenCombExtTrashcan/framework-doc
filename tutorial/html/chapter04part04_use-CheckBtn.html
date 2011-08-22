@@ -14,6 +14,8 @@
 <li><a href="chapter03.html">HTML模板</a>
 	<ul>
 		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
 	</ul>
 </li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
@@ -53,7 +55,85 @@
 </div>
 
 <div class="bodyText">
+<div class='page'>
+	<h1><span class="title"></span>使用CheckBtn类</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p03.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
+	</blockquote>
+	
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<p class='purpose'>你已经很熟练了,把CheckBtn控件添加进去把</p>
+			<ul class='todo'>
+			<li>在init函数的末尾处添加下面的代码
+				<pre class='code'>
+				<code class='php'>
+$email = new Text ( 'email', '邮件' );
+$this->viewRegister->addWidget ( $email );
 
+$ademail = new CheckBtn ( 'ademail', '接受广告邮件', 'ademail', CheckBtn::checkbox );
+$this->viewRegister->addWidget ( $ademail );</code>
+				</pre>
+				<p>一个是填写邮件的Text控件,另外一个是接受广告邮件的checkbox选项.别忘记在代码开头处"use"一下CheckBtn的命名空间.注意CheckBtn类的名字,不是"CheckBox"</p>
+			</li>
+		</ul>
+	</div>
+	
+	<h3 id='s2'>step 2.</h3>
+	<div class='step'>
+		<p class='purpose'>然后我们去模板添加对应的标签</p>
+		<ul class='todo'>
+			<li>添加控件的标签,然后模板看起来应该是这样:
+				<pre class='code'>
+					<code class='html'>
+&lt;msgqueue for="$theView" />
+&lt;form id="theform" method='post'>
+	&lt;label for="username">用户名:&lt;/label>&lt;widget id='username'/>
+	&lt;label for='password1'>密码&lt;/label>&lt;widget id="password1"/>&lt;br />
+	&lt;label for='password2'>确认密码&lt;/label>&lt;widget id="password2"/>&lt;br />
+	&lt;label for='email'>邮箱&lt;/label>&lt;widget id="email"/>&lt;br />
+	&lt;widget id="ademail"/>&lt;br />
+	&lt;input type='submit' value='提交表单'/>
+&lt;/form></code>
+				</pre>
+				<p>注意ademail没有对应的label,其实它的label集成在控件的模板里的,是的,控件也是有模板的,他们在framework文件夹里面了,总之,你不用为ademail写label标签了,它自己会出现的</p>
+			</li>
+		</ul>
+	</div>
+	
+	<h3 id='s3'>step 3.</h3>
+	<div class='step'>
+		<p class='purpose'>写一些代码来输出Checkbox的值</p>
+		<ul class='todo'>
+			<li>修改一下process函数中的代码
+			<pre class='code'>
+					<code class='php'>
+public function process() {
+	if ($this->viewRegister->isSubmit ( $this->aParams )) {
+		$this->viewRegister->loadWidgets ( $this->aParams );
+		$this->response()->output($this->aParams->get('username')) ;
+		$this->response()->output(var_export($this->viewRegister->widget ( 'passwordGroup')->value(),true )) ;
+		$this->response()->output($this->aParams->get('email')) ;
+		$this->response()->output($this->aParams->get('ademail')) ;
+	}
+}</code>
+			</pre>
+			<p>如果checkbox被选中,那么ademail的值会通过表单传过来并且通过上面的第7行打印出来,如果没有选中,那么ademail控件的值就是null</p>
+			</li>
+		</ul>
+	</div>
+	
+	<h3 id='s4'>step 4.</h3>
+	<div class='step'>
+		<p class='purpose'>现在来检验你的代码</p>
+		<ul class='todo'>
+			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/user/Register.php 然后回车来访问你的页面</li>
+			<li>在username等控件中填入一些内容,点击"提交表单"的按钮,看看输出的值是否和你输入的一样.反复实验CheckBtn控件选中和为选中的情况下提交是什么样的效果</li>
+		</ul>
+	</div>
+</div>
 </div>
 
 </div>

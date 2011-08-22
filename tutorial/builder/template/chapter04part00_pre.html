@@ -61,8 +61,7 @@ $aSession->start() ;
 Session::setSingleton($aSession) ;
 
 return $aApp ;
-?>
-				</code>
+?></code>
 			</pre>
 			<p>第12行是在调用Jecat框架下的初始化文件,这样就完成了Jecat的加载,在这之后的代码就是在Jecat框架下运行了.</p>
 			<p>第14行是在创建一个Applacation对象,这个对象是系统执行的"线索",整个系统按照它的调遣来完成页面请求的处理.</p>
@@ -95,9 +94,7 @@ class RegisterController extends Controller {
 
 $aController = new RegisterController($aApp->request () );
 $aController->mainRun ( );
-
-?>
-				</code>
+?></code>
 			</pre>
 			<p>这个页面是我们的注册页面的入口,为了让Jecat执行,我们在第8行的语句调用Jecat初始化脚本,这样Jecat就运行起来了.</p>
 			<p>第10行我们定义了一个控制器类.它里面的init和process方法就是我们显示页面和处理页面的地方,下一节就来说明他们的用途.</p>

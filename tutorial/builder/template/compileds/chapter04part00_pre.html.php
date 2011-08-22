@@ -54,18 +54,17 @@ use jc\system\ApplicationFactory;
 
 include __DIR__."/../framework/inc.entrance.php" ;
 
-$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
+\$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 加载模板
-UIFactory::singleton()->sourceFileManager()->addFolder($aApp->fileSystem ()->findFolder('/templates/') ) ;
+UIFactory::singleton()->sourceFileManager()->addFolder(\$aApp->fileSystem ()->findFolder('/templates/') ) ;
 
-$aSession = new OriginalSession() ;
-$aSession->start() ;
-Session::setSingleton($aSession) ;
+\$aSession = new OriginalSession() ;
+\$aSession->start() ;
+Session::setSingleton(\$aSession) ;
 
-return $aApp ;
-<? ob_flush(); echo '?','>' ; ?>
-				</code>
+return \$aApp ;
+?></code>
 			</pre>
 			<p>第12行是在调用Jecat框架下的初始化文件,这样就完成了Jecat的加载,在这之后的代码就是在Jecat框架下运行了.</p>
 			<p>第14行是在创建一个Applacation对象,这个对象是系统执行的"线索",整个系统按照它的调遣来完成页面请求的处理.</p>
@@ -83,11 +82,11 @@ use jc\mvc\model\db\Model;
 use jc\mvc\controller\Controller;
 use jc\mvc\view\View;
 
-$aApp = require_once dirname ( __DIR__ ) . '/user/inc.common.php';
+\$aApp = require_once dirname ( __DIR__ ) . '/user/inc.common.php';
 
 class RegisterController extends Controller {
 	protected function init() {
-		$this->createFormView ( "Register" );
+		\$this->createFormView ( "Register" );
 		
 	}
 	
@@ -96,11 +95,9 @@ class RegisterController extends Controller {
 	}
 }
 
-$aController = new RegisterController($aApp->request () );
-$aController->mainRun ( );
-
-<? ob_flush(); echo '?','>' ; ?>
-				</code>
+\$aController = new RegisterController(\$aApp->request () );
+\$aController->mainRun ( );
+?></code>
 			</pre>
 			<p>这个页面是我们的注册页面的入口,为了让Jecat执行,我们在第8行的语句调用Jecat初始化脚本,这样Jecat就运行起来了.</p>
 			<p>第10行我们定义了一个控制器类.它里面的init和process方法就是我们显示页面和处理页面的地方,下一节就来说明他们的用途.</p>
@@ -110,7 +107,7 @@ $aController->mainRun ( );
 			进入template文件夹,打开Register.html文件,添加如下代码:
 			<pre class='code'>
 				<code class='html'>
-&lt;msgqueue for="$theView" />
+&lt;msgqueue for="\$theView" />
 &lt;form id="theform" method='post'>
 	&lt;input type='submit' value='提交表单'/>
 &lt;/form>

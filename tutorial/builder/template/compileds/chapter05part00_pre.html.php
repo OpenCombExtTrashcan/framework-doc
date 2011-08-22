@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>准备工作</h1>
 	<h3 id='s1'>step 1.</h3>
@@ -102,11 +105,11 @@ use jc\system\ApplicationFactory ;
 include __DIR__.'/framework/inc.entrance.php' ;
 
 // 用 Application工厂类的单件实例创建一个 Application 对象
-$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
+\$aApp = ApplicationFactory::singleton()->create(__DIR__) ;
 
 // 连接到数据库
 DB::singleton()->setDriver( new PDODriver("mysql:host=192.168.1.28;dbname=jc-example",'root','123456',array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")) ) ;
-<? ob_flush(); echo '?','>' ; ?></code>
+?></code>
 </pre>
 		<p>记得代码中的 &lt;you database ...> 改成你真实运行环境中的配置 :)</p>
 	</div>
@@ -121,7 +124,7 @@ use jc\mvc\model\db\Model ;
 use jc\system\Application;
 
 require 'inc.common.php' ;
-<? ob_flush(); echo '?','>' ; ?></code>
+?></code>
 </pre>
 	</div>
 	<p>
@@ -129,3 +132,7 @@ require 'inc.common.php' ;
 	</p>
 	
 </div>
+
+OUTPUT
+) ;
+?>

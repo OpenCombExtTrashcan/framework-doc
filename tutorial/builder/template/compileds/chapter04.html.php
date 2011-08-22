@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>MVC模式：控件类</h1>
 	<p>本章介绍jecat系统的控件类的使用方法.</p>
@@ -12,3 +15,6 @@
 		</ul>
 	<p>本章将引导读者从零开始构建一个注册系统的页面,让读者以最快的速度体验jecat的MVC系统.</p>
 </div>
+OUTPUT
+) ;
+?>

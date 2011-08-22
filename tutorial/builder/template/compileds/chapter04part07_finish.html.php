@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
 	<h1><span class="title"></span>总结</h1>
 	<p>本章我们主要完成了注册的前台,它可以显示注册页面,可以提交数据.Jecat还提供了RadioGroup等控件,使用方法和我们教程中用到的控件大同小异,读者完全掌握.</p>
@@ -9,3 +12,6 @@
 	<br />
 	<br />
 </div>
+OUTPUT
+) ;
+?>

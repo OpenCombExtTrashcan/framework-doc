@@ -17,6 +17,8 @@ $aDevice->write(<<<OUTPUT
 <li><a href="chapter03.html">HTML模板</a>
 	<ul>
 		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
 	</ul>
 </li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
@@ -73,12 +75,12 @@ $aDevice->write(<<<OUTPUT
 <script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
 <script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
 <script type="text/javascript">
-$(function(){
-	$.beautyOfCode.init({
+\$(function(){
+	\$.beautyOfCode.init({
 		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
 		baseUrl: './',
 		ready: function() {
-			$.beautyOfCode.beautifyAll();
+			\$.beautyOfCode.beautifyAll();
 		}
 	});
 });

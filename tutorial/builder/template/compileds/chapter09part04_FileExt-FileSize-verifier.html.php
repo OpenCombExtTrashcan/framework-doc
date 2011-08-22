@@ -1,3 +1,6 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div>
 	<h1><span class="title"></span>文件类型校验器(FileExt),文件大小校验器(FileSize)</h1>
 	<blockquote class="prepare">
@@ -11,13 +14,13 @@
 		<p class='purpose'>咱们再给文件上传添加2个校验器.代码如下</p>
 <pre class='code'>
 <code class='php'>
-if(!$uploadForlder = $this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
-	$uploadForlder = $this->application ()->fileSystem ()->createFolder ( '/data/widget');
+if(!\$uploadForlder = \$this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
+	\$uploadForlder = \$this->application ()->fileSystem ()->createFolder ( '/data/widget');
 }
-$fileupload = new File ( 'fileupload', '文件上传', $uploadForlder );
-$fileupload->addVerifier(FileSize::flyweight(array(200,200000)));
-$fileupload->addVerifier(FileExt::flyweight(array(array('jpg','png','bmp'),true)));
-$this->viewRegister->addWidget ( $fileupload );</code>
+\$fileupload = new File ( 'fileupload', '文件上传', \$uploadForlder );
+\$fileupload->addVerifier(FileSize::flyweight(array(200,200000)));
+\$fileupload->addVerifier(FileExt::flyweight(array(array('jpg','png','bmp'),true)));
+\$this->viewRegister->addWidget ( \$fileupload );</code>
 </pre>
 	<p>第5行用的是FileSize校验器,这个和前面我们用过的Number校验器很象,前面的数字是文件大小的下限,后面的数字是上限,单位是字节(byte)</p>
 	<p>第6行我们使用FileExt校验器,这个校验器很有意思.第一个参数是一个数组,里面是一些文件扩展名,后面是一个bool量,如果是true,前面所写的扩展名都是允许上传的.如果第2个参数是false,
@@ -33,3 +36,7 @@ $this->viewRegister->addWidget ( $fileupload );</code>
 		由于文件上传有容易出现重大的安全隐患,所以我们建议你在使用任何文件上传功能的控件时都仔细设置他们的校验器,以保证服务器安全.
 	</blockquote>
 </div>
+
+OUTPUT
+) ;
+?>
