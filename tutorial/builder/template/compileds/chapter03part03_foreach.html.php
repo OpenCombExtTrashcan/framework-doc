@@ -52,7 +52,7 @@ $aDevice->write(<<<OUTPUT
 		</ul>
 	</div>
 	
-	<h3 id='s3'>step 3.</h3>
+	<h3 id='s2'>step 2.</h3>
 	<div class='step'>
 		<p>验证构建的代码是否正确</p>
 		<ul>

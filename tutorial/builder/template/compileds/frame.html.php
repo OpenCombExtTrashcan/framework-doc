@@ -19,6 +19,8 @@ $aDevice->write(<<<OUTPUT
 		<li><a href='chapter03part01_if.html'>if 标签</a></li>
 		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
 		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
+		<li><a href='chapter03part04_macro.html'>模板宏</a></li>
+		<li><a href='chapter03part05_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li><a href='chapter04.html'>MVC模式：控件类</a> 
