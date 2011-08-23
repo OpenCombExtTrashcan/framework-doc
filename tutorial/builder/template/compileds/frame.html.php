@@ -32,7 +32,8 @@ $aDevice->write(<<<OUTPUT
 		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
 		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
 		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
-		<li><a href='chapter04part07_finish.html'>总结</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li><a href='chapter05.html'>MVC模式：模型（model）</a>

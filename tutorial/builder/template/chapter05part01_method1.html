@@ -34,7 +34,7 @@ $aCategory->name = 'Soft Engine' ;</code></pre>
 			<pre class='code'>
 			<code class='php'>
 $aCategory['name'] = 'Soft Engine' ;</code></pre>
-			<p>name 是数据表  categories 中的一个字段，用这3中方式访问 name ，作用时完全相同的。</p>
+			<p>name 是数据表  categories 中的一个字段，用这3种方式访问 name 字段 ，作用是完全相同的。</p>
 	</div>
 	
 	<h3 id='s2'>step 2.</h3>
@@ -70,8 +70,10 @@ else
 		<p class='purpose'>在刚才的代码后面加上：</p>
 	<pre class='code'>
 	<code class='php'>
-// 删除前面创建的 $aCategory 和 $aBook
+//获得刚刚添加的图书类型的ID
 $nCId = $aCategory->cid ;
+
+// 删除前面创建的 $aCategory 和 $aBook
 unset($aCategory) ;
 unset($aBook) ;
 
@@ -85,7 +87,7 @@ if( !$aCategory->load($nCId) )
 }
 
 // 查找 name 字段 为"Beautiful Architecture"的 books表中的记录
-if( !$aCategory->load('Beautiful Architecture','name') )
+if( !$aBook->load('Beautiful Architecture','name') )
 {
 	Application::singleton()->response()->output("无法找到指定的图书") ;
 }

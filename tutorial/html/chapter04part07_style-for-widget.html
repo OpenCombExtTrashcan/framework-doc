@@ -29,7 +29,8 @@
 		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
 		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
 		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
-		<li><a href='chapter04part07_finish.html'>总结</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
 	</ul>
 </li>
 <li><a href='chapter05.html'>MVC模式：模型（model）</a>
@@ -58,15 +59,36 @@
 
 <div class="bodyText">
 <div class='page'>
-	<h1><span class="title"></span>总结</h1>
-	<p>本章我们主要完成了注册的前台,它可以显示注册页面,可以提交数据.Jecat还提供了RadioGroup等控件,使用方法和我们教程中用到的控件大同小异,读者完全掌握.</p>
-	<p>我们完成的注册页面不能校验数据,也不能写入数据库,如果你想要了解数据校验的方法,可以看这个教程的数据校验章节.我们将依然使用这个章节完成的代码,通过简单的几个语句完成整个表单的数据校验.
-	写入和读取数据库(数据交换)可以参照数据交换章节.到时候我们将使用另外一个例子来讲解Jecat和数据库交互的方法.</p>
+	<h1><span class="title"></span>给widget添加样式和属性</h1>
 	<blockquote class="prepare">
-		<p>点击<a href='../code/MVC_p06.zip'>这里</a>下载完成后的代码包.</p>
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p06.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
 	</blockquote>
-	<br />
-	<br />
+	
+	<p>控件类的使用改变了html页面中标签的书写方式,如果要对模板进行美化工作,我们应该怎么作呢?</p>
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<p class='purpose'>以username控件为例,我们对它的模板进行修改,让它支持style属性和class属性</p>
+			<ul class='todo'>
+				<li>进入user文件夹,编辑Register.php文件,找到init函数
+					<pre class='code'>
+						<code class='html'>
+&lt;widget id='username' /></code>
+					</pre>
+				</li>
+				
+			</ul>
+	</div>
+	
+	<h3 id='s3'>step 3.</h3>
+	<div class='step'>
+		<p class='purpose'>你已经完成了添加控件的步骤,现在来检验你的代码</p>
+		<ul class='todo'>
+			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/user/Register.php 然后回车来访问你的页面</li>
+			<li>你的页面应该有一个id为username的输入框和一个名为"提交表单"的按钮,说明你成功的使用了Jecat提供的控件类.但是这个表单还不能提交,下一节就告诉你如何处理这个表单提交的内容</li>
+		</ul>
+	</div>
 </div>
 </div>
 

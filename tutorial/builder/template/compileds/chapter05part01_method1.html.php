@@ -37,7 +37,7 @@ else
 			<pre class='code'>
 			<code class='php'>
 \$aCategory['name'] = 'Soft Engine' ;</code></pre>
-			<p>name 是数据表  categories 中的一个字段，用这3中方式访问 name ，作用时完全相同的。</p>
+			<p>name 是数据表  categories 中的一个字段，用这3种方式访问 name 字段 ，作用是完全相同的。</p>
 	</div>
 	
 	<h3 id='s2'>step 2.</h3>
