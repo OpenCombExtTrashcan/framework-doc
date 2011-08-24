@@ -36,9 +36,9 @@
 <li><a href='chapter05.html'>MVC模式：模型（model）</a>
 	<ul>
 		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
-		<li><a href='chapter05part01_method1.html'>直接了当的方式</a></li>
-		<li><a href='chapter05part02_method2.html'>聪明的方式</a></li>
-		<li><a href='chapter05part03_method3.html'>完整的定义orm</a></li>
+		<li><a href='chapter05part01_method1.html'>使用表名创建数据库模型</a></li>
+		<li><a href='chapter05part02_method2.html'>使用数组配置创建数据库模型</a></li>
+		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
 	</ul>
 </li>
 <li> MVC模式：数据交换</li>
@@ -59,7 +59,13 @@
 
 <div class="bodyText">
 <div>
-	<h1><span class="title"></span>聪明的方式</h1>
+	<h1><span class="title"></span>使用数组配置创建数据库模型</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/model_p01.zip'>代码包</a>,
+		这样你只要把这个代码部署到Jecat的framework同级的目录下然后使用其中的sql文件倒数数据库就可以开始了<br />
+	</blockquote>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>在前面的例子当中，我们为每个表各自建立Model对象，$aCategory 和 $aBook 之间没有联系，它们是各自操作各自的。
@@ -69,8 +75,15 @@
 		<p>books表 belongsTo categories表</p>
 		<p>如果配置好这些关联，并提供给Model类，Model类就能够根据这些关联进程很多自动处理，这会大大简化开发人员需要处理的业务逻辑。</p>
 		<p>接下来我们重新写一段代码，用更优雅（代码更精简）的方式完成前面例子里做过的那写操作，并且再加上对图书作者的处理。</p>
+		<p>我们把model_example.php文件的代码用下面的代码替换替换</p>
 				<pre class='code'>
 			<code class='php'>
+&lt;?php
+use jc\mvc\model\db\Model ;
+use jc\system\Application;
+
+require 'inc.common.php' ;
+
 // 用一个ORM数组来配置数据表和数据表之间的关系
 $arrOrmConfig = array(
 
@@ -98,7 +111,7 @@ $arrOrmConfig = array(
 						'fromk' => 'bid' ,			// （可省略）
 					
 						'bridge' => 'authors' ,		// “桥接表”
-						'btok' => 'cid' ,				// 桥接表上的外键（可省略）
+						'btok' => 'bid' ,				// 桥接表上的外键（可省略）
 						'bfromk' => 'uid' ,			// 桥接表上的连接另一端的外键（可省略）
 
 						'tok' => 'uid' ,				// （可省略）
@@ -149,11 +162,11 @@ $aBook1->child('press')->email = 'cmpbook@vip.163.com' ;
 $aBook1->child('press')->country = '机械工业出版社' ;
 
 // 创建这本书的两名作者
-$aAuthor1 = $aBook1->child('authors')->create() ;
-$aAuthor1->name = 'Diomidis Spinellis' ;
+$aAuthor1 = $aBook1->child('authors')->createChild();
+$aAuthor1->username = 'Diomidis Spinellis' ;
 
-$aAuthor2 = $aBook1->child('authors')->create() ;
-$aAuthor2->name = 'Georgios Gousios' ;
+$aAuthor2 = $aBook1->child('authors')->createChild() ;
+$aAuthor2->username = 'Georgios Gousios' ;
 // 在"Soft Engine"类别中创建第二本图书 ----------------
 $aBook2 = $aCategory->child('books')->createChild() ;
 $aBook2->setData('name','Design Patterns: Elements of Reusable Object-Oriented Software') ;
@@ -164,22 +177,23 @@ $aBook2->setData('price',69.00) ;
 $aBook2->addChild( $aBook1->child('press'), 'press' ) ;
 
 // 创建这本书的四名作者
-$aAuthor3 = $aBook2->child('authors')->create() ;
-$aAuthor3->name = 'Erich Gamma' ;
+$aAuthor3 = $aBook2->child('authors')->createChild() ;
+$aAuthor3->username = 'Erich Gamma' ;
 
-$aAuthor4 = $aBook2->child('authors')->create() ;
-$aAuthor4->name = 'Richard Helm' ;
+$aAuthor4 = $aBook2->child('authors')->createChild() ;
+$aAuthor4->username = 'Richard Helm' ;
 
-$aAuthor5 = $aBook2->child('authors')->create() ;
-$aAuthor5->name = 'Ralph Johnson' ;
+$aAuthor5 = $aBook2->child('authors')->createChild() ;
+$aAuthor5->username = 'Ralph Johnson' ;
 
-$aAuthor6 = $aBook2->child('authors')->create() ;
-$aAuthor6->name = 'John Vlissides' ;
+$aAuthor6 = $aBook2->child('authors')->createChild() ;
+$aAuthor6->username = 'John Vlissides' ;
 
 
 // 将类别、图书、出版社、作者，连同互相之间的关系，全部保存到数据库里 ... ...
-$aCategory->save() ;
-// done :)</code>
+$aCategory->save();
+// done :)
+?></code>
 				</pre>
 			<p>Model 类构造的函数可以接收一个数组做为参数，这个数组有特定的格式，它定义了一个数据表原型。然后可以在数组中为这个数据表定义相关联的数据表，
 			并用同样的格式进一步定义被关联的数据表原型。这个结构可以无穷递归下去。</p>
@@ -218,7 +232,12 @@ $arrOrmConfig = array(
 	'hasAndBelongsToMany' => array(
 		array(
 			'prop' => 'authors' ,
+			'fromk' => 'bid' ,
+			'tok' => 'uid' ,
+		
 			'bridge' => 'authors' ,		// “桥接表”
+			'bfromk' => 'uid',
+			'btok' => 'bid',
 
 			// 被关联的表
 			'prototype' => array(
@@ -232,6 +251,7 @@ $arrOrmConfig = array(
 		array(
 			'prop' => 'press' ,
 			'fromk' => 'press' ,
+			'tok' => 'pid' ,
 			
 			// 被关联的表
 			'prototype' => array(
@@ -242,25 +262,27 @@ $arrOrmConfig = array(
 ) ;
 
 // Model构造函数的第二个参数为true，表示该Model 是一个聚合模型——它是多个book模型的集合
-$aBookList = Model($arrOrmConfig,true) ;
+$aBookList =new Model($arrOrmConfig,true) ;
 
 if( !$aBookList->load($nCategoryId,'category') )
 {	
-	Application::singleton()->response()->output(“图书列表信息查询失败！”) ;
+	Application::singleton()->response()->output("图书列表信息查询失败！") ;
+	//print_r(DB::singleton()->executeLog()) ;
 }
-
-// 遍历“集合”中的 book模型对象
+$aBookList->printStruct() ;
+// 遍历"集合"中的 book模型对象
 foreach( $aBookList->childIterator() as $aBook )
 {
 	
-	Application::singleton()->response()->output(“Book Name: 《”. $aBook->name . “》”) ;
+	Application::singleton()->response()->output("Book Name: 《". $aBook->name . "》") ;
 
-	Application::singleton()->response()->output(“Price: ”. $aBook->price) ;
+	Application::singleton()->response()->output("Price: ". $aBook->price) ;
 
 }</code>
 </pre>
-		<p>请注意观察：这段代码重新定义了一遍 $arrOrmConfig 变量，它去掉了关于 categories 数据表的部分，因为我们不需要到数据库里查询 categories 表中的信息。
-		并且，还省略了一些可以省略的配置，这些配置系统可以根据上下文自行搜集或补全。请参考 ORM配置的详细文档，了解都有哪些配置，以及在何种情况下可以省略哪些配置。</p>
+		<p>这段代码重新定义了一遍 $arrOrmConfig 变量，它去掉了关于 categories 数据表的部分，因为我们不需要到数据库里查询 categories 表中的信息。
+		并且，还省略了一些可以省略的配置，这些配置系统可以根据上下文自行搜集或补全,你可以进一步省略配置,比如bfromk和btok,还有后面的fromk和tok。
+		请参考 ORM配置的详细文档，了解都有哪些配置，以及在何种情况下可以省略哪些配置。</p>
 	</div>
 	<p>小结
 前面两章的例子里，我们显示了一种用纯粹OOP的方式来管理数据库中的数据的方法，不但所有对数据表的操作都被转换成了对对象的操作，连数据表之间的关联也被“映射”成了对象之间的 has a关系。

@@ -2,7 +2,13 @@
 
 $aDevice->write(<<<OUTPUT
 <div>
-	<h1><span class="title"></span>直接了当的方式</h1>
+	<h1><span class="title"></span>使用表名创建数据库模型</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/model_p01.zip'>代码包</a>,
+		这样你只要把这个代码部署到Jecat的framework同级的目录下然后使用其中的sql文件倒数数据库就可以开始了<br />
+	</blockquote>
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
 		<p class='purpose'>首先我要新建一个图书分类。</p>
@@ -73,8 +79,10 @@ else
 		<p class='purpose'>在刚才的代码后面加上：</p>
 	<pre class='code'>
 	<code class='php'>
-// 删除前面创建的 \$aCategory 和 \$aBook
+//获得刚刚添加的图书类型的ID
 \$nCId = \$aCategory->cid ;
+
+// 删除前面创建的 \$aCategory 和 \$aBook
 unset(\$aCategory) ;
 unset(\$aBook) ;
 
@@ -88,7 +96,7 @@ if( !\$aCategory->load(\$nCId) )
 }
 
 // 查找 name 字段 为"Beautiful Architecture"的 books表中的记录
-if( !\$aCategory->load('Beautiful Architecture','name') )
+if( !\$aBook->load('Beautiful Architecture','name') )
 {
 	Application::singleton()->response()->output("无法找到指定的图书") ;
 }
@@ -105,11 +113,12 @@ Application::singleton()->response()->output("book name: {\$aBook->name}") ;</co
 		<p class='purpose'>在接下来，我想要修改图书的书名和isbn，价格不需要修改（我不是故意的，这两本书刚好价格相同），这很简单，再刚才的代码后面，加上这一段：</p>
 			<pre class='code'>
 					<code class='php'>
+//修改书的信息
 \$aBook->name = "Design Patterns: Elements of Reusable Object-Oriented Software" ;
 \$aBook->setData('isbn','978-111-28350') ;
 
 // 将改动保存到数据库
-if( \$aCategory->save() )
+if( \$aBook->save() )
 {
 	Application::singleton()->response()->output("图书信息修改成功！") ;
 }
