@@ -44,7 +44,11 @@ $aDevice->write(<<<OUTPUT
 		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
 	</ul>
 </li>
-<li> MVC模式：数据交换</li>
+<li><a href='chapter06.html'>MVC模式：数据交换</a>
+	<ul>
+		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
+	</ul>
+</li>
 <li> MVC模式：使用控制器（controller）</li>
 <li> MVC模式：控制器和视图的组合/重用</li>
 <li><a href='chapter09.html'>数据校验</a>

@@ -41,6 +41,8 @@ $arrChapters = array(
 	'chapter05part01_method1.html',
 	'chapter05part02_method2.html',
 	'chapter05part03_method3.html',
+	'chapter06.html',
+	'chapter06part01_dataexchange.html',
 	'chapter09.html',
 	'chapter09part00_pre.html',
 	'chapter09part01_NotEmpty-verifier.html',

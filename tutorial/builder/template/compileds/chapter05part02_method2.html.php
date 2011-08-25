@@ -210,17 +210,23 @@ require 'inc.common.php' ;
 if( !\$aBookList->load(\$nCategoryId,'category') )
 {	
 	Application::singleton()->response()->output("图书列表信息查询失败！") ;
-	//print_r(DB::singleton()->executeLog()) ;
 }
-\$aBookList->printStruct() ;
+
 // 遍历"集合"中的 book模型对象
 foreach( \$aBookList->childIterator() as \$aBook )
 {
-	
 	Application::singleton()->response()->output("Book Name: 《". \$aBook->name . "》") ;
-
-	Application::singleton()->response()->output("Price: ". \$aBook->price) ;
-
+	Application::singleton()->response()->output("Book Press: ". \$aBook->child('press')->name ) ;
+	
+	\$arrAuthorName = array();
+	foreach ( \$aBook->child('authors')->childIterator() as \$aAuthor ){
+		\$arrAuthorName[] = \$aAuthor->username ;
+	}
+	Application::singleton()->response()->output("Book Authors: ". implode( ' , ' ,\$arrAuthorName ) ) ;
+	
+	Application::singleton()->response()->output("Book Price: ". \$aBook->price) ;
+	Application::singleton()->response()->output("Book ISBN: " . \$aBook->isbn ) ;
+	Application::singleton()->response()->output("<hr />" ) ;
 }</code>
 </pre>
 		<p>这段代码重新定义了一遍 \$arrOrmConfig 变量，它去掉了关于 categories 数据表的部分，因为我们不需要到数据库里查询 categories 表中的信息。
