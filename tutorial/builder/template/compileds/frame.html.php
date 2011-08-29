@@ -49,7 +49,13 @@ $aDevice->write(<<<OUTPUT
 		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
 	</ul>
 </li>
-<li> MVC模式：使用控制器（controller）</li>
+<li><a href='chapter07.html'>MVC模式：使用控制器（controller）</a>
+	<ul>
+		<li><a href='chapter07part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter07part01_singleIndex.html'>单一入口</a></li>
+		<li><a href='chapter07part02_createView-createModel.html'>在控制器中创建视图(view)和模型(model)</a></li>
+	</ul>
+</li>
 <li> MVC模式：控制器和视图的组合/重用</li>
 <li><a href='chapter09.html'>数据校验</a>
 	<ul>

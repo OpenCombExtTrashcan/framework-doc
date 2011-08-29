@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jecat 使用教程</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+<div class="wrapper">
+<div class="index">
+<ol>
+<li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
+<li><a href="chapter02_file-operation.html">文件操作</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
+		<li><a href='chapter03part04_macro.html'>模板宏</a></li>
+		<li><a href='chapter03part05_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter04.html'>MVC模式：控件类</a> 
+	<ul>
+		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
+		<li><a href='chapter04part02_process.html'>获取表单提交数据</a></li>
+		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
+		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
+		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
+		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter05.html'>MVC模式：模型（model）</a>
+	<ul>
+		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter05part01_method1.html'>使用表名创建数据库模型</a></li>
+		<li><a href='chapter05part02_method2.html'>使用数组配置创建数据库模型</a></li>
+		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
+	</ul>
+</li>
+<li><a href='chapter06.html'>MVC模式：数据交换</a>
+	<ul>
+		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
+	</ul>
+</li>
+<li><a href='chapter07.html'>MVC模式：使用控制器（controller）</a>
+	<ul>
+		<li><a href='chapter07part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter07part01_singleIndex.html'>单一入口</a></li>
+		<li><a href='chapter07part02_createView-createModel.html'>在控制器中创建视图(view)和模型(model)</a></li>
+	</ul>
+</li>
+<li> MVC模式：控制器和视图的组合/重用</li>
+<li><a href='chapter09.html'>数据校验</a>
+	<ul>
+		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter09part01_NotEmpty-verifier.html'>使用非空校验器(NotEmpty)</a></li>
+		<li><a href='chapter09part02_Length-verifier.html'>字符长度校验器(Length)</a></li>
+		<li><a href='chapter09part03_Number-Email-Same-verifier.html'>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</a></li>
+		<li><a href='chapter09part04_FileExt-FileSize-verifier.html'>文件类型校验器(FileExt),文件大小校验器(FileSize)</a></li>
+	</ul>
+</li>
+<li> 消息队列</li>
+</ol>
+</div>
+
+<div class="bodyText">
+<div>
+	<h1><span class="title"></span>在控制器中创建视图(view)和模型(model)</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 确定你正确部署了本章教程第一节"准备工作"中的代码.<br />
+	</blockquote>
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<ul class='todo'>
+			<li>在数据库中新建controler数据库,将下面的内容导入数据库
+			<pre class='code'>
+			<code class='sql'>
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+CREATE TABLE IF NOT EXISTS `authors` (
+  `uid` int(10) NOT NULL,
+  `bid` int(8) NOT NULL,
+  UNIQUE KEY `uid` (`uid`,`bid`),
+  UNIQUE KEY `bid` (`bid`,`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `bid` int(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) NOT NULL,
+  `category` int(6) NOT NULL,
+  `press` int(10) NOT NULL,
+  `price` float NOT NULL,
+  `isbn` varchar(40) NOT NULL,
+  PRIMARY KEY (`bid`),
+  KEY `category` (`category`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+INSERT INTO `books` (`bid`, `name`, `category`, `press`, `price`, `isbn`) VALUES
+(1, 'Beautiful A', 1, 1, 169, '978-111-21126-6'),
+(2, 'Design Patterns: Elements of Reusable Object-Oriented Software', 1, 1, 69, '978-111-28350');
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `cid` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+INSERT INTO `categories` (`cid`, `name`) VALUES
+(1, 'Soft Engine'),
+(2, 'Search Engine'),
+(3, 'Database');
+
+CREATE TABLE IF NOT EXISTS `presses` (
+  `pid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(90) NOT NULL,
+  `home` varchar(120) NOT NULL,
+  `email` varchar(120) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+INSERT INTO `presses` (`pid`, `name`, `home`, `email`, `country`) VALUES
+(1, 'Apress', 'English', 'XXX@email.com', 'English'),
+(2, 'O''REILLY', '', '', '');
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `passwd` varchar(16) NOT NULL,
+  `group` int(4) NOT NULL,
+  `lastLoginTime` int(10) DEFAULT NULL,
+  `createTime` int(10) DEFAULT NULL,
+  `updateTime` int(10) DEFAULT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+			</code>
+			</pre>
+			</li>
+			<li>然后在inc.common.php中return语句以前添加下面的代码.用来建立刚刚我们导入的那些表的ORM关系.
+	<pre class='code'>
+	<code class='php'>
+//链接数据库
+DB::singleton()->setDriver( new PDODriver("mysql:host=localhost;dbname=controller",'root','123456') ) ;
+
+//数据库关系
+$aPam = PrototypeAssociationMap::singleton() ;
+
+// 定义 categories 数据表原型
+$aPam->addOrm(
+	array(
+		'name' => 'category' ,			// 数据表原型名称
+		'table' => 'categories' ,		// 数据表名称
+		
+		// 定义这个数据表所拥有的 hasMany 关联
+		'hasMany' => array(
+			array(
+				'prop' => 'books' ,		// book 对象在 category 对象内的属性名称
+				'fromk' => 'cid',
+				'tok' => 'category' ,	// 关键另一端的字段
+				
+				// 被关联的数据表原型
+				'prototype' => 'book' ,	// books 表的原型名称
+			) ,
+		) ,
+	)
+) ;
+
+// 定义 books 数据表原型
+$aPam->addOrm(
+	array(
+		'name' => 'book' ,				// 数据表原型名称
+		'table' => 'books' ,			// 数据表名称
+	
+		// 定义这个数据表所拥有的 hasMany 关联
+		'belongsTo' => array(
+			array(
+				'prop' => 'press' ,
+				'fromk' => 'press' ,	// 外键的字段名
+				'tok' => 'pid' ,	// 关键另一端的字段
+				// 被关联的表
+				'prototype' => 'press' ,// 为 presses 表定义的原型名称
+			) ,
+		) ,
+		
+		// 定义这个数据表所拥有的 hasMany 关联
+		'hasAndBelongsToMany' => array(
+			array(
+				'prop' => 'authors' ,
+				'fromk' => 'bid' ,
+				'bridge' => 'authors' ,		// “桥接表”
+				'btok' => 'bid' ,				// 桥接表上的外键（可省略）
+				'bfromk' => 'uid' ,			// 桥接表上的连接另一端的外键（可省略）
+				'tok' => 'uid' ,
+				// 被关联的表
+				'prototype' => 'user' ,
+			),
+		) ,
+	)
+) ;
+
+// 定义 presses 数据表原型
+$aPam->addOrm(
+	array(
+		'name' => 'press' ,			// 数据表原型名称
+		'table' => 'presses' ,		// 数据表名称
+	)
+) ;
+
+// 定义 categories 数据表原型
+$aPam->addOrm(
+	array(
+		'name' => 'user' ,			// 数据表原型名称
+		'table' => 'users' ,		// 数据表名称
+	)
+) ;</code>
+</pre>
+	<p>注意第2行的数据库链接信息要改成自己的.</p>
+	<p>在页面顶部的namespace后面添加2个use语句</p>
+	<pre class='code'>
+	<code class='php'>
+use jc\db\DB;
+use jc\db\driver\PDODriver;</code>
+</pre>
+	<p>这样我们就有了数据库内容和数据库表关关系的描述(ORM),在下面我们构建网页的时候要用这些来构建模型.</p>
+			</li>
+		</ul>
+	</div>
+	
+	<h3 id='s2'>step 2.</h3>
+	<div class='step'>
+		<p class='purpose'>下面我们给一个控制器添加数据模型</p>
+		<ul class='todo'>
+			<li>打开ControllerA.php,把init函数修改成下面这个样子.
+			<pre class='code'>
+	<code class='php'>
+protected function init() {
+	//让controller实例化一个带有表单的视图 , 名字是viewA, 使用的模板是viewA.html
+	$this->createView( "A" , "viewA.html" );
+	
+	//让controller通过book数据表原型创建数据模型
+	$this->createModel( 'book' , array() , true);
+	$this->viewA->setModel($this->modelBook);
+	
+	//无条件的读取所有book模型中的数据
+	$this->modelBook->load();
+	
+	//把数据模型中的数据整理成数组
+	$arrBooks = array();
+	foreach ($this->modelBook->childIterator() as $key => $aBook){
+		$arrBooks[] = $aBook;
+	}
+	
+	//把整理好的数组发送给模板用于遍历
+	$this->viewA->variables()->set('arrBooks',$arrBooks) ;
+}</code>
+</pre>
+	<p>第3行的createView函数创建了一个视图,视图的名字是"A",你在实际工作中应该给它起一个更有描述性的名字.
+	controller会自动给它前面加上一个"view"来标记他们,我们之后调用它的时候就使用"viewA"这个名字.</p>
+	<p>第6行的createModel函数创建了一个模型,我们把模型的名字设置为"book",controller也会自动给它改名,原来的名字首字母大写,前面再加上一个"model" , 完整的名字就是"modelBook"了,
+	函数的第2个参数是关联哪些数据原型,我们只需要book一个原型,所以我们传进一个空的数组,第3个参数为true的意思是我们需要的是一个组合模型,
+	就是一个模型里面包含好多子模型,每个子模型就是一条数据.</p>
+			</li>
+			<li>打开viewA.html,把这个模板的内容用下面的代码替换.
+				<pre class='code'>
+	<code class='html'>
+&lt;div>
+	&lt;ul>
+		&lt;foreach for='$arrBooks' item='book'>
+			&lt;li>&#123=$book['name']}&lt;/li>
+		&lt;/foreach>
+	&lt;/ul>
+&lt;/div></code>
+</pre>
+	<p>第3行的foreach语句把ControllerA.php发送来的数组遍历.循环中就为所欲为了.</p>
+			</li>
+		</ul>
+	</div>
+	
+	<h3 id='s3'>step 3.</h3>
+	<div class='step'>
+		<p class='purpose'>用浏览器打开: http://你的域名/controller/?c=cA ,来检验刚刚添加的代码.
+		控制器的任务就是组织所有的资源,这是MVC最重要的部分,你应该熟练掌握,建议你用ControllerB.php来写一个自己的控制器,创建自己的视图和模型,
+		然后把视图的内容用自己的方式遍历到页面上.</p>
+	</div>
+	<blockquote class='prepare'>
+		如果你需要在视图中使用表单,那么创建表单的时候要使用createFormView(),而不是createView()
+	</blockquote>
+</div>
+</div>
+
+</div>
+<script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script type="text/javascript">
+$(function(){
+	$.beautyOfCode.init({
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
+		baseUrl: './',
+		ready: function() {
+			$.beautyOfCode.beautifyAll();
+		}
+	});
+});
+</script>
+</body>
+</html>
