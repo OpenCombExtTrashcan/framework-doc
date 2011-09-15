@@ -19,6 +19,7 @@ UIFactory::singleton()->sourceFileManager()->addFolder( $aApp->fileSystem ()->fi
 
 $arrChapters = array(
 	'chapter01_hello-world.html' ,
+	'chapter02_file-operation.html' ,
 	'chapter03.html',
 	'chapter03part01_if.html',
 	'chapter03part02_loop.html',
@@ -27,7 +28,6 @@ $arrChapters = array(
 	'chapter03part05_finish.html',
 	'chapter04.html',
 	'chapter04part00_pre.html',
-	'chapter02_file-operation.html' ,
 	'chapter04part01_use-Text.html',
 	'chapter04part02_process.html',
 	'chapter04part03_use-Group.html',
