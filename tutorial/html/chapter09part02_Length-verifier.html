@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jecat 使用教程</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+<div class="wrapper">
+<div class="index">
+<ol>
+<li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
+		<li><a href='chapter03part04_macro.html'>模板宏</a></li>
+		<li><a href='chapter03part05_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter07.html'>MVC模式：使用控制器（controller）</a>
+	<ul>
+		<li><a href='chapter07part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter07part01_singleIndex.html'>单一入口</a></li>
+		<li><a href='chapter07part02_createView-createModel.html'>在控制器中创建视图(view)和模型(model)</a></li>
+	</ul>
+</li>
+<li><a href='chapter05.html'>MVC模式：模型（model）</a>
+	<ul>
+		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter05part01_method1.html'>使用表名创建数据库模型</a></li>
+		<li><a href='chapter05part02_method2.html'>使用数组配置创建数据库模型</a></li>
+		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
+	</ul>
+</li>
+<li><a href='chapter04.html'>MVC模式：视图和控件类</a> 
+	<ul>
+		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
+		<li><a href='chapter04part02_process.html'>获取表单提交数据</a></li>
+		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
+		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
+		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
+		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter06.html'>MVC模式：数据交换</a>
+	<ul>
+		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
+	</ul>
+</li>
+<li> MVC模式：控制器和视图的组合/重用</li>
+<li> 消息队列</li>
+<li><a href='chapter09.html'>数据校验</a>
+	<ul>
+		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter09part01_NotEmpty-verifier.html'>使用非空校验器(NotEmpty)</a></li>
+		<li><a href='chapter09part02_Length-verifier.html'>字符长度校验器(Length)</a></li>
+		<li><a href='chapter09part03_Number-Email-Same-verifier.html'>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</a></li>
+		<li><a href='chapter09part04_FileExt-FileSize-verifier.html'>文件类型校验器(FileExt),文件大小校验器(FileSize)</a></li>
+	</ul>
+</li>
+<li><a href="chapter02_file-operation.html">文件操作</a></li>
+</ol>
+</div>
+
+<div class="bodyText">
+<div>
+	<h1><span class="title"></span>字符长度校验器(Length)</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你没有本章之前的代码,可以直接下载<a href='../code/Verifier_p01.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
+	</blockquote>
+	<p>下面让我们体验Length校验器</p>
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<p class='purpose'>咱们再给username控件加一个长度限制校验器,长度校验器类的名字是Length,别忘记在本页代码的顶部加上相应的use语句</p>
+<pre class='code'>
+<code class='php'>
+$username = new Text ( 'username', '用户名', '', TEXT::single );
+$username->addVerifier(NotEmpty::singleton() , '用户名不能为空')->add(Length::flyweight(array(4,10)));
+$this->viewRegister->addWidget ( $username );</code>
+</pre>
+	<p>第2行是在以前的代码基础上又追加了一个长度校验器,在语句的后面你可以加入更多的add方法追加更多的校验器</p>
+	<p>Length的参数比较特殊,它需要一个整数区间来表示限制的范围,我们用一个数组来表示这个区间,把这个数组作为第一个参数传递给Length的flyweight方法...
+	等等,为什么不是我们在NotEmpty类上用的singleton方法呢?NotEmpty很简单,它不需要参数,所以可以用单件模式,而Length就不同,它是有参数的,不能用同一个对象来解决每种参数不同的情况,
+	所以我们这里用享元模式,比如说,你在系统中用了3次Length对象,其中2次参数是一致的,那么这2次用的是同一个对象,而第3次用的是另外一个对象.这样即做到了节省内存,又做到了同一个类能够应付不同情况.
+	所以,没有参数的NotEmpty我们就使用单件模式,而有参数的Length我们就使用它的享元模式,其他的校验器也都是这个原则.
+	</p>
+	</div>
+	
+	<h3 id='s2'>step 2.</h3>
+	<div class='step'>
+		<p class='purpose'>打开你的浏览器,访问user目录下的Register.php.不填写用户名,或者填写字符过多的用户名或者字符过少的用户名再提交表单,
+		你会看到不同校验器提供的不同提示信息.很神奇吧,想想如果是你自己来处理这些验证条件会是怎么样的情形,Jecat的校验器不止节省了你的编写代码的时间,还节省了你大量的测试和纠错时间.</p>
+	</div>
+	
+	<blockquote class='prepure'>
+		如果我们要用Length限制下限却不限制上限应该怎么作呢?这样写: Length::flyweight(array(4,-1)) , -1 就代表不限制,其他的验证器对于"忽略"或者"无限"也是这么赋值的.
+	</blockquote>
+</div>
+
+</div>
+
+</div>
+<script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script type="text/javascript">
+$(function(){
+	$.beautyOfCode.init({
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
+		baseUrl: './',
+		ready: function() {
+			$.beautyOfCode.beautifyAll();
+		}
+	});
+});
+</script>
+</body>
+</html>

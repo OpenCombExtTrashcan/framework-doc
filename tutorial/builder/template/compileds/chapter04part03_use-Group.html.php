@@ -1,6 +1,9 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
-	<h1>使用Group类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用Group类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p02.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -14,21 +17,21 @@
 				<pre class='code'>
 					<code class='php'>
 protected function init() {
-	$this->createFormView( "Register" );
+	\$this->createFormView( "Register" );
 	
-	$username = new Text ( 'username', '用户名', '', TEXT::single );
-	$this->viewRegister->addWidget ( $username );
+	\$username = new Text ( 'username', '用户名', '', TEXT::single );
+	\$this->viewRegister->addWidget ( \$username );
 			
-	$password1 = new Text ( 'password1', '确认密码1', '', Text::password );
-	$this->viewRegister->addWidget ( $password1 );
+	\$password1 = new Text ( 'password1', '确认密码1', '', Text::password );
+	\$this->viewRegister->addWidget ( \$password1 );
 	
-	$password2 = new Text ( 'password2', '确认密码2', '', Text::password );
-	$this->viewRegister->addWidget ( $password2 );
+	\$password2 = new Text ( 'password2', '确认密码2', '', Text::password );
+	\$this->viewRegister->addWidget ( \$password2 );
 	
-	$group = new Group ( 'passwordGroup', '密码核对' );
-	$group->addWidget ( $password1 );
-	$group->addWidget ( $password2 );
-	$this->viewRegister->addWidget ( $group );
+	\$group = new Group ( 'passwordGroup', '密码核对' );
+	\$group->addWidget ( \$password1 );
+	\$group->addWidget ( \$password2 );
+	\$this->viewRegister->addWidget ( \$group );
 }</code>
 				</pre>
 				<p>从第7行开始是新创建的2个Text控件,注意他们的type参数都是password,而不是single,同样的,他们也被viewRegister管理</p>
@@ -50,7 +53,7 @@ use jc\mvc\view\widget\Group;</code>
 			<li>添加控件的标签,然后模板看起来应该是这样:
 				<pre class='code'>
 					<code class='html'>
-&lt;msgqueue for="$theView" />
+&lt;msgqueue for="\$theView" />
 &lt;form id="theform" method='post'>
 	&lt;label for="username">用户名:&lt;/label>&lt;widget id='username'/>
 	&lt;label for='password1'>密码&lt;/label>&lt;widget id="password1"/>&lt;br />
@@ -71,10 +74,10 @@ use jc\mvc\view\widget\Group;</code>
 			<pre class='code'>
 					<code class='php'>
 public function process() {
-	if ($this->viewRegister->isSubmit ( $this->aParams )) {
-		$this->viewRegister->loadWidgets ( $this->aParams );
-		$this->response()->output($this->aParams->get('username')) ;
-		$this->response()->output(var_export($this->viewRegister->widget ( 'passwordGroup')->value() ,true)) ;
+	if (\$this->viewRegister->isSubmit ( \$this->aParams )) {
+		\$this->viewRegister->loadWidgets ( \$this->aParams );
+		\$this->response()->output(\$this->aParams->get('username')) ;
+		\$this->response()->output(var_export(\$this->viewRegister->widget ( 'passwordGroup')->value() ,true)) ;
 	}
 }</code>
 			</pre>
@@ -92,3 +95,6 @@ public function process() {
 		</ul>
 	</div>
 </div>
+OUTPUT
+) ;
+?>

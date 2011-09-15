@@ -2,22 +2,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
+<title>Jecat 使用教程</title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" />
 </head>
-
 <body>
-
 <div class="wrapper">
-
 <div class="index">
 <ol>
 <li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
-<li><a href="chapter02_file-operation.html"> 文件操作</a></li>
-<li><a href="chapter02_use-ui-engine.html"> 使用HTML模板</a></li>
-<li> MVC模式：使用模型（model）</li>
-<li> MVC模式：使用视图（view）</li>
-<li><a href='chapter04.html'>MVC模式：控件类</a> 
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
+		<li><a href='chapter03part04_macro.html'>模板宏</a></li>
+		<li><a href='chapter03part05_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter07.html'>MVC模式：使用控制器（controller）</a>
+	<ul>
+		<li><a href='chapter07part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter07part01_singleIndex.html'>单一入口</a></li>
+		<li><a href='chapter07part02_createView-createModel.html'>在控制器中创建视图(view)和模型(model)</a></li>
+	</ul>
+</li>
+<li><a href='chapter05.html'>MVC模式：模型（model）</a>
+	<ul>
+		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter05part01_method1.html'>使用表名创建数据库模型</a></li>
+		<li><a href='chapter05part02_method2.html'>使用数组配置创建数据库模型</a></li>
+		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
+	</ul>
+</li>
+<li><a href='chapter04.html'>MVC模式：视图和控件类</a> 
 	<ul>
 		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
 		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
@@ -26,21 +43,34 @@
 		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
 		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
 		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
-		<li><a href='chapter04part07_finish.html'>总结</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
 	</ul>
 </li>
-<li> MVC模式：数据交换</li>
-<li> MVC模式：使用控制器（controller）</li>
+<li><a href='chapter06.html'>MVC模式：数据交换</a>
+	<ul>
+		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
+	</ul>
+</li>
 <li> MVC模式：控制器和视图的组合/重用</li>
-<li> 数据校验</li>
 <li> 消息队列</li>
-</ol> 
+<li><a href='chapter09.html'>数据校验</a>
+	<ul>
+		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter09part01_NotEmpty-verifier.html'>使用非空校验器(NotEmpty)</a></li>
+		<li><a href='chapter09part02_Length-verifier.html'>字符长度校验器(Length)</a></li>
+		<li><a href='chapter09part03_Number-Email-Same-verifier.html'>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</a></li>
+		<li><a href='chapter09part04_FileExt-FileSize-verifier.html'>文件类型校验器(FileExt),文件大小校验器(FileSize)</a></li>
+	</ul>
+</li>
+<li><a href="chapter02_file-operation.html">文件操作</a></li>
+</ol>
 </div>
 
 <div class="bodyText">
 <div class='page'>
-	<h1>使用Text类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用Text类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_start.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -83,7 +113,7 @@ $this->viewRegister->addWidget ( $username );</code>
 					第3个参数是控件的初始值.第4个参数是Text控件的类型,Text默认提供single,textarea,password,hidden类型,分别代表单行文本框,多行文本框,密码,隐藏文本框.
 					还有一些不常用的参数,你可以通过查阅文档得知</p>
 					<p>第2行,把Text对象添加到视图中,相当于把这个控件对象交给指定的view来管理</p>
-					<blockquote>
+					<blockquote class="prepare">
 						你可能已经发现了,在Jecat框架中,设计者试图把事物以他们的功能进行归类,这样类的功能更抽象.就像我们把多种具有文本输入功能的html标签归纳为一个Text对象这样的做法在Jecat框架中很普遍,我们的目的是让你在使用Jecat的时候不被那些他们的细节打扰
 					</blockquote>
 				</li>
@@ -94,15 +124,15 @@ namespace jc\user\RegisterController;
 
 use jc\mvc\model\db\Model;
 use jc\mvc\controller\Controller;
-use jc\mvc\view\View;</code>
+use jc\mvciew\View;</code>
 					</pre>
 					<p>namespace是声明了本页的RegisterController类的命名空间,use则是在声明我们用到的那些类,你要作的就是用一个use语句把Text类引入进来,这样我们才可以正常的使用Text类.引入Text类的代码如下:</p>
 					<pre class='code'>
 <code class='php'>
-use jc\mvc\view\widget\Text;</code>
+use jc\mvciew\widget\Text;</code>
 					</pre>
 					<p>把这行代码放到那几行use一起就可以了</p>
-					<blockquote>
+					<blockquote class="prepare">
 						如果你是第一次看到关于命名空间的知识,你应该看一看他们的介绍来了解他们的作用,请查阅php文档关于namesapce的部分.一开始不用深究,只要了解他们的作用就好.
 					</blockquote>
 				</li>
@@ -154,16 +184,17 @@ use jc\mvc\view\widget\Text;</code>
 			<li>你的页面应该有一个id为username的输入框和一个名为"提交表单"的按钮,说明你成功的使用了Jecat提供的控件类.但是这个表单还不能提交,下一节就告诉你如何处理这个表单提交的内容</li>
 		</ul>
 	</div>
-</div></div>
+</div>
+</div>
 
 </div>
-<script src='scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
-<script src='scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
 <script type="text/javascript">
 $(function(){
 	$.beautyOfCode.init({
-		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php'],
-		baseUrl: 'http://'+location.hostname+'/doc/tutorial/html/',
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
+		baseUrl: './',
 		ready: function() {
 			$.beautyOfCode.beautifyAll();
 		}

@@ -1,6 +1,9 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
-	<h1>使用CheckBtn类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用CheckBtn类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p03.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -13,11 +16,11 @@
 			<li>在init函数的末尾处添加下面的代码
 				<pre class='code'>
 				<code class='php'>
-$email = new Text ( 'email', '邮件' );
-$this->viewRegister->addWidget ( $email );
+\$email = new Text ( 'email', '邮件' );
+\$this->viewRegister->addWidget ( \$email );
 
-$ademail = new CheckBtn ( 'ademail', '接受广告邮件', 'ademail', CheckBtn::checkbox );
-$this->viewRegister->addWidget ( $ademail );</code>
+\$ademail = new CheckBtn ( 'ademail', '接受广告邮件', 'ademail', CheckBtn::checkbox );
+\$this->viewRegister->addWidget ( \$ademail );</code>
 				</pre>
 				<p>一个是填写邮件的Text控件,另外一个是接受广告邮件的checkbox选项.别忘记在代码开头处"use"一下CheckBtn的命名空间.注意CheckBtn类的名字,不是"CheckBox"</p>
 			</li>
@@ -31,7 +34,7 @@ $this->viewRegister->addWidget ( $ademail );</code>
 			<li>添加控件的标签,然后模板看起来应该是这样:
 				<pre class='code'>
 					<code class='html'>
-&lt;msgqueue for="$theView" />
+&lt;msgqueue for="\$theView" />
 &lt;form id="theform" method='post'>
 	&lt;label for="username">用户名:&lt;/label>&lt;widget id='username'/>
 	&lt;label for='password1'>密码&lt;/label>&lt;widget id="password1"/>&lt;br />
@@ -54,12 +57,12 @@ $this->viewRegister->addWidget ( $ademail );</code>
 			<pre class='code'>
 					<code class='php'>
 public function process() {
-	if ($this->viewRegister->isSubmit ( $this->aParams )) {
-		$this->viewRegister->loadWidgets ( $this->aParams );
-		$this->response()->output($this->aParams->get('username')) ;
-		$this->response()->output(var_export($this->viewRegister->widget ( 'passwordGroup')->value(),true )) ;
-		$this->response()->output($this->aParams->get('email')) ;
-		$this->response()->output($this->aParams->get('ademail')) ;
+	if (\$this->viewRegister->isSubmit ( \$this->aParams )) {
+		\$this->viewRegister->loadWidgets ( \$this->aParams );
+		\$this->response()->output(\$this->aParams->get('username')) ;
+		\$this->response()->output(var_export(\$this->viewRegister->widget ( 'passwordGroup')->value(),true )) ;
+		\$this->response()->output(\$this->aParams->get('email')) ;
+		\$this->response()->output(\$this->aParams->get('ademail')) ;
 	}
 }</code>
 			</pre>
@@ -77,3 +80,6 @@ public function process() {
 		</ul>
 	</div>
 </div>
+OUTPUT
+) ;
+?>

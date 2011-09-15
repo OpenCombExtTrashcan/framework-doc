@@ -1,36 +1,146 @@
+/*CSS reset*/
+body,div,dl,dt,dd,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table { border-collapse:collapse; border-spacing:0;}
+fieldset,img { border:0;}
+address,caption,cite,code,dfn,em,strong,th,var { font-style:normal; font-weight:normal;}
+/*ol,ul,li { list-style:none;}*/
+caption,th { text-align:left;}
+h1,h2,h3,h4,h5,h6 { font-weight:normal;}
+q:before,q:after {content:'';}
+abbr,acronym {border:0;}
+h3{font-weight: bold;}
+img {
+	color: transparent;
+	font-size: 0;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;/*Only fot IE7*/
+}
+b, strong {
+	/*
+  Makes browsers agree.
+  IE + Opera = font-weight: bold.
+  Gecko + WebKit = font-weight: bolder.
+*/
+  font-weight: bold;
+}
+*:focus {
+	/* 去掉获得焦点时出现的虚线框 */
+	outline: none;
+}  
+textarea{
+	/* chrome 不允许 textarea 可更改大小  */
+	resize:none;
+}
+
 
 body {
+	font:12px Arial, Helvetica, sans-serif;
+	padding:10px;
 	font-size: 14px ;
 	line-height: 18px ;
-	background-color: #E9F1F4;
+	background: #d8d2ce url(../styles/bglines.png) repeat 0;
 }
+
+a {
+	text-decoration:none;
+}
+
+a:link {
+	color:#4B8DB5;
+}
+
+a:visited {
+	color:#5A6F7F;
+}
+
+a:hover {
+	color:#D05D2A;
+}
+
+li{ line-height:20px;}
 
 p {
 	display: block;
 	text-indent: 2em;
-	margin: 15px 0px;
-	margin-top: 10px;
-	margin-right: 0px;
-	margin-bottom: 15px;
-	margin-left: 0px;
+	margin:10px 0 15px 0;
+	line-height:20px;
+}
+
+pre {
+	white-space:normal;
 }
 
 .wrapper {
-	background-color: #fff ;
+	
 }
 
 .index {
 	-webkit-gradient(linear, 0% 0, 0% 100%, from(#FFFFF6), to(#FFFDE3));
-	background-color: #FFFDE3; 
+	background:#fff;
+	/*padding:10px;*/
+	width:300px;
+	float:left;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.index a {
+	padding:1px 1px 1px 3px;
+	background:#fff;
+	display:block;
+	margin-right:10px;
+}
+
+.index a:hover {
+	background:#eee;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+}
+
+.bodyText {
+	margin-left:310px;
+	padding:10px 20px;
+	background:#fff;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.bodyText h1{
+	font-weight:bold;
+	padding-bottom:4px;
 }
 
 blockquote{
 	display:block;
-	width:80%;
 	height:auto;
+	margin:10px;
 	padding: 10px 20px;
 	border:1px #aaa solid;
 	background:#EEE;
+	line-height:20px;
+}
+
+.prepare{
+	min-height:60px;
+	background:#eee url(../styles/prepare.png) no-repeat 10px 10px ;
+	padding-left:80px;
+}
+.warning{
+	min-height:60px;
+	background:#eee url(../styles/warning.png) no-repeat 10px 10px ;
+	padding-left:80px;
+}
+
+.title {
+    background: none repeat scroll 0 0 #108AC6;
+    display: block;
+    float: left;
+    height: 18px;
+    margin: 2px 5px 0 0;
+    width: 6px;
 }
 
 /*

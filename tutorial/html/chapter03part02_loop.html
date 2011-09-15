@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jecat 使用教程</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+</head>
+<body>
+<div class="wrapper">
+<div class="index">
+<ol>
+<li><a href="chapter01_hello-world.html">&quot;hello world&quot;（创建JeCat项目）</a></li>
+<li><a href="chapter03.html">HTML模板</a>
+	<ul>
+		<li><a href='chapter03part01_if.html'>if 标签</a></li>
+		<li><a href='chapter03part02_loop.html'>loop 标签</a></li>
+		<li><a href='chapter03part03_foreach.html'>foreach 标签</a></li>
+		<li><a href='chapter03part04_macro.html'>模板宏</a></li>
+		<li><a href='chapter03part05_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter07.html'>MVC模式：使用控制器（controller）</a>
+	<ul>
+		<li><a href='chapter07part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter07part01_singleIndex.html'>单一入口</a></li>
+		<li><a href='chapter07part02_createView-createModel.html'>在控制器中创建视图(view)和模型(model)</a></li>
+	</ul>
+</li>
+<li><a href='chapter05.html'>MVC模式：模型（model）</a>
+	<ul>
+		<li><a href='chapter05part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter05part01_method1.html'>使用表名创建数据库模型</a></li>
+		<li><a href='chapter05part02_method2.html'>使用数组配置创建数据库模型</a></li>
+		<li><a href='chapter05part03_method3.html'>定义关系图创建数据库模型</a></li>
+	</ul>
+</li>
+<li><a href='chapter04.html'>MVC模式：视图和控件类</a> 
+	<ul>
+		<li><a href='chapter04part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter04part01_use-Text.html'>使用Text类</a></li>
+		<li><a href='chapter04part02_process.html'>获取表单提交数据</a></li>
+		<li><a href='chapter04part03_use-Group.html'>使用Group类</a></li>
+		<li><a href='chapter04part04_use-CheckBtn.html'>使用CheckBtn类</a></li>
+		<li><a href='chapter04part05_use-Select.html'>使用Select和SelectList类</a></li>
+		<li><a href='chapter04part06_use-File.html'>使用File类</a></li>
+		<li><a href='chapter04part07_style-for-widget.html'>给widget添加样式和属性</a></li>
+		<li><a href='chapter04part08_finish.html'>总结</a></li>
+	</ul>
+</li>
+<li><a href='chapter06.html'>MVC模式：数据交换</a>
+	<ul>
+		<li><a href='chapter06part01_dataexchange.html'>数据交换</a></li>
+	</ul>
+</li>
+<li> MVC模式：控制器和视图的组合/重用</li>
+<li> 消息队列</li>
+<li><a href='chapter09.html'>数据校验</a>
+	<ul>
+		<li><a href='chapter09part00_pre.html'>准备工作</a></li>
+		<li><a href='chapter09part01_NotEmpty-verifier.html'>使用非空校验器(NotEmpty)</a></li>
+		<li><a href='chapter09part02_Length-verifier.html'>字符长度校验器(Length)</a></li>
+		<li><a href='chapter09part03_Number-Email-Same-verifier.html'>数字校验器(Number),邮箱地址校验器(Email),相等校验器(Same)</a></li>
+		<li><a href='chapter09part04_FileExt-FileSize-verifier.html'>文件类型校验器(FileExt),文件大小校验器(FileSize)</a></li>
+	</ul>
+</li>
+<li><a href="chapter02_file-operation.html">文件操作</a></li>
+</ol>
+</div>
+
+<div class="bodyText">
+<div class='page'>
+	<h1><span class="title"></span>loop标签</h1>
+	<blockquote class="prepare">
+		准备:<br />
+		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
+		* 如果你不想自己构建程序的目录,可以直接下载<a href='../code/template_p01.zip'>代码包</a><br />
+	</blockquote>
+	<p>loop其实就是for语句,它循环执行内部代码一定的次数,本节就介绍如何使用它</p>
+	<h3 id='s1'>step 1.</h3>
+	<div class='step'>
+		<p class='purpose'>我们要用loop标签显示一个列表</p>
+		<ul class='todo'>
+		<li>
+			进入template文件夹,打开template.html文件,添加如下代码:
+			<pre class='code'>
+				<code class='html'>
+&lt;ul>
+&lt;loop end='10'>
+	&lt;li>一个空的li标签&lt;/li>
+&lt;/loop>
+&lt;/ul></code>
+			</pre>
+			<p>最外层是个ul标签,里面的loop标签会让最内层的li标签重复出现10次</p>
+			<p>你可能已经猜到了,loop标签的end属性的值就是它循环的次数,loop标签默认从0开始,循环的条件是循环次数小于10,那么从0到9正好执行了10次.</p>
+		</li>
+		<li>如果你把代码改成下面这样,运行的结果也是一样的
+		<pre class='code'>
+				<code class='html'>
+&lt;ul>
+&lt;loop start='0' end='10' step='1'>
+	&lt;li>一个空的li标签&lt;/li>
+&lt;/loop>
+&lt;/ul></code>
+			</pre>
+			<p>start属性是指循环开始的数字,step是每次循环给这个数字增加的跨度.</p>
+		</li>
+		<li>有的时候你需要知道循环到了第几次.我们提供了var属性
+		<pre class='code'>
+				<code class='html'>
+&lt;ul>
+&lt;loop start='0' end='10' step='1' var='index'>
+	&lt;li>&lt;/li>
+&lt;/loop>
+&lt;/ul></code>
+			</pre>
+			<p>var属性允许你指定一个变量名,用来储存循环的计数.</p>
+			<p>第3行把循环计数输出出来,是Jecat的宏语法,后面的章节我们会讲到他们的用法.</p>
+		</li>
+		</ul>
+	</div>
+	
+	<h3 id='s2'>step 2.</h3>
+	<div class='step'>
+		<p>验证构建的代码是否正确</p>
+		<ul>
+			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/te/te.php 然后回车来访问你刚刚构建的页面</li>
+			<li>不断的尝试修改loop中各个属性的值然后运行他们,记住他们的作用.</li>
+		</ul>
+	</div>
+	<blockquote class='prepare'>
+		Jecat还提供了do标签和while标签来提供PHP中do while 和while do 语法类似的功能,和loop类似他们都是循环语句.他们的用法和loop标签类似,你可以通过Jecat手册来了解他们的用法.
+	</blockquote>
+</div>
+</div>
+
+</div>
+<script src='./scripts/jquery-1.6.2.min.js' type='text/javascript'></script>
+<script src='./scripts/jquery.beautyOfCode-min.js' type='text/javascript'></script>
+<script type="text/javascript">
+$(function(){
+	$.beautyOfCode.init({
+		brushes: ['Xml', 'JScript', 'CSharp', 'Plain', 'Php' ,'Sql'],
+		baseUrl: './',
+		ready: function() {
+			$.beautyOfCode.beautifyAll();
+		}
+	});
+});
+</script>
+</body>
+</html>

@@ -1,6 +1,9 @@
+<?php
+
+$aDevice->write(<<<OUTPUT
 <div class='page'>
-	<h1>使用File类</h1>
-	<blockquote>
+	<h1><span class="title"></span>使用File类</h1>
+	<blockquote class="prepare">
 		准备:<br />
 		* 如果你还没有在自己的开发环境中部署Jecat,请先部署Jecat.部署的方法参见教程的第一章<br />
 		* 如果你没有本章之前的代码,可以直接下载<a href='../code/MVC_p05.zip'>代码包</a>,这样你只要把这个代码部署到Jecat的framework同级的目录下就可以开始了<br />
@@ -8,31 +11,22 @@
 	
 	<h3 id='s1'>step 1.</h3>
 	<div class='step'>
-		<p class='purpose'>下面是Select和SelectList类的实例代码</p>
+		<p class='purpose'>下面是File类的php代码</p>
 		<ul class='todo'>
 			<li>在init函数的末尾处添加下面的代码
 				<pre class='code'>
 				<code class='php'>
-$selectprovince = new Select ( 'selectprovince', '选择省' );
-$selectprovince->addOption ( '请选择...', null , true );
-$selectprovince->addOption ( '辽宁', 'liaoning', false );
-$selectprovince->addOption ( '北京', 'beijing', false );
-$this->viewRegister->addWidget ( $selectprovince );
-
-$selectcity = new SelectList ( 'selectcity', '选择城市', 5, true );
-$selectcity->addOptionByArray ( array (
-										array ('沈阳', 'shenyang', false ),
-										array ('大连', 'dalian', false ), 
-										array ('锦州', 'jinzhou', true ) 
-										));
-$this->viewRegister->addWidget ( $selectcity );</code>
+if(!\$uploadForlder = \$this->application ()->fileSystem ()->findFolder ( '/data/widget' )){
+	\$uploadForlder = \$this->application ()->fileSystem ()->createFolder ( '/data/widget');
+}
+\$fileupload = new File ( 'fileupload', '文件上传', \$uploadForlder );
+\$this->viewRegister->addWidget ( \$fileupload );</code>
 				</pre>
-				<p>前5行是Select类,第2行到第4行是添加option选项,addOption函数的参数是:option显示的文本,option的值,是否默认选中.显然,第2行添加的option就是默认选中的.</p>
-				<p>第7行开始是SelectList类,它和Select的区别是"看起来象个列表",是的,在html中他们的标签都是&lt;select>,后者只是比前者多了size属性和multiple属性,但是他们看起来几乎是完全不同的控件,所以我们把他们分成2个类来处理.
-				Select类的参数很简单,SelectList类多了2个参数,第3个参数"5"是指select有多少个option是可见的,默认是4个,后面的"true"代表这个SelectList是多选的.
-				第8行开始是给这个SelectList添加option,这里用的是addOptionByAarry方法,其实Select类也可以用这种方式添加option,你可以根据喜好来决定使用哪种.注意我们给SelectList对象设定第3个option是默认选中的</p>
-				<blockquote>
-					你可以在上面2个对象中添加更多的option来体验他们的写法.你甚至可以试试把其中多个option的默认选中参数都设成true,看看结果如何
+				<p>第1行代码找到user目录下的一个名为widget的文件夹对象,它的路径是: user/data/widget ,这个文件夹就是我们要用来存储文件用的文件夹.不过如果这个目录不存在,它会返回null.
+				如果返回null,就创建那个文件夹(第2行).当然,你可以按照自己的想法定位这个文件夹,改一下第1行代码末尾的findFolder函数的参数就可以了.</p>
+				<p>第3行把建立好的forder对象作为第3个参数传递给FIle类的构造函数这样File控件对象就知道应该把文件放在哪里了</p>
+				<blockquote class="prepare">
+					如果你想更准确的定位存储文件的路径,你可以查阅Jecat文档文件系统相关章节
 				</blockquote>
 			</li>
 		</ul>
@@ -40,48 +34,51 @@ $this->viewRegister->addWidget ( $selectcity );</code>
 	
 	<h3 id='s2'>step 2.</h3>
 	<div class='step'>
-		<p class='purpose'>然后我们去模板添加对应的标签</p>
+		<p class='purpose'>去模板添加对应的标签</p>
 		<ul class='todo'>
 			<li>在模板文件Register.html的form标签的底部添加下面的代码
 				<pre class='code'>
 					<code class='html'>
-&lt;label for='selectprovince'>选择省&lt;/label>&lt;widget id="selectprovince"/>&lt;br />
-&lt;label for='selectcity'>选择城市&lt;/label>&lt;widget id="selectcity"/>&lt;br /></code>
+&lt;label for='fileupdate'>上传照片&lt;/label>&lt;widget id="fileupload"/>&lt;br /></code>
 				</pre>
-				<p></p>
 			</li>
 		</ul>
 	</div>
 	
 	<h3 id='s3'>step 3.</h3>
 	<div class='step'>
-		<p class='purpose'>写一些代码来输出Select和SelectList标签的值</p>
+		<p class='purpose'>现在后台只是知道存放文件的物理路径,却不知道如何产生一个url地址来让用户的浏览器显示图片或者给出下载地址</p>
 		<ul class='todo'>
-			<li>修改一下process函数中的代码,以便我们提交表单后能看到表单的内容
-			<pre class='code'>
+			<li>编辑user文件夹下的inc.common.php文件,让它看起来像是这样
+				<pre class='code'>
 					<code class='php'>
-public function process() {
-	if ($this->viewRegister->isSubmit ( $this->aParams )) {
-		$this->viewRegister->loadWidgets ( $this->aParams );
-		$this->response()->output($this->aParams->get('username')) ;
-		$this->response()->output(var_export($this->aParams->get('passwordGroup'), TRUE)) ;
-		$this->response()->output($this->aParams->get('email')) ;
-		$this->response()->output($this->aParams->get('ademail')) ;
-		$this->response()->output($this->aParams->get('selectprovince')) ;
-		$this->response()->output(var_export($this->aParams->get('selectcity'),true)) ;
-	}
-}</code>
-			</pre>
+// UI
+UIFactory::singleton()->sourceFileManager()->addFolder(__DIR__.'/templates') ;
+
+// 文件访问路径
+\$aApp->fileSystem()->findFolder('/')->setHttpUrl(
+	dirname(\$aApp->request()->url())
+) ;
+
+// 会话
+\$aSession = new OriginalSession() ;
+\$aSession->start() ;
+Session::setSingleton(\$aSession) ;</code>
+				</pre>
+				<p>第4行到8行就是你要加入的代码,它的作用是帮助后台了解计算文件url的方法.如果你不是很清楚它是什么作用,尽管添加上就可以了.</p>
 			</li>
 		</ul>
 	</div>
 	
 	<h3 id='s4'>step 4.</h3>
 	<div class='step'>
-		<p class='purpose'>现在来检验你的代码</p>
+		<p class='purpose'>检验你的代码</p>
 		<ul class='todo'>
 			<li>运行你的浏览器,在地址栏输入这些:  http://你的域名/user/Register.php 然后回车来访问你的页面</li>
-			<li>在username等控件中填入一些内容,随意选中select的几个option,点击"提交表单"的按钮,看看输出的值是否和你输入的一样.反复修改Select和SelectList控件的选项状态确保他们的选中状态完全在你的掌控中</li>
+			<li>在username等控件中填入一些内容,在文件上传控件中放入一个文件,点击"提交表单"的按钮,如果上传控件下方出现了一个文件链接,点击它,如果你上传的是图片,那么你应该可以看到那张图片了,如果是其他文件,那么你应该会得到一个下载提示对话框</li>
 		</ul>
 	</div>
 </div>
+OUTPUT
+) ;
+?>
